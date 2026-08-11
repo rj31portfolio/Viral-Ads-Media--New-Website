@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viral Ads Media Navbar</title>
+    <link rel="stylesheet" href="./src/input.css" />
+  </head>
+  <body>
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-black border-b border-white/10"
+    >
+      <nav
+        class="max-w-9xl mx-auto h-[90px] px-4 md:px-8 lg:px-12 flex items-center justify-between"
+      >
+        <!-- LOGO -->
+        <div class="flex items-center shrink-0">
+          <a href="index.html">
+            <img
+              src="Assets/animated logo.gif"
+              alt="Viral Ads Media"
+              class="w-[120px] sm:w-[150px] lg:w-[180px] h-auto"
+            />
+          </a>
+        </div>
+
+        <!-- DESKTOP MENU -->
+        <ul class="hidden lg:flex items-center justify-center gap-1 flex-1">
+          <li>
+            <a href="index.html" class="nav-item text-bold ">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+          </li>
+
+          <!-- SERVICES DROPDOWN (Desktop) -->
+          <li class="relative" id="servicesMenu">
+            <a
+              href="services.html"
+              class="nav-item flex items-center gap-1.5 cursor-pointer"
+              id="servicesBtn"
+            >
+              <i class="fa-solid fa-lightbulb"></i>
+              <span>Services</span>
+              <!-- <i
+                class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"
+                id="servicesArrow"
+              ></i> -->
+            </a>
+
+            <div
+              id="servicesDropdown"
+              class="absolute left-1/2 -translate-x-1/2 top-full w-[340px] bg-[#0b0b0b] border border-white/10 rounded-2xl p-4 opacity-0 invisible translate-y-3 transition-all duration-300 shadow-2xl z-50 max-h-[70vh] overflow-y-auto"
+            >
+              <div class="grid gap-2">
+                <a
+                  class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                  href="service.html?best-social-media-agency-in-delhi"
+                >
+                  <h4 class="font-bold text-sm text-white">
+                    Social Media Marketing
+                  </h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">
+                    Grow & engage your audience
+                  </p>
+                </a>
+                <a
+                  class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                  href="service.html?best-seo-agency-near-me"
+                >
+                  <h4 class="font-bold text-sm text-white">
+                    Search Engine Optimization
+                  </h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">
+                    Rank higher & grow traffic organically
+                  </p>
+                </a>
+                <a
+                  class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                  href="service.html?affordable-web-developer-in-delhi"
+                >
+                  <h4 class="font-bold text-sm text-white">
+                    Website Designing
+                  </h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">
+                    Create stunning, high-converting websites
+                  </p>
+                </a>
+                <a
+                  class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                  href="service.html?best-performance-marketing-in-delhi"
+                >
+                  <h4 class="font-bold text-sm text-white">
+                    Performance Marketing
+                  </h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">
+                    Data-driven results for scaling brands
+                  </p>
+                </a>
+                <a
+                  class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                  href="service.html?affordable-logo-and-branding-near-me"
+                >
+                  <h4 class="font-bold text-sm text-white">Logo & Branding</h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">
+                    Brand Identity, Strategy & Design
+                  </p>
+                </a>
+              
+                <a
+                  class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                  href="service.html?best-influencer-marketing-in-delhi"
+                >
+                  <h4 class="font-bold text-sm text-white">
+                    Influencer Marketing
+                  </h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">
+                    Boost visibility & trust
+                  </p>
+                </a>
+             
+                <a
+                  class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                  href="service.html?proffessional-brand-shoots-in-delhi"
+                >
+                  <h4 class="font-bold text-sm text-white">Brand Shoots</h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">
+                    Professional corporate & product photography
+                  </p>
+                </a>
+               
+              </div>
+
+              <div class="border-t border-white/10 mt-3 pt-3">
+                <a
+                  href="services.html"
+                  class="flex items-center justify-between text-sm font-semibold text-[var(--primary-color)] hover:underline"
+                >
+                  <span>Explore All Services</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a href="portfolio.html" class="nav-item">
+              <i class="fa-solid fa-photo-film"></i>
+              <span>Portfolio</span>
+            </a>
+          </li>
+
+          <!-- INDUSTRIES DROPDOWN (Desktop - Fully Dynamic) -->
+          <li class="relative" id="industryMenu">
+            <a
+              href="industries.html"
+              class="nav-item flex items-center gap-1.5 cursor-pointer"
+              id="industryBtn"
+            >
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Industries</span>
+              <!-- <i
+                id="industryArrow"
+                class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"
+              ></i> -->
+            </a>
+
+            <div
+              id="industryDropdown"
+              class="absolute left-1/2 -translate-x-1/2 top-full w-[340px] bg-[#0b0b0b] border border-white/10 rounded-2xl p-4 opacity-0 invisible translate-y-3 transition-all duration-300 shadow-2xl z-50 max-h-[70vh] overflow-y-auto"
+            >
+              <div class="grid gap-2">
+                <a href="industry-detail.html?affordable-e-commerce-website-development-services" class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                  <h4 class="font-bold text-sm text-white">E-Commerce</h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">Growth solutions for online brands</p>
+                </a>
+                <a href="industry-detail.html?healthcare-marketing-services" class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                  <h4 class="font-bold text-sm text-white">Healthcare</h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">Digital solutions for healthcare brands</p>
+                </a>
+                <a href="industry-detail.html?manufacturing-marketing-services" class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                  <h4 class="font-bold text-sm text-white">Manufacturing</h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">Industrial digital growth solutions</p>
+                </a>
+                <a href="industry-detail.html?real-estate-marketing-services" class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                  <h4 class="font-bold text-sm text-white">Real Estate</h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">Generate quality property leads</p>
+                </a>
+                <a href="industry-detail.html?education-marketing-services" class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                  <h4 class="font-bold text-sm text-white">Education</h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">Build powerful online presence</p>
+                </a>
+                <a href="industry-detail.html?fashion-marketing-services" class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                  <h4 class="font-bold text-sm text-white">Fashion</h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">Create digital brand identity</p>
+                </a>
+                <a href="industry-detail.html?travel-marketing-services" class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                  <h4 class="font-bold text-sm text-white">Travel</h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">Tourism & hospitality marketing</p>
+                </a>
+                <a href="industry-detail.html?appliances-marketing-service" class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                  <h4 class="font-bold text-sm text-white">Appliances</h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">Home appliance brand scaling</p>
+                </a>
+                <a href="industry-detail.html?cosmetics-marketing-service" class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                  <h4 class="font-bold text-sm text-white">Cosmetics</h4>
+                  <p class="text-xs text-zinc-400 mt-0.5">Beauty & wellness customer acquisition</p>
+                </a>
+              </div>
+
+              <div class="border-t border-white/10 mt-3 pt-3">
+                <a
+                  href="industries.html"
+                  class="flex items-center justify-between text-sm font-semibold text-[var(--primary-color)] hover:underline"
+                >
+                  <span>Explore All Industries</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a href="about.html" class="nav-item">
+              <i class="fa-solid fa-building"></i>
+              <span>Company</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="blogs.html" class="nav-item">
+              <i class="fa-solid fa-pen-nib"></i>
+              <span>Blogs</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="career.html" class="nav-item">
+              <i class="fa-solid fa-rocket"></i>
+              <span>Career</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- RIGHT CTA -->
+        <div class="hidden lg:flex shrink-0 gap-4">
+          <a
+            href="contact.html"
+            class="text-white px-5 py-3 flex flex-col items-center text-xs font-bold rounded-lg shadow-lg hover:scale-105 transition"
+            style="background: linear-gradient(to top,var(--primary-color) , #ff6a00);"
+          >
+            <i class="fa-solid fa-comments text-lg mb-0.5"></i>
+            Let's Talk
+          </a>
+          <a
+            href="https://razorpay.me/@viraladsmedia9256" target="_blank"
+            class="text-white px-5 py-3 flex flex-col items-center text-xs font-bold rounded-lg shadow-lg hover:scale-105 transition"
+            style="background: linear-gradient(to top,var(--primary-color) , #ff6a00);"
+          >
+            <i class="fa-solid fa-credit-card text-lg mb-0.5"></i>
+            Pay Now!
+          </a>
+        </div>
+
+        <!-- MOBILE TOGGLE BUTTON -->
+        <button
+          id="mobileBtn"
+          class="lg:hidden text-white border border-white/20 w-11 h-11 rounded-full flex items-center justify-center hover:border-[var(--primary-color)] transition cursor-pointer"
+        >
+          <i class="fa-solid fa-bars text-lg" id="mobileMenuIcon"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- MOBILE MENU DRAWER (With Dynamic Submenus) -->
+    <div
+      id="mobileMenu"
+      class="fixed top-[90px] left-0 w-full bg-black hidden lg:hidden z-40 shadow-2xl overflow-y-auto max-h-[calc(100vh-90px)]"
+    >
+      <div class="px-5 sm:px-8 py-5 space-y-1">
+        <a href="index.html" class="mobile-link"><span>Home</span></a>
+
+        <!-- Mobile Services Accordion -->
+        <div>
+          <div class="flex items-center justify-between py-3 overflow-y-auto">
+            <a href="services.html" class="text-white text-base font-semibold hover:text-[var(--primary-color)]">Services</a>
+            <button id="mobileServicesToggle" class="text-white p-2 cursor-pointer">
+              <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="mobileServicesArrow"></i>
+            </button>
+          </div>
+          <div id="mobileServicesSub" class="hidden pl-4 py-3 space-y-3 mt-1">
+            <a href="service.html?best-social-media-agency-in-delhi" class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Social Media Marketing</a>
+            <a href="service.html?best-seo-agency-near-me" class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Search Engine Optimization</a>
+            <a href="service.html?affordable-web-developer-in-delhi" class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Website Designing</a>
+            <a href="service.html?best-performance-marketing-in-delhi" class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Performance Marketing</a>
+            <a href="services.html" class="block text-sm font-semibold text-[var(--primary-color)] pt-1">View All Services →</a>
+          </div>
+        </div>
+
+        <a href="portfolio.html" class="mobile-link"><span>Portfolio</span></a>
+
+        <!-- Mobile Industries Accordion (Dynamic Links) -->
+        <div>
+          <div class="flex items-center justify-between py-3">
+            <a href="industries.html" class="text-white text-base font-semibold hover:text-[var(--primary-color)]">Industries</a>
+            <button id="mobileIndustryToggle" class="text-white p-2 cursor-pointer">
+              <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="mobileIndustryArrow"></i>
+            </button>
+          </div>
+          <div id="mobileIndustriesSub" class="hidden pl-4 py-3 space-y-3 mt-1">
+            <a href="industry-detail.html?affordable-e-commerce-website-development-services" class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">E-Commerce</a>
+            <a href="industry-detail.html?healthcare-marketing-services" class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Healthcare</a>
+            <a href="industry-detail.html?manufacturing-marketing-services" class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Manufacturing</a>
+            <a href="industry-detail.html?real-estate-marketing-services" class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Real Estate</a>
+            <a href="industry-detail.html?education-marketing-services" class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Education</a>
+            <a href="industry-detail.html?fashion-marketing-services" class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Fashion</a>
+            <a href="industry-detail.html?travel-marketing-services" class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Travel</a>
+            <a href="industry-detail.html?appliances-marketing-service" class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Appliances</a>
+            <a href="industry-detail.html?cosmetics-marketing-service" class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Cosmetics</a>
+            <a href="industries.html" class="block text-sm font-semibold text-[var(--primary-color)] pt-1">View All Industries Matrix →</a>
+          </div>
+        </div>
+
+        <div class="flex flex-col space-y-4">
+          <a href="about.html" class="mobile-link"><span>Company</span></a>
+          <a href="blogs.html" class="mobile-link"><span>Blogs</span></a>
+          <a href="career.html" class="mobile-link"><span>Career</span></a>
+        </div>
+        <a href="contact.html" class="block w-full text-center py-3.5 mt-6 bg-[var(--primary-color)] text-white font-bold rounded-lg">Let's Talk</a>
+        <a href="https://razorpay.me/@viraladsmedia9256" target="_blank" class="block w-full text-center py-3.5 mt-6 bg-[var(--primary-color)] text-white font-bold rounded-lg">Pay Now</a>
+      </div>
+    </div>
+
+    <script src="./src/script.js"></script>
+  </body>
+</html>

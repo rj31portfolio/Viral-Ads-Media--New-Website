@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Journal — Viral Ads Media</title>
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+  <!-- ============================================================
+  VIRAL ADS MEDIA — BLOG / "JOURNAL" PAGE
+  Same dark cinematic system as the Work and Case Study pages:
+  bg #050505, accent #EC4D20, Bebas Neue + IBM Plex Mono + Inter,
+  film-grain overlay, monochrome->colour hover on media.
+
+  FULLY DYNAMIC: every article lives in the POSTS array below and
+  is rendered, filtered, searched, and paginated by JS — no static
+  HTML cards to hand-edit. To add a post, add one object to POSTS.
+
+  Cards link to /blog-post.html?slug=<slug> — a single dynamic post
+  template (same pattern as /project.html for the Work section) —
+  ask if you'd like that page built next; this file is the index.
+============================================================= -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="./src/input.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="./src/blogs.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#050505',
+            surface: '#0c0c0b',
+            bone: '#EDEAE2',
+            smoke: '#86837C',
+            accent: '#EC4D20',
+            line: 'rgba(237,234,226,0.08)',
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'monospace'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+
+</head>
+
+<body class="bg-ink text-bone antialiased">
+  <div class="grain"></div>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <!-- header start -->
+      <header class="fixed top-0 left-0 w-full z-50 bg-black border-b border-white/10">
+        <nav class="max-w-9xl mx-auto h-[90px] px-4 md:px-8 lg:px-12 flex items-center justify-between">
+          <!-- LOGO -->
+          <div class="flex items-center shrink-0">
+            <a href="index.html">
+              <img src="Assets/animated logo.gif" alt="Viral Ads Media"
+                class="w-[120px] sm:w-[150px] lg:w-[180px] h-auto" />
+            </a>
+          </div>
+
+          <!-- DESKTOP MENU -->
+          <ul class="hidden lg:flex items-center justify-center gap-1 flex-1">
+            <li>
+              <a href="index.html" class="nav-item text-bold ">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+              </a>
+            </li>
+
+            <!-- SERVICES DROPDOWN (Desktop) -->
+            <li class="relative" id="servicesMenu">
+              <a href="services.html" class="nav-item flex items-center gap-1.5 cursor-pointer" id="servicesBtn">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>Services</span>
+              </a>
+
+              <div id="servicesDropdown"
+                class="absolute left-1/2 -translate-x-1/2 top-full w-[340px] bg-[#0b0b0b] border border-white/10 rounded-2xl p-4 opacity-0 invisible translate-y-3 transition-all duration-300 shadow-2xl z-50 max-h-[70vh] overflow-y-auto">
+                <div class="grid gap-2">
+                  <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                    href="service.html?best-social-media-agency-in-delhi">
+                    <h4 class="font-bold text-sm text-white">
+                      Social Media Marketing
+                    </h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">
+                      Grow & engage your audience
+                    </p>
+                  </a>
+                  <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                    href="service.html?best-seo-agency-near-me">
+                    <h4 class="font-bold text-sm text-white">
+                      Search Engine Optimization
+                    </h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">
+                      Rank higher & grow traffic organically
+                    </p>
+                  </a>
+                  <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                    href="service.html?affordable-web-developer-in-delhi">
+                    <h4 class="font-bold text-sm text-white">
+                      Website Designing
+                    </h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">
+                      Create stunning, high-converting websites
+                    </p>
+                  </a>
+                  <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                    href="service.html?best-performance-marketing-in-delhi">
+                    <h4 class="font-bold text-sm text-white">
+                      Performance Marketing
+                    </h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">
+                      Data-driven results for scaling brands
+                    </p>
+                  </a>
+                  <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                    href="service.html?affordable-logo-and-branding-near-me">
+                    <h4 class="font-bold text-sm text-white">Logo & Branding</h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">
+                      Brand Identity, Strategy & Design
+                    </p>
+                  </a>
+
+                  <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                    href="service.html?best-influencer-marketing-in-delhi">
+                    <h4 class="font-bold text-sm text-white">
+                      Influencer Marketing
+                    </h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">
+                      Boost visibility & trust
+                    </p>
+                  </a>
+
+                  <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                    href="service.html?proffessional-brand-shoots-in-delhi">
+                    <h4 class="font-bold text-sm text-white">Brand Shoots</h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">
+                      Professional corporate & product photography
+                    </p>
+                  </a>
+
+                </div>
+
+                <div class="border-t border-white/10 mt-3 pt-3">
+                  <a href="services.html"
+                    class="flex items-center justify-between text-sm font-semibold text-[var(--primary-color)] hover:underline">
+                    <span>Explore All Services</span>
+                    <span>→</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <a href="portfolio.html" class="nav-item">
+                <i class="fa-solid fa-photo-film"></i>
+                <span>Portfolio</span>
+              </a>
+            </li>
+
+            <!-- INDUSTRIES DROPDOWN (Desktop - Fully Dynamic) -->
+            <li class="relative" id="industryMenu">
+              <a href="industries.html" class="nav-item flex items-center gap-1.5 cursor-pointer" id="industryBtn">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Industries</span>
+              </a>
+
+              <div id="industryDropdown"
+                class="absolute left-1/2 -translate-x-1/2 top-full w-[340px] bg-[#0b0b0b] border border-white/10 rounded-2xl p-4 opacity-0 invisible translate-y-3 transition-all duration-300 shadow-2xl z-50 max-h-[70vh] overflow-y-auto">
+                <div class="grid gap-2">
+                  <a href="industry-detail.html?affordable-e-commerce-website-development-services"
+                    class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                    <h4 class="font-bold text-sm text-white">E-Commerce</h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">Growth solutions for online brands</p>
+                  </a>
+                  <a href="industry-detail.html?healthcare-marketing-services"
+                    class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                    <h4 class="font-bold text-sm text-white">Healthcare</h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">Digital solutions for healthcare brands</p>
+                  </a>
+                  <a href="industry-detail.html?manufacturing-marketing-services"
+                    class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                    <h4 class="font-bold text-sm text-white">Manufacturing</h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">Industrial digital growth solutions</p>
+                  </a>
+                  <a href="industry-detail.html?real-estate-marketing-services"
+                    class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                    <h4 class="font-bold text-sm text-white">Real Estate</h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">Generate quality property leads</p>
+                  </a>
+                  <a href="industry-detail.html?education-marketing-services"
+                    class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                    <h4 class="font-bold text-sm text-white">Education</h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">Build powerful online presence</p>
+                  </a>
+                  <a href="industry-detail.html?fashion-marketing-services"
+                    class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                    <h4 class="font-bold text-sm text-white">Fashion</h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">Create digital brand identity</p>
+                  </a>
+                  <a href="industry-detail.html?travel-marketing-services"
+                    class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                    <h4 class="font-bold text-sm text-white">Travel</h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">Tourism & hospitality marketing</p>
+                  </a>
+                  <a href="industry-detail.html?appliances-marketing-service"
+                    class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                    <h4 class="font-bold text-sm text-white">Appliances</h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">Home appliance brand scaling</p>
+                  </a>
+                  <a href="industry-detail.html?cosmetics-marketing-service"
+                    class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                    <h4 class="font-bold text-sm text-white">Cosmetics</h4>
+                    <p class="text-xs text-zinc-400 mt-0.5">Beauty & wellness customer acquisition</p>
+                  </a>
+                </div>
+
+                <div class="border-t border-white/10 mt-3 pt-3">
+                  <a href="industries.html"
+                    class="flex items-center justify-between text-sm font-semibold text-[var(--primary-color)] hover:underline">
+                    <span>Explore All Industries</span>
+                    <span>→</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <a href="about.html" class="nav-item">
+                <i class="fa-solid fa-building"></i>
+                <span>Company</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="blogs.html" class="nav-item">
+                <i class="fa-solid fa-pen-nib"></i>
+                <span>Blogs</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="career.html" class="nav-item">
+                <i class="fa-solid fa-rocket"></i>
+                <span>Career</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- RIGHT CTA -->
+          <div class="hidden lg:flex shrink-0 gap-4">
+            <a href="contact.html"
+              class="text-white px-5 py-3 flex flex-col items-center text-xs font-bold rounded-lg shadow-lg hover:scale-105 transition"
+              style="background: linear-gradient(to top,var(--primary-color) , #ff6a00);">
+              <i class="fa-solid fa-comments text-lg mb-0.5"></i>
+              Let's Talk
+            </a>
+            <a href="https://razorpay.me/@viraladsmedia9256" target="_blank"
+              class="text-white px-5 py-3 flex flex-col items-center text-xs font-bold rounded-lg shadow-lg hover:scale-105 transition"
+              style="background: linear-gradient(to top,var(--primary-color) , #ff6a00);">
+              <i class="fa-solid fa-credit-card text-lg mb-0.5"></i>
+              Pay Now!
+            </a>
+          </div>
+
+          <!-- MOBILE TOGGLE BUTTON -->
+          <button id="mobileBtn"
+            class="lg:hidden text-white border border-white/20 w-11 h-11 rounded-full flex items-center justify-center hover:border-[var(--primary-color)] transition cursor-pointer">
+            <i class="fa-solid fa-bars text-lg" id="mobileMenuIcon"></i>
+          </button>
+        </nav>
+      </header>
+
+      <!-- MOBILE MENU DRAWER (With Dynamic Submenus) -->
+      <div id="mobileMenu"
+        class="fixed top-[90px] left-0 w-full bg-black hidden lg:hidden z-40 shadow-2xl overflow-y-auto max-h-[calc(100vh-90px)]">
+        <div class="px-5 sm:px-8 py-5 space-y-1">
+          <a href="index.html" class="mobile-link"><span>Home</span></a>
+
+          <!-- Mobile Services Accordion -->
+          <div>
+            <div class="flex items-center justify-between py-3 overflow-y-auto">
+              <a href="services.html"
+                class="text-white text-base font-semibold hover:text-[var(--primary-color)]">Services</a>
+              <button id="mobileServicesToggle" class="text-white p-2 cursor-pointer">
+                <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"
+                  id="mobileServicesArrow"></i>
+              </button>
+            </div>
+            <div id="mobileServicesSub" class="hidden pl-4 py-3 space-y-3 mt-1">
+              <a href="service.html?best-social-media-agency-in-delhi"
+                class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Social Media
+                Marketing</a>
+              <a href="service.html?best-seo-agency-near-me"
+                class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Search Engine
+                Optimization</a>
+              <a href="service.html?affordable-web-developer-in-delhi"
+                class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Website
+                Designing</a>
+              <a href="service.html?best-performance-marketing-in-delhi"
+                class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Performance
+                Marketing</a>
+              <a href="services.html" class="block text-sm font-semibold text-[var(--primary-color)] pt-1">View All
+                Services
+                →</a>
+            </div>
+          </div>
+
+          <a href="portfolio.html" class="mobile-link"><span>Portfolio</span></a>
+
+          <!-- Mobile Industries Accordion (Dynamic Links) -->
+          <div>
+            <div class="flex items-center justify-between py-3">
+              <a href="industries.html"
+                class="text-white text-base font-semibold hover:text-[var(--primary-color)]">Industries</a>
+              <button id="mobileIndustryToggle" class="text-white p-2 cursor-pointer">
+                <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"
+                  id="mobileIndustryArrow"></i>
+              </button>
+            </div>
+            <div id="mobileIndustriesSub" class="hidden pl-4 py-3 space-y-3 mt-1">
+              <a href="industry-detail.html?affordable-e-commerce-website-development-services"
+                class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">E-Commerce</a>
+              <a href="industry-detail.html?healthcare-marketing-services"
+                class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Healthcare</a>
+              <a href="industry-detail.html?manufacturing-marketing-services"
+                class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Manufacturing</a>
+              <a href="industry-detail.html?real-estate-marketing-services"
+                class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Real Estate</a>
+              <a href="industry-detail.html?education-marketing-services"
+                class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Education</a>
+              <a href="industry-detail.html?fashion-marketing-services"
+                class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Fashion</a>
+              <a href="industry-detail.html?travel-marketing-services"
+                class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Travel</a>
+              <a href="industry-detail.html?appliances-marketing-service"
+                class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Appliances</a>
+              <a href="industry-detail.html?cosmetics-marketing-service"
+                class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Cosmetics</a>
+              <a href="industries.html" class="block text-sm font-semibold text-[var(--primary-color)] pt-1">View All
+                Industries Matrix →</a>
+            </div>
+          </div>
+
+          <div class="flex flex-col space-y-4">
+            <a href="about.html" class="mobile-link"><span>Company</span></a>
+            <a href="blogs.html" class="mobile-link"><span>Blogs</span></a>
+            <a href="career.html" class="mobile-link"><span>Career</span></a>
+          </div>
+          <a href="contact.html"
+            class="block w-full text-center py-3.5 mt-6 bg-[var(--primary-color)] text-white font-bold rounded-lg">Let's
+            Talk</a>
+          <a href="https://razorpay.me/@viraladsmedia9256" target="_blank"
+            class="block w-full text-center py-3.5 mt-6 bg-[var(--primary-color)] text-white font-bold rounded-lg">Pay
+            Now</a>
+        </div>
+      </div>
+
+      <!-- header end -->
+
+
+      <!-- HERO -->
+      <header class="px-6 lg:px-[6vw] pt-40 lg:pt-48 pb-16 lg:pb-20 border-b border-line">
+        <p id="heroEyebrow" class="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-5 opacity-0">Viral Ads
+          Media — Insights</p>
+        <h1 id="heroTitle" class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-5 text-left"> <span
+            class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-4 px-3 py-1 rotate-[-2deg] hindi">
+            सोच आपकी...</span> <br> Impact <span
+            class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-4 px-3 py-1 rotate-[-2deg] hindi">हमारा!</span>
+        </h1>
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mt-6">
+          <p id="heroTagline" class="font-sans text-base lg:text-lg text-smoke max-w-xl opacity-0">Notes on production,
+            strategy, and the campaigns that actually moved people — written by the people who made them.</p>
+          <div id="heroSearchWrap" class="relative w-full lg:w-80 opacity-0">
+            <input id="searchInput" type="text" placeholder="Search articles..."
+              class="w-full bg-surface border border-line rounded-sm pl-4 pr-10 py-3 text-sm text-bone focus:outline-none focus:border-accent transition-colors" />
+            <span class="absolute right-4 top-2/3 -translate-y-1/2 text-smoke text-sm pointer-events-none"> <i
+                class="fa-solid fa-magnifying-glass"></i> </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- FEATURED POST -->
+      <section class="px-6 lg:px-[6vw] py-16 lg:py-20 border-b border-line">
+        <p class="font-mono text-xs tracking-[0.3em] uppercase text-smoke mb-8">Featured</p>
+        <div id="featuredPost" class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center"></div>
+      </section>
+
+      <!-- FILTER BAR -->
+      <section class="px-6 lg:px-[6vw] py-8 border-b border-line sticky top-[68px] z-40 bg-ink/90 backdrop-blur-sm">
+        <div class="flex items-center justify-between gap-6">
+          <div id="filterChips" class="filters-row flex items-center gap-3 overflow-x-auto flex-1"></div>
+          <p id="resultsCount"
+            class="font-mono text-xs text-smoke uppercase tracking-widest whitespace-nowrap hidden lg:block"></p>
+        </div>
+      </section>
+
+
+      <!-- GRID -->
+      <section class="px-6 lg:px-[6vw] py-16 lg:py-20">
+        <div id="blogGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"></div>
+
+        <div id="noResults" class="hidden text-center py-20">
+          <p class="font-display text-3xl tracking-wide mb-3">NO ARTICLES FOUND</p>
+          <p class="text-smoke mb-6">Try a different search term or category.</p>
+          <button id="resetFilters"
+            class="font-mono text-xs uppercase tracking-widest text-accent border-b border-accent pb-1">Reset
+            filters</button>
+        </div>
+
+        <div class="flex justify-center mt-14">
+          <button id="loadMoreBtn"
+            class="font-mono text-xs uppercase tracking-widest border border-line rounded-full px-8 py-3 hover:border-accent hover:text-accent transition-colors">
+            Load More Articles
+          </button>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER -->
+      <section id="newsletter" class="px-6 lg:px-[6vw] pb-20 lg:pb-28">
+        <div
+          class="bg-surface border border-line rounded-sm p-10 lg:p-16 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div class="max-w-md">
+            <h2 class="font-display text-3xl lg:text-4xl tracking-wide mb-3">DON'T MISS THE NEXT ONE</h2>
+            <p class="text-smoke">One email a month. No recap of every social trend — just what we learned making the
+              work.</p>
+          </div>
+          <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+            <input id="newsletterEmail" type="email" required placeholder="you@company.com"
+              class="bg-ink border border-line rounded-sm px-4 py-3 text-sm text-bone focus:outline-none focus:border-accent transition-colors w-full sm:w-64" />
+            <button type="submit"
+              class="bg-accent text-ink font-mono text-xs uppercase tracking-widest px-6 py-3 rounded-sm hover:opacity-90 transition-opacity whitespace-nowrap">
+              Subscribe
+            </button>
+          </form>
+          <p id="newsletterSuccess" class="hidden font-mono text-xs uppercase tracking-widest text-accent">Subscribed —
+            welcome aboard.</p>
+        </div>
+      </section>
+
+      <!-- Responsive Pixel-Matched Footer Section -->
+      <footer
+        class="text-white pt-16 pb-8 px-4 sm:px-6 lg:px-12 relative overflow-hidden border-t border-white/5 font-sans bg-[#050505]">
+
+        <div class="max-w-8xl mx-auto relative z-10 space-y-12">
+
+          <!-- Top Callout Banner -->
+          <div
+            class="relative bg-gradient-to-r from-[#0c0705] via-[#100806] to-[#070403] rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-[0_0_60px_rgba(236,77,32,0.15)] overflow-hidden border border-[#EC4D20]/50">
+
+            <!-- Subtle curved orange glow on the right bottom edge -->
+            <div
+              class="absolute -bottom-10 right-10 w-64 h-64 bg-[#EC4D20]/25 rounded-full blur-[60px] pointer-events-none">
+            </div>
+
+            <!-- Left side graphic icon & text -->
+            <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left relative z-10">
+              <div class="w-20 flex items-center justify-center text-3xl shrink-0">
+                <img src="Assets/brand mark.png" alt="Brand Mark" class="w-full h-auto object-contain">
+              </div>
+              <div class="space-y-1">
+                <h3 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">Let's <span
+                    class="text-[#EC4D20]">Grow Your Brand</span></h3>
+                <p class="text-zinc-300 text-sm sm:text-base font-normal">Powerful strategies. Creative ideas. Real
+                  results.</p>
+                <p class="text-zinc-500 text-xs sm:text-sm">Partner with Viral Ads Media and take your business to the
+                  next level.</p>
+              </div>
+            </div>
+
+            <!-- Enquire Now Button -->
+            <a href="https://wa.me/919354491934" target="_blank"
+              class="relative z-10 px-8 py-4 bg-gradient-to-r from-[#EC4D20] to-[#d8370d] hover:opacity-95 rounded-2xl font-bold text-white text-sm tracking-wide transition-all shadow-[0_0_35px_rgba(236,77,32,0.5),inset_0_1px_2px_rgba(255,255,255,0.3)] flex items-center gap-3 shrink-0 cursor-pointer">
+              <i class="fa-brands fa-whatsapp text-xl"></i> ENQUIRE NOW
+            </a>
+
+          </div>
+
+          <!-- Middle Content Columns Grid (5 Columns, Responsive & Certifications/Sponsorships 2-item grid preserved) -->
+          <!-- Middle Content Columns Grid (Responsive 2-column mobile, 5-column desktop) -->
+          <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-8 pt-4 items-start">
+
+            <!-- Column 1: Brand Info & Socials -->
+            <!-- Added: col-span-2 sm:col-span-1 -->
+            <div class="col-span-2 sm:col-span-1 space-y-6 lg:pr-2">
+              <div class="flex items-center gap-3">
+                <div class="w-full flex items-center justify-start text-[#EC4D20] shrink-0">
+                  <img src="Assets/VAM logo.png" alt="Viral Ads Media Logo" class="w-48 h-auto object-contain">
+                </div>
+              </div>
+              <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
+                We are a creative digital agency helping brands grow with innovative ideas, data-driven strategies, and
+                impactful marketing.
+              </p>
+              <!-- Follow Us Section -->
+              <div class="space-y-3 pt-2">
+                <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-zinc-500 font-semibold">FOLLOW US</p>
+                <div class="flex flex-wrap items-center gap-3">
+                  <a href="https://www.facebook.com/theviraladsmedia/" target="_blank"
+                    class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                      class="fa-brands fa-facebook text-xs"></i></a>
+                  <a href="https://www.instagram.com/theviraladsmedia/" target="_blank"
+                    class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                      class="fa-brands fa-instagram text-xs"></i></a>
+                  <a href="https://www.behance.net/viraladsmedia/" target="_blank"
+                    class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                      class="fa-brands fa-behance text-xs"></i></a>
+                  <a href="https://www.linkedin.com/in/viral-ads-media-34ba19280/" target="_blank"
+                    class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                      class="fa-brands fa-linkedin-in text-xs"></i></a>
+                  <a href="https://www.youtube.com/@ViralAdsMedia/" target="_blank"
+                    class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                      class="fa-brands fa-youtube text-xs"></i></a>
+                  <a href="https://x.com/viraladsmedia/" target="_blank"
+                    class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                      class="fa-brands fa-x-twitter text-xs"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 2: Quick Links with Divider -->
+            <!-- Added: col-span-1 -->
+            <div class="col-span-1 space-y-4 border-t sm:border-t-0 sm:border-l border-white/10 pt-6 sm:pt-0 sm:pl-6">
+              <div class="flex items-center gap-2 text-[#EC4D20] text-sm font-bold">
+                <i class="fa-solid fa-link text-xl"></i>
+                <h4 class="text-white text-xl sm:text-2xl">Quick Links</h4>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-zinc-400">
+                <li><a href="./index.html"
+                    class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                      class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Home</a></li>
+                <li><a href="./about.html"
+                    class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                      class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Company</a></li>
+                <li><a href="./services.html"
+                    class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                      class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Services</a></li>
+                <li><a href="./portfolio.html"
+                    class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                      class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Our Work</a></li>
+                <li><a href="./blogs.html"
+                    class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                      class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Blogs</a></li>
+                <li><a href="./career.html"
+                    class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                      class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Career</a></li>
+                <li><a href="./contact.html"
+                    class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                      class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Contact Us</a></li>
+              </ul>
+            </div>
+
+            <!-- Column 3: Services with Divider -->
+            <!-- Added: col-span-1 -->
+            <div class="col-span-1 space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-6">
+              <div class="flex items-center gap-2 text-[#EC4D20] text-sm font-bold">
+                <i class="fa-solid fa-briefcase text-xl"></i>
+                <h4 class="text-white text-xl sm:text-2xl">Services</h4>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-zinc-400">
+                <li>
+                  <a href="./service.html?best-social-media-agency-in-delhi"
+                    class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                    <i class="fa-brands fa-facebook-messenger text-[#EC4D20] shrink-0"></i>
+                    <span>Social Media Marketing</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="./service.html?best-seo-agency-near-me"
+                    class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                    <i class="fa-solid fa-magnifying-glass-chart text-[#EC4D20] shrink-0"></i>
+                    <span>Search Engine Optimization</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="./service.html?affordable-web-developer-in-delhi"
+                    class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                    <i class="fa-solid fa-paint-brush text-[#EC4D20] shrink-0"></i>
+                    <span>Website Designing</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="./service.html?best-performance-marketing-in-delhi"
+                    class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                    <i class="fa-solid fa-chart-simple text-[#EC4D20] shrink-0"></i>
+                    <span>Performance Marketing</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="./service.html?affordable-logo-and-branding-near-me"
+                    class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                    <i class="fa-solid fa-signature text-[#EC4D20] shrink-0"></i>
+                    <span>Logo & Branding</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="./service.html?best-influencer-marketing-in-delhi"
+                    class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                    <i class="fa-solid fa-star text-[#EC4D20] shrink-0"></i>
+                    <span>Influencer Marketing</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="./service.html?proffessional-brand-shoots-in-delhi"
+                    class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                    <i class="fa-solid fa-camera-retro text-[#EC4D20] shrink-0"></i>
+                    <span>Brand Shoots</span>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+
+            <!-- Column 4: Contact Info with Divider & Pay Now! Button -->
+            <!-- Added: col-span-2 sm:col-span-1 -->
+            <div
+              class="col-span-2 sm:col-span-1 space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-6">
+              <div class="flex items-center gap-2 text-[#EC4D20] text-sm font-bold">
+                <i class="fa-solid fa-phone text-xl"></i>
+                <h4 class="text-white text-xl sm:text-2xl">Contact Info</h4>
+              </div>
+              <ul class="space-y-4 text-xs sm:text-sm text-zinc-400">
+                <li class="flex items-center gap-3.5">
+                  <div
+                    class="w-9 h-9 rounded-xl bg-[#121212] border border-white/10 flex items-center justify-center text-[#EC4D20] shrink-0 shadow-sm">
+                    <i class="fa-solid fa-phone text-xs"></i></div>
+                  <a href="tel:+919354491934" class="hover:text-white transition text-base sm:text-lg font-medium">+91
+                    93544 91934</a>
+                </li>
+                <li class="flex items-center gap-3.5">
+                  <div
+                    class="w-9 h-9 rounded-xl bg-[#121212] border border-white/10 flex items-center justify-center text-[#EC4D20] shrink-0 shadow-sm">
+                    <i class="fa-solid fa-envelope text-xs"></i></div>
+                  <a href="mailto:info@viraladsmedia.com"
+                    class="hover:text-white transition text-base sm:text-lg font-medium break-all">info@viraladsmedia.com</a>
+                </li>
+                <li class="flex items-start gap-3.5">
+                  <div
+                    class="w-9 h-9 rounded-xl bg-[#121212] border border-white/10 flex items-center justify-center text-[#EC4D20] shrink-0 shadow-sm mt-0.5">
+                    <i class="fa-solid fa-location-dot text-xs"></i></div>
+                  <span class="leading-relaxed text-base sm:text-lg text-zinc-300">B-33, Khatu Shyam Mandir Road, near
+                    Max Bazar, Budh Vihar Phase I, Delhi, 110086</span>
+                </li>
+              </ul>
+
+              <!-- Pay Now! Button added to Contact Info Column -->
+              <div class="pt-3">
+                <a href="https://razorpay.me/@viraladsmedia9256" target="_blank"
+                  class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-orange-600 to-[#EC4D20] hover:opacity-95 rounded-xl font-bold text-white text-sm tracking-wide transition-all shadow-[0_0_20px_rgba(185,64,16,0.692)] flex items-center justify-center gap-2.5 cursor-pointer">
+                  <i class="fa-solid fa-credit-card text-base"></i> Pay Now!
+                </a>
+              </div>
+            </div>
+
+            <!-- Column 5: Certifications & Sponsorships with Divider (Preserving 2-item row grid exactly) -->
+            <!-- Added: col-span-2 sm:col-span-1 -->
+            <div
+              class="col-span-2 sm:col-span-1 space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-6">
+              <div class="flex items-start gap-2 text-[#EC4D20] text-sm font-bold">
+                <i class="fa-solid fa-certificate text-xl mt-1"></i>
+                <h4 class="text-white text-xl sm:text-sm leading-tight">Certifications &<br class="hidden sm:inline">
+                  Sponsorships</h4>
+              </div>
+
+              <!-- Strict 2 items in a row grid layout for Certifications & Sponsorships -->
+              <div class="grid grid-cols-2 gap-3 items-center">
+                <img src="Assets/Certification/36.png" alt="Google Partner"
+                  class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+                <img src="Assets/Certification/37.png" alt="Facebook Marketing Partner"
+                  class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+                <img src="Assets/Certification/38.png" alt="ISO Certification"
+                  class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+                <img src="Assets/Certification/39.png" alt="Sponsor 1"
+                  class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+                <img src="Assets/Certification/40.png" alt="Certification 5"
+                  class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+                <img src="Assets/Certification/41.png" alt="Sponsor 2"
+                  class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+                <img src="Assets/Certification/42.png" alt="Certification 6"
+                  class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+                <a href="https://www.dmca.com/r/prddr50" target="_blank" class="block w-full">
+                  <img src="Assets/Certification/43.png" alt="DMCA Protected"
+                    class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Feature Values Strip with Internal Dividers -->
+          <div
+            class="bg-[#0b0b0b] border border-white/10 rounded-2xl p-6 sm:p-8 lg:p-10 grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-6 relative ">
+
+            <!-- Value 1 -->
+            <div class="flex items-start gap-4">
+              <div
+                class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div>
+                <h5 class="font-bold text-xs sm:text-sm text-white">Result Driven</h5>
+                <p class="text-zinc-400 text-[11px] mt-0.5">Strategies that deliver measurable growth.</p>
+              </div>
+            </div>
+
+            <!-- Value 2 -->
+            <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
+              <div
+                class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <div>
+                <h5 class="font-bold text-xs sm:text-sm text-white">Creative Excellence</h5>
+                <p class="text-zinc-400 text-[11px] mt-0.5">Innovative ideas that make your brand stand out.</p>
+              </div>
+            </div>
+
+            <!-- Value 3 -->
+            <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
+              <div
+                class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <div>
+                <h5 class="font-bold text-xs sm:text-sm text-white">Data Focused</h5>
+                <p class="text-zinc-400 text-[11px] mt-0.5">Insights that drive smarter decisions and better ROI.</p>
+              </div>
+            </div>
+
+            <!-- Value 4 -->
+            <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
+              <div
+                class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div>
+                <h5 class="font-bold text-xs sm:text-sm text-white">Client First</h5>
+                <p class="text-zinc-400 text-[11px] mt-0.5">Your success is our top priority.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Copyright & Location Bar -->
+          <div
+            class="pt-6 border-t border-[#EC4D20]/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-mono">
+            <p>Viral Ads Media — <span class="text-[#EC4D20]">Believe</span> &copy; 2025</p>
+            <div class="flex items-center gap-2 text-white">
+              <i class="fa-solid fa-location-dot text-[#EC4D20]"></i>
+              <span>Delhi, India</span>
+            </div>
+          </div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js"></script>
+
+
+  <script src="./src/script.js"></script>
+  <script src="./src/blogs.js"></script>
+</body>
+
+</html>

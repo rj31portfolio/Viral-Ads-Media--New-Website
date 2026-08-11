@@ -1,0 +1,52 @@
+/* Add this to your main CSS file (e.g., input.css) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden; /* This prevents the X-scrollbar */
+}
+/* Add to services.css */
+main {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+img, video, svg {
+  max-width: 100%;
+}
+
+.service-item {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  
+  .service-img {
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s cubic-bezier(.16,1,.3,1); }
+  .reveal.show { opacity: 1; transform: translateY(0); }
+  .accordion-panel { grid-template-rows: 0fr; }
+  .accordion-item.active .accordion-panel { grid-template-rows: 1fr; }
+  .accordion-item.active .plus { transform: rotate(45deg); color: #EC4D20; }
+  .process-step.active { border-color: #EC4D20; background: #111111; box-shadow: 0 18px 50px rgba(236,77,32,.18); }
+  .testimonialSwiper { overflow: visible; }
+  .testimonialSwiper .swiper-slide { height: auto; }
+  .testimonialSwiper .swiper-pagination { position: static; margin-top: 2rem; }
+  .testimonialSwiper .swiper-pagination-bullet { width: .75rem; height: .75rem; background: rgba(255,255,255,.28); opacity: 1; }
+  .testimonialSwiper .swiper-pagination-bullet-active { background: #EC4D20; }
+  .testimonial-nav { transition: transform .25s ease, border-color .25s ease, background-color .25s ease; }
+  .testimonial-nav:hover { transform: translateY(-2px); border-color: #EC4D20; background: rgba(236,77,32,.12); }
+  .grain:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .035;
+    z-index: 60;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+  }

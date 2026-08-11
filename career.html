@@ -1,0 +1,1254 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers | Viral Ads Media - Digital Creative Agency</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts: Inter & Amita -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@1&display=swap"
+    rel="stylesheet" />
+  <!-- GSAP Core & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandPrimary: "#EC4D20",
+            cardBg: "#0c0c0c",
+            brand: "#c2e812",
+            darkBg: "#0f0f0f",
+            darkBorder: "#222222",
+            inputBg: "#141414",
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            serif: ["Playfair Display", "serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <link href="./src/input.css" rel="stylesheet" />
+  <link href="./src/style.css" rel="stylesheet" />
+</head>
+
+<body class="bg-[var(--background-color)] text-white elms-sans min-h-screen overflow-x-hidden selection:text-white">
+
+  <!-- <div id="navbar-placeholder"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("navbar.html")
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById("navbar-placeholder").innerHTML = html;
+            if (typeof initNavbar === "function") initNavbar();
+          })
+          .catch(err => {
+            console.error("Navbar Load Error:", err);
+          });
+      });
+    </script> -->
+
+  <!-- header start -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-black border-b border-white/10">
+    <nav class="max-w-9xl mx-auto h-[90px] px-4 md:px-8 lg:px-12 flex items-center justify-between">
+      <!-- LOGO -->
+      <div class="flex items-center shrink-0">
+        <a href="index.html">
+          <img src="Assets/animated logo.gif" alt="Viral Ads Media"
+            class="w-[120px] sm:w-[150px] lg:w-[180px] h-auto" />
+        </a>
+      </div>
+
+      <!-- DESKTOP MENU -->
+      <ul class="hidden lg:flex items-center justify-center gap-1 flex-1">
+        <li>
+          <a href="index.html" class="nav-item text-bold ">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+        </li>
+
+        <!-- SERVICES DROPDOWN (Desktop) -->
+        <li class="relative" id="servicesMenu">
+          <a href="services.html" class="nav-item flex items-center gap-1.5 cursor-pointer" id="servicesBtn">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Services</span>
+            <!-- <i
+                class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"
+                id="servicesArrow"
+              ></i> -->
+          </a>
+
+          <div id="servicesDropdown"
+            class="absolute left-1/2 -translate-x-1/2 top-full w-[340px] bg-[#0b0b0b] border border-white/10 rounded-2xl p-4 opacity-0 invisible translate-y-3 transition-all duration-300 shadow-2xl z-50 max-h-[70vh] overflow-y-auto">
+            <div class="grid gap-2">
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?best-social-media-agency-in-delhi">
+                <h4 class="font-bold text-sm text-white">
+                  Social Media Marketing
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Grow & engage your audience
+                </p>
+              </a>
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition" href="service.html?best-seo-agency-near-me">
+                <h4 class="font-bold text-sm text-white">
+                  Search Engine Optimization
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Rank higher & grow traffic organically
+                </p>
+              </a>
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?affordable-web-developer-in-delhi">
+                <h4 class="font-bold text-sm text-white">
+                  Website Designing
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Create stunning, high-converting websites
+                </p>
+              </a>
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?best-performance-marketing-in-delhi">
+                <h4 class="font-bold text-sm text-white">
+                  Performance Marketing
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Data-driven results for scaling brands
+                </p>
+              </a>
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?affordable-logo-and-branding-near-me">
+                <h4 class="font-bold text-sm text-white">Logo & Branding</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Brand Identity, Strategy & Design
+                </p>
+              </a>
+
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?best-influencer-marketing-in-delhi">
+                <h4 class="font-bold text-sm text-white">
+                  Influencer Marketing
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Boost visibility & trust
+                </p>
+              </a>
+
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?proffessional-brand-shoots-in-delhi">
+                <h4 class="font-bold text-sm text-white">Brand Shoots</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Professional corporate & product photography
+                </p>
+              </a>
+
+            </div>
+
+            <div class="border-t border-white/10 mt-3 pt-3">
+              <a href="services.html"
+                class="flex items-center justify-between text-sm font-semibold text-[var(--primary-color)] hover:underline">
+                <span>Explore All Services</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a href="portfolio.html" class="nav-item">
+            <i class="fa-solid fa-photo-film"></i>
+            <span>Portfolio</span>
+          </a>
+        </li>
+
+        <!-- INDUSTRIES DROPDOWN (Desktop - Fully Dynamic) -->
+        <li class="relative" id="industryMenu">
+          <a href="industries.html" class="nav-item flex items-center gap-1.5 cursor-pointer" id="industryBtn">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Industries</span>
+            <!-- <i
+                id="industryArrow"
+                class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"
+              ></i> -->
+          </a>
+
+          <div id="industryDropdown"
+            class="absolute left-1/2 -translate-x-1/2 top-full w-[340px] bg-[#0b0b0b] border border-white/10 rounded-2xl p-4 opacity-0 invisible translate-y-3 transition-all duration-300 shadow-2xl z-50 max-h-[70vh] overflow-y-auto">
+            <div class="grid gap-2">
+              <a href="industry-detail.html?affordable-e-commerce-website-development-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">E-Commerce</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Growth solutions for online brands</p>
+              </a>
+              <a href="industry-detail.html?healthcare-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Healthcare</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Digital solutions for healthcare brands</p>
+              </a>
+              <a href="industry-detail.html?manufacturing-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Manufacturing</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Industrial digital growth solutions</p>
+              </a>
+              <a href="industry-detail.html?real-estate-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Real Estate</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Generate quality property leads</p>
+              </a>
+              <a href="industry-detail.html?education-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Education</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Build powerful online presence</p>
+              </a>
+              <a href="industry-detail.html?fashion-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Fashion</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Create digital brand identity</p>
+              </a>
+              <a href="industry-detail.html?travel-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Travel</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Tourism & hospitality marketing</p>
+              </a>
+              <a href="industry-detail.html?appliances-marketing-service"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Appliances</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Home appliance brand scaling</p>
+              </a>
+              <a href="industry-detail.html?cosmetics-marketing-service"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Cosmetics</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Beauty & wellness customer acquisition</p>
+              </a>
+            </div>
+
+            <div class="border-t border-white/10 mt-3 pt-3">
+              <a href="industries.html"
+                class="flex items-center justify-between text-sm font-semibold text-[var(--primary-color)] hover:underline">
+                <span>Explore All Industries</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a href="about.html" class="nav-item">
+            <i class="fa-solid fa-building"></i>
+            <span>Company</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="blogs.html" class="nav-item">
+            <i class="fa-solid fa-pen-nib"></i>
+            <span>Blogs</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="career.html" class="nav-item">
+            <i class="fa-solid fa-rocket"></i>
+            <span>Career</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- RIGHT CTA -->
+      <div class="hidden lg:flex shrink-0 gap-4">
+        <a href="contact.html"
+          class="text-white px-5 py-3 flex flex-col items-center text-xs font-bold rounded-lg shadow-lg hover:scale-105 transition"
+          style="background: linear-gradient(to top,var(--primary-color) , #ff6a00);">
+          <i class="fa-solid fa-comments text-lg mb-0.5"></i>
+          Let's Talk
+        </a>
+        <a href="https://razorpay.me/@viraladsmedia9256" target="_blank"
+          class="text-white px-5 py-3 flex flex-col items-center text-xs font-bold rounded-lg shadow-lg hover:scale-105 transition"
+          style="background: linear-gradient(to top,var(--primary-color) , #ff6a00);">
+          <i class="fa-solid fa-credit-card text-lg mb-0.5"></i>
+          Pay Now!
+        </a>
+      </div>
+
+      <!-- MOBILE TOGGLE BUTTON -->
+      <button id="mobileBtn"
+        class="lg:hidden text-white border border-white/20 w-11 h-11 rounded-full flex items-center justify-center hover:border-[var(--primary-color)] transition cursor-pointer">
+        <i class="fa-solid fa-bars text-lg" id="mobileMenuIcon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- MOBILE MENU DRAWER (With Dynamic Submenus) -->
+  <div id="mobileMenu"
+    class="fixed top-[90px] left-0 w-full bg-black hidden lg:hidden z-40 shadow-2xl overflow-y-auto max-h-[calc(100vh-90px)]">
+    <div class="px-5 sm:px-8 py-5 space-y-1">
+      <a href="index.html" class="mobile-link"><span>Home</span></a>
+
+      <!-- Mobile Services Accordion -->
+      <div>
+        <div class="flex items-center justify-between py-3 overflow-y-auto">
+          <a href="services.html"
+            class="text-white text-base font-semibold hover:text-[var(--primary-color)]">Services</a>
+          <button id="mobileServicesToggle" class="text-white p-2 cursor-pointer">
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="mobileServicesArrow"></i>
+          </button>
+        </div>
+        <div id="mobileServicesSub" class="hidden pl-4 py-3 space-y-3 mt-1">
+          <a href="service.html?best-social-media-agency-in-delhi"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Social Media
+            Marketing</a>
+          <a href="service.html?best-seo-agency-near-me"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Search Engine
+            Optimization</a>
+          <a href="service.html?affordable-web-developer-in-delhi"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Website Designing</a>
+          <a href="service.html?best-performance-marketing-in-delhi"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Performance
+            Marketing</a>
+          <a href="services.html" class="block text-sm font-semibold text-[var(--primary-color)] pt-1">View All Services
+            →</a>
+        </div>
+      </div>
+
+      <a href="portfolio.html" class="mobile-link"><span>Portfolio</span></a>
+
+      <!-- Mobile Industries Accordion (Dynamic Links) -->
+      <div>
+        <div class="flex items-center justify-between py-3">
+          <a href="industries.html"
+            class="text-white text-base font-semibold hover:text-[var(--primary-color)]">Industries</a>
+          <button id="mobileIndustryToggle" class="text-white p-2 cursor-pointer">
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="mobileIndustryArrow"></i>
+          </button>
+        </div>
+        <div id="mobileIndustriesSub" class="hidden pl-4 py-3 space-y-3 mt-1">
+          <a href="industry-detail.html?affordable-e-commerce-website-development-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">E-Commerce</a>
+          <a href="industry-detail.html?healthcare-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Healthcare</a>
+          <a href="industry-detail.html?manufacturing-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Manufacturing</a>
+          <a href="industry-detail.html?real-estate-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Real Estate</a>
+          <a href="industry-detail.html?education-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Education</a>
+          <a href="industry-detail.html?fashion-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Fashion</a>
+          <a href="industry-detail.html?travel-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Travel</a>
+          <a href="industry-detail.html?appliances-marketing-service"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Appliances</a>
+          <a href="industry-detail.html?cosmetics-marketing-service"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Cosmetics</a>
+          <a href="industries.html" class="block text-sm font-semibold text-[var(--primary-color)] pt-1">View All
+            Industries Matrix →</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col space-y-4">
+        <a href="about.html" class="mobile-link"><span>Company</span></a>
+        <a href="blogs.html" class="mobile-link"><span>Blogs</span></a>
+        <a href="career.html" class="mobile-link"><span>Career</span></a>
+      </div>
+      <a href="contact.html"
+        class="block w-full text-center py-3.5 mt-6 bg-[var(--primary-color)] text-white font-bold rounded-lg">Let's
+        Talk</a>
+      <a href="https://razorpay.me/@viraladsmedia9256" target="_blank"
+        class="block w-full text-center py-3.5 mt-6 bg-[var(--primary-color)] text-white font-bold rounded-lg">Pay
+        Now</a>
+    </div>
+  </div>
+
+  <!-- header end -->
+
+
+  <!-- Career Hero Section -->
+  <section class="relative pt-36 pb-20 px-6 md:px-12 lg:px-24 overflow-hidden border-b border-white/5">
+    <!-- Ambient Glow -->
+    <div
+      class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brandPrimary/10 blur-[150px] pointer-events-none">
+    </div>
+
+    <div class="max-w-5xl mx-auto text-center relative z-10 space-y-6">
+      <div
+        class="inline-flex items-center gap-3 text-xs tracking-[0.3em] uppercase text-brandPrimary font-mono font-semibold">
+        <span class="w-8 h-[1px] bg-brandPrimary"></span>
+        JOIN OUR CREATIVE FORCE
+        <span class="w-8 h-[1px] bg-brandPrimary"></span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight">
+        <span
+          class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-4 px-3 py-1 rotate-[-2deg] hindi">
+          जहाँ सोच बनती है
+        </span> Strategy, <br />
+        <span
+          class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-4 px-3 py-1 rotate-[-2deg] hindi">और</span>
+        Strategy <span
+          class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-4 px-3 py-1 rotate-[-2deg] hindi">बनती
+          है</span> Success.
+      </h1>
+      <p class="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+        We’re looking for fearless creators, master engineers, and performance-driven minds ready to push boundaries at
+        Viral Ads Media.
+      </p>
+      <div class="pt-4 flex flex-wrap justify-center gap-4">
+        <a href="#openings"
+          class="px-8 py-4 bg-brandPrimary hover:bg-orange-600 rounded-xl font-bold text-white transition-all shadow-[0_0_30px_rgba(236,77,32,0.4)]">
+          Explore Open Roles <i class="fa-solid fa-arrow-down text-xs ml-1"></i>
+        </a>
+        <a href="#application-form-section"
+          class="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-bold text-white transition-all">
+          Direct Application Form <i class="fa-solid fa-file-lines text-xs ml-1 text-brandPrimary"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advertising with the Power of Viral Section -->
+  <section class="py-24 px-6 md:px-12 lg:px-24 bg-darkBg relative border-b border-white/5 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-xs font-mono uppercase tracking-[0.3em] text-brandPrimary block">[01] Our Core
+          Philosophy</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+          Advertising with the <br />
+          <span
+            class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-4 px-3 py-1 rotate-[-2deg] hindi">वायरल
+            की शक्ति।</span>
+        </h2>
+        <p class="text-zinc-300 text-base leading-relaxed font-light">
+          At Viral Ads Media, we don't just run standard campaigns—we engineer digital architecture, high-end commercial
+          concepts, and organic momentum that captures consumer attention on a massive scale.
+        </p>
+      </div>
+      <div class="lg:col-span-6 bg-cardBg border border-white/10 p-8 rounded-3xl relative shadow-2xl space-y-6">
+        <div class="absolute -top-10 -right-10 w-40 h-40 bg-brandPrimary/10 blur-3xl pointer-events-none"></div>
+        <div class="space-y-4">
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+            <div
+              class="w-10 h-10 rounded-xl bg-brandPrimary/20 text-brandPrimary flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-fire"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-white">Scale-Driven Execution</h4>
+              <p class="text-zinc-400 text-xs mt-0.5">Transforming brand presence into high-volume leads.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+            <div
+              class="w-10 h-10 rounded-xl bg-brandPrimary/20 text-brandPrimary flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-white">AI & Tech Integrated</h4>
+              <p class="text-zinc-400 text-xs mt-0.5">Leveraging cutting-edge automation and analytics systems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Job Openings Section (Highlighted Current Open Positions) -->
+  <section id="openings" class="py-24 px-6 md:px-12 lg:px-24 bg-[#050505] relative border-b border-white/5">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-[0.3em] text-brandPrimary block mb-2">[02] Current Open
+            Positions</span>
+          <h2 class="text-3xl sm:text-5xl font-bold tracking-tight">Open <span
+              class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-4 px-3 py-1 rotate-[-2deg] hindi">पोज़िशन्स</span>
+          </h2>
+        </div>
+        <p class="text-zinc-400 text-sm max-w-xs">Select any role below to instantly apply or submit via our universal
+          lead form.</p>
+      </div>
+
+      <!-- Job Cards List -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Role 1: Graphic Designer -->
+        <div
+          class="job-card bg-cardBg border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between gap-6 hover:border-brandPrimary transition-all group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="px-3 py-1 bg-brandPrimary/10 text-brandPrimary text-[10px] font-mono rounded-full uppercase tracking-widest border border-brandPrimary/20">Full-Time</span>
+              <span class="text-zinc-500 text-xs font-mono">Delhi / Hybrid</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-brandPrimary transition-colors">Graphic
+              Designer</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm font-light">Create stunning branding visuals, social media
+              creatives, high-end pitch decks, and advertising assets that grab instant attention.</p>
+          </div>
+          <button onclick="openApplicationModal('Graphic Designer')"
+            class="w-full py-3 bg-white/5 border border-white/10 group-hover:bg-brandPrimary group-hover:border-brandPrimary text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer">
+            Apply For This Role <i class="fa-solid fa-arrow-right ml-1"></i>
+          </button>
+        </div>
+
+        <!-- Role 2: Video Editor Intern -->
+        <div
+          class="job-card bg-cardBg border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between gap-6 hover:border-brandPrimary transition-all group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="px-3 py-1 bg-brandPrimary/10 text-brandPrimary text-[10px] font-mono rounded-full uppercase tracking-widest border border-brandPrimary/20">Internship</span>
+              <span class="text-zinc-500 text-xs font-mono">Delhi / Stipend</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-brandPrimary transition-colors">Video
+              Editor Intern</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm font-light">Edit high-retention short-form reels, TikToks,
+              YouTube shorts, and commercial video edits using Premiere Pro and After Effects.</p>
+          </div>
+          <button onclick="openApplicationModal('Video Editor Intern')"
+            class="w-full py-3 bg-white/5 border border-white/10 group-hover:bg-brandPrimary group-hover:border-brandPrimary text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer">
+            Apply For This Role <i class="fa-solid fa-arrow-right ml-1"></i>
+          </button>
+        </div>
+
+        <!-- Role 3: Digital Marketing Intern -->
+        <div
+          class="job-card bg-cardBg border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between gap-6 hover:border-brandPrimary transition-all group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="px-3 py-1 bg-brandPrimary/10 text-brandPrimary text-[10px] font-mono rounded-full uppercase tracking-widest border border-brandPrimary/20">Internship</span>
+              <span class="text-zinc-500 text-xs font-mono">Delhi / Stipend</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-brandPrimary transition-colors">Digital
+              Marketing Intern</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm font-light">Assist in managing Meta & Google ad campaigns, SEO
+              keyword audits, social media tracking reports, and organic growth strategies.</p>
+          </div>
+          <button onclick="openApplicationModal('Digital Marketing Intern')"
+            class="w-full py-3 bg-white/5 border border-white/10 group-hover:bg-brandPrimary group-hover:border-brandPrimary text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer">
+            Apply For This Role <i class="fa-solid fa-arrow-right ml-1"></i>
+          </button>
+        </div>
+
+        <!-- Role 4: Senior Frontend Developer -->
+        <div
+          class="job-card bg-cardBg border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between gap-6 hover:border-brandPrimary transition-all group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="px-3 py-1 bg-brandPrimary/10 text-brandPrimary text-[10px] font-mono rounded-full uppercase tracking-widest border border-brandPrimary/20">Full-Time</span>
+              <span class="text-zinc-500 text-xs font-mono">Delhi / Hybrid</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-brandPrimary transition-colors">Senior
+              Frontend Developer</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm font-light">Lead high-performance web experiences using modern
+              Tailwind CSS, GSAP animations, and interactive component architectures.</p>
+          </div>
+          <button onclick="openApplicationModal('Senior Frontend Developer')"
+            class="w-full py-3 bg-white/5 border border-white/10 group-hover:bg-brandPrimary group-hover:border-brandPrimary text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer">
+            Apply For This Role <i class="fa-solid fa-arrow-right ml-1"></i>
+          </button>
+        </div>
+
+        <!-- Role 5: Performance Marketing Specialist -->
+        <div
+          class="job-card bg-cardBg border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between gap-6 hover:border-brandPrimary transition-all group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="px-3 py-1 bg-brandPrimary/10 text-brandPrimary text-[10px] font-mono rounded-full uppercase tracking-widest border border-brandPrimary/20">Full-Time</span>
+              <span class="text-zinc-500 text-xs font-mono">Delhi / Remote</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-brandPrimary transition-colors">
+              Performance Marketing Specialist</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm font-light">Scale high-budget Google and Meta ads campaigns,
+              audit funnel metrics, and optimize conversions for scaling e-commerce brands.</p>
+          </div>
+          <button onclick="openApplicationModal('Performance Marketing Specialist')"
+            class="w-full py-3 bg-white/5 border border-white/10 group-hover:bg-brandPrimary group-hover:border-brandPrimary text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer">
+            Apply For This Role <i class="fa-solid fa-arrow-right ml-1"></i>
+          </button>
+        </div>
+
+        <!-- Role 6: Video Editor & Motion Designer -->
+        <div
+          class="job-card bg-cardBg border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between gap-6 hover:border-brandPrimary transition-all group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="px-3 py-1 bg-brandPrimary/10 text-brandPrimary text-[10px] font-mono rounded-full uppercase tracking-widest border border-brandPrimary/20">Full-Time
+                / Contract</span>
+              <span class="text-zinc-500 text-xs font-mono">Delhi</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-brandPrimary transition-colors">Video
+              Editor & Motion Designer</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm font-light">Craft high-conversion promotional video reels, brand
+              commercials, and dynamic motion graphic assets for viral campaigns.</p>
+          </div>
+          <button onclick="openApplicationModal('Video Editor & Motion Designer')"
+            class="w-full py-3 bg-white/5 border border-white/10 group-hover:bg-brandPrimary group-hover:border-brandPrimary text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer">
+            Apply For This Role <i class="fa-solid fa-arrow-right ml-1"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--CURRENT FORM-->
+  <section id="application-form-section"
+    class="py-24 px-6 md:px-12 lg:px-24 bg-darkBg relative border-b border-white/5">
+    <div
+      class="max-w-4xl mx-auto bg-cardBg border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-80 h-80 bg-brandPrimary/10 blur-3xl pointer-events-none"></div>
+
+      <div class="text-center max-w-xl mx-auto space-y-3 mb-12 relative z-10">
+        <span class="text-xs font-mono uppercase tracking-[0.3em] text-brandPrimary">[03] Direct Submissions</span>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Apply For Any <span
+            class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-4 px-3 py-1 rotate-[-2deg] hindi">रोल</span>
+        </h2>
+        <p class="text-zinc-400 text-sm">Fill out the form below, select your desired position from the dropdown menu,
+          and attach your portfolio.</p>
+      </div>
+
+      <!-- Updated Form Tag for Web3Forms -->
+      <form action="https://api.web3forms.com/submit" method="POST" id="main-career-lead-form"
+        onsubmit="handleDirectFormSubmit(event)" class="space-y-6 relative z-10">
+
+        <!-- Web3Forms Required Hidden Inputs -->
+        <input type="hidden" name="access_key" value="e36ec535-55b6-4d78-91cd-0d3f3fd6c6cc">
+        <input type="hidden" name="subject" value="New Career Application - Viral Ads Media">
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="text-xs font-mono uppercase text-zinc-400 tracking-wider">Full Name *</label>
+            <input type="text" name="name" required
+              class="w-full bg-[#111] border border-white/10 rounded-xl p-4 text-sm text-white outline-none focus:border-brandPrimary transition"
+              placeholder="John Smith" />
+          </div>
+          <div class="space-y-2">
+            <label class="text-xs font-mono uppercase text-zinc-400 tracking-wider">Email Address *</label>
+            <input type="email" name="email" required
+              class="w-full bg-[#111] border border-white/10 rounded-xl p-4 text-sm text-white outline-none focus:border-brandPrimary transition"
+              placeholder="smith@example.com" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="text-xs font-mono uppercase text-zinc-400 tracking-wider">Phone Number *</label>
+            <input type="tel" name="phone" required
+              class="w-full bg-[#111] border border-white/10 rounded-xl p-4 text-sm text-white outline-none focus:border-brandPrimary transition"
+              placeholder="+91 xxxxx xxxxx" />
+          </div>
+          <div class="space-y-2">
+            <label class="text-xs font-mono uppercase text-zinc-400 tracking-wider">Select Position / Role *</label>
+            <select id="role-dropdown-select" name="position" required
+              class="w-full bg-[#111] border border-white/10 rounded-xl p-4 text-sm text-white outline-none focus:border-brandPrimary transition cursor-pointer">
+              <option value="" disabled selected>-- Choose Desired Position --</option>
+              <option value="Graphic Designer">Graphic Designer</option>
+              <option value="Video Editor Intern">Video Editor Intern</option>
+              <option value="Digital Marketing Intern">Digital Marketing Intern</option>
+              <option value="Senior Frontend Developer">Senior Frontend Developer</option>
+              <option value="Performance Marketing Specialist">Performance Marketing Specialist</option>
+              <option value="Video Editor & Motion Designer">Video Editor & Motion Designer</option>
+              <option value="General Open Application">General Open Application</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <label class="text-xs font-mono uppercase text-zinc-400 tracking-wider">Portfolio / GitHub / LinkedIn URL
+            *</label>
+          <input type="url" name="portfolio" required
+            class="w-full bg-[#111] border border-white/10 rounded-xl p-4 text-sm text-white outline-none focus:border-brandPrimary transition"
+            placeholder="https://behance.net/... or https://linkedin.com/in/..." />
+        </div>
+
+        <div class="space-y-2">
+          <label class="text-xs font-mono uppercase text-zinc-400 tracking-wider">Cover Note / Why Viral Ads Media?
+            *</label>
+          <textarea name="message" required rows="4"
+            class="w-full bg-[#111] border border-white/10 rounded-xl p-4 text-sm text-white outline-none focus:border-brandPrimary transition resize-none"
+            placeholder="Tell us about your background and goals..."></textarea>
+        </div>
+
+        <button type="submit"
+          class="w-full py-4 bg-brandPrimary hover:bg-orange-600 rounded-xl font-bold text-white text-sm uppercase tracking-wider transition-all shadow-[0_0_30px_rgba(236,77,32,0.4)] cursor-pointer">
+          Submit Application <i class="fa-solid fa-paper-plane ml-2 text-xs"></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Company Details  & Contact HQ Section -->
+  <section id="company-info" class="py-24 px-6 md:px-12 lg:px-24 bg-[#050505] relative">
+    <div class="max-w-7xl mx-auto space-y-12">
+      <div class="text-center max-w-xl mx-auto space-y-3">
+        <span class="text-xs font-mono uppercase tracking-[0.3em] text-brandPrimary">[04] Reach Out</span>
+        <h2 class="text-3xl sm:text-5xl font-bold tracking-tight">Agency <span
+            class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-4 px-3 py-1 rotate-[-2deg] hindi">हेडक्वार्टर्स</span>
+        </h2>
+        <p class="text-zinc-400 text-sm">Have specific inquiries regarding career paths or partnerships? Contact our
+          team directly.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919354491934" target="_blank"
+          class="bg-cardBg border border-white/10 p-8 rounded-2xl hover:border-brandPrimary transition group flex flex-col items-center text-center space-y-4">
+          <div
+            class="w-14 h-14 rounded-2xl bg-brandPrimary/10 text-brandPrimary flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div>
+            <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-1">WhatsApp
+              Support</span>
+            <h4 class="font-bold text-white text-lg">+91 93544 91934</h4>
+          </div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:info@viraladsmedia.com"
+          class="bg-cardBg border border-white/10 p-8 rounded-2xl hover:border-brandPrimary transition group flex flex-col items-center text-center space-y-4">
+          <div
+            class="w-14 h-14 rounded-2xl bg-brandPrimary/10 text-brandPrimary flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div>
+            <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-1">Email
+              Inquiries</span>
+            <h4 class="font-bold text-white text-lg">info@viraladsmedia.com</h4>
+          </div>
+        </a>
+
+        <!-- Address -->
+        <div class="bg-cardBg border border-white/10 p-8 rounded-2xl flex flex-col items-center text-center space-y-4">
+          <div
+            class="w-14 h-14 rounded-2xl bg-brandPrimary/10 text-brandPrimary flex items-center justify-center text-2xl">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div>
+            <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-1">Headquarters</span>
+            <h4 class="font-bold text-white text-sm">B-33, Khatu Shyam Mandir Road, near Max Bazar, Budh Vihar Phase I,
+              Delhi, 110086</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Modal (Pre-selects role on click) -->
+  <div id="application-modal"
+    class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-cardBg border border-white/10 rounded-3xl max-w-xl w-full p-8 relative shadow-2xl space-y-6">
+      <button onclick="closeApplicationModal()"
+        class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white transition cursor-pointer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div>
+        <span class="text-[10px] font-mono text-brandPrimary uppercase tracking-widest block mb-1">Application
+          Portal</span>
+        <h3 id="modal-role-title" class="text-2xl font-bold text-white">Apply for Role</h3>
+      </div>
+
+      <form id="career-modal-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4"
+        onsubmit="handleModalFormSubmit(event)">
+        <!-- Web3Forms Required Hidden Inputs -->
+        <input type="hidden" name="access_key" value="e36ec535-55b6-4d78-91cd-0d3f3fd6c6cc">
+        <input type="hidden" name="subject" value="New Modal Career Application - Viral Ads Media">
+        <input type="hidden" name="position" id="modal-role-input">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="text-[10px] font-mono uppercase text-zinc-500 tracking-wider">Full Name *</label>
+            <input type="text" name="name" required
+              class="w-full bg-[#111] border border-white/10 rounded-xl p-3 text-sm text-white outline-none focus:border-brandPrimary transition"
+              placeholder="John Smith" />
+          </div>
+          <div class="space-y-1">
+            <label class="text-[10px] font-mono uppercase text-zinc-500 tracking-wider">Email Address *</label>
+            <input type="email" name="email" required
+              class="w-full bg-[#111] border border-white/10 rounded-xl p-3 text-sm text-white outline-none focus:border-brandPrimary transition"
+              placeholder="smith@example.com" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="text-[10px] font-mono uppercase text-zinc-500 tracking-wider">Phone Number *</label>
+            <input type="tel" name="phone" required
+              class="w-full bg-[#111] border border-white/10 rounded-xl p-3 text-sm text-white outline-none focus:border-brandPrimary transition"
+              placeholder="+91 xxxxx xxxxx" />
+          </div>
+          <div class="space-y-1">
+            <label class="text-[10px] font-mono uppercase text-zinc-500 tracking-wider">Portfolio / LinkedIn URL</label>
+            <input type="url" name="portfolio"
+              class="w-full bg-[#111] border border-white/10 rounded-xl p-3 text-sm text-white outline-none focus:border-brandPrimary transition"
+              placeholder="https://linkedin.com/in/..." />
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <label class="text-[10px] font-mono uppercase text-zinc-500 tracking-wider">Cover Note / Why You?</label>
+          <textarea name="message" rows="3"
+            class="w-full bg-[#111] border border-white/10 rounded-xl p-3 text-sm text-white outline-none focus:border-brandPrimary transition resize-none"
+            placeholder="Tell us about your experience..."></textarea>
+        </div>
+
+        <button type="submit"
+          class="w-full py-4 bg-brandPrimary hover:bg-orange-600 rounded-xl font-bold text-white text-sm uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(236,77,32,0.3)] cursor-pointer">
+          Submit Application
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        })
+        .catch((err) => console.error("Footer load failed:", err));
+    });
+  </script>
+
+  <!-- Interactive Script -->
+  <script>
+    let selectedRoleModal = "";
+
+    function openApplicationModal(roleName) {
+      selectedRoleModal = roleName;
+      const modal = document.getElementById('application-modal');
+      const title = document.getElementById('modal-role-title');
+      title.innerText = `Apply for ${roleName}`;
+
+      // Pass the role name to the hidden input so it gets sent in the email
+      document.getElementById('modal-role-input').value = roleName;
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeApplicationModal() {
+      const modal = document.getElementById('application-modal');
+      modal.classList.add('hidden');
+    }
+
+    function handleModalFormSubmit(e) {
+      e.preventDefault(); // Stop page refresh
+      const form = e.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerHTML;
+
+      submitBtn.innerHTML = 'Submitting...';
+      submitBtn.disabled = true;
+
+      // Send data to Web3Forms silently
+      fetch(form.action, {
+        method: form.method,
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: new FormData(form)
+      })
+        .then(async (response) => {
+          if (response.ok) {
+            alert(`Thank you! Your application for "${selectedRoleModal}" has been successfully submitted to Viral Ads Media.`);
+            closeApplicationModal();
+            form.reset();
+          } else {
+            alert("Something went wrong with Web3Forms. Please try again.");
+          }
+        })
+        .catch(() => {
+          alert("Network error. Please make sure you are connected to the internet and try again.");
+        })
+        .finally(() => {
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+        });
+    }
+
+    function handleDirectFormSubmit(e) {
+      e.preventDefault(); // Stop page refresh
+      const form = e.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerHTML;
+      const roleDropdown = document.getElementById('role-dropdown-select').value;
+
+      submitBtn.innerHTML = 'Submitting...';
+      submitBtn.disabled = true;
+
+      // Send data to Web3Forms silently
+      fetch(form.action, {
+        method: form.method,
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: new FormData(form)
+      })
+        .then(async (response) => {
+          if (response.ok) {
+            alert(`Thank you! Your application for "${roleDropdown}" has been successfully submitted. Our HR team will reach out soon.`);
+            form.reset();
+          } else {
+            alert("Something went wrong with Web3Forms. Please try again.");
+          }
+        })
+        .catch(() => {
+          alert("Network error. Please make sure you are connected to the internet and try again.");
+        })
+        .finally(() => {
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+        });
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById('application-modal');
+      if (event.target == modal) {
+        closeApplicationModal();
+      }
+    }
+  </script>
+
+  <!-- footer start -->
+
+  <footer
+    class="text-white pt-16 pb-8 px-4 sm:px-6 lg:px-12 relative overflow-hidden border-t border-white/5 font-sans bg-[#050505]">
+
+    <div class="max-w-8xl mx-auto relative z-10 space-y-12">
+
+      <!-- Top Callout Banner -->
+      <div
+        class="relative bg-gradient-to-r from-[#0c0705] via-[#100806] to-[#070403] rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-[0_0_60px_rgba(236,77,32,0.15)] overflow-hidden border border-[#EC4D20]/50">
+
+        <!-- Subtle curved orange glow on the right bottom edge -->
+        <div
+          class="absolute -bottom-10 right-10 w-64 h-64 bg-[#EC4D20]/25 rounded-full blur-[60px] pointer-events-none">
+        </div>
+
+        <!-- Left side graphic icon & text -->
+        <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left relative z-10">
+          <div class="w-20 flex items-center justify-center text-3xl shrink-0">
+            <img src="Assets/brand mark.png" alt="Brand Mark" class="w-full h-auto object-contain">
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">Let's <span
+                class="text-[#EC4D20]">Grow Your Brand</span></h3>
+            <p class="text-zinc-300 text-sm sm:text-base font-normal">Powerful strategies. Creative ideas. Real
+              results.</p>
+            <p class="text-zinc-500 text-xs sm:text-sm">Partner with Viral Ads Media and take your business to the
+              next level.</p>
+          </div>
+        </div>
+
+        <!-- Enquire Now Button -->
+        <a href="https://wa.me/919354491934" target="_blank"
+          class="relative z-10 px-8 py-4 bg-gradient-to-r from-[#EC4D20] to-[#d8370d] hover:opacity-95 rounded-2xl font-bold text-white text-sm tracking-wide transition-all shadow-[0_0_35px_rgba(236,77,32,0.5),inset_0_1px_2px_rgba(255,255,255,0.3)] flex items-center gap-3 shrink-0 cursor-pointer">
+          <i class="fa-brands fa-whatsapp text-xl"></i> ENQUIRE NOW
+        </a>
+
+      </div>
+
+      <!-- Middle Content Columns Grid (5 Columns, Responsive & Certifications/Sponsorships 2-item grid preserved) -->
+      <!-- Middle Content Columns Grid (Responsive 2-column mobile, 5-column desktop) -->
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-8 pt-4 items-start">
+
+        <!-- Column 1: Brand Info & Socials -->
+        <!-- Added: col-span-2 sm:col-span-1 -->
+        <div class="col-span-2 sm:col-span-1 space-y-6 lg:pr-2">
+          <div class="flex items-center gap-3">
+            <div class="w-full flex items-center justify-start text-[#EC4D20] shrink-0">
+              <img src="Assets/VAM logo.png" alt="Viral Ads Media Logo" class="w-48 h-auto object-contain">
+            </div>
+          </div>
+          <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
+            We are a creative digital agency helping brands grow with innovative ideas, data-driven strategies, and
+            impactful marketing.
+          </p>
+          <!-- Follow Us Section -->
+          <div class="space-y-3 pt-2">
+            <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-zinc-500 font-semibold">FOLLOW US</p>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="https://www.facebook.com/theviraladsmedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-facebook text-xs"></i></a>
+              <a href="https://www.instagram.com/theviraladsmedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-instagram text-xs"></i></a>
+              <a href="https://www.behance.net/viraladsmedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-behance text-xs"></i></a>
+              <a href="https://www.linkedin.com/in/viral-ads-media-34ba19280/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-linkedin-in text-xs"></i></a>
+              <a href="https://www.youtube.com/@ViralAdsMedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-youtube text-xs"></i></a>
+              <a href="https://x.com/viraladsmedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-x-twitter text-xs"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links with Divider -->
+        <!-- Added: col-span-1 -->
+        <div class="col-span-1 space-y-4 border-t sm:border-t-0 sm:border-l border-white/10 pt-6 sm:pt-0 sm:pl-6">
+          <div class="flex items-center gap-2 text-[#EC4D20] text-sm font-bold">
+            <i class="fa-solid fa-link text-xl"></i>
+            <h4 class="text-white text-xl sm:text-2xl">Quick Links</h4>
+          </div>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-zinc-400">
+            <li><a href="./index.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Home</a></li>
+            <li><a href="./about.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Company</a></li>
+            <li><a href="./services.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Services</a></li>
+            <li><a href="./portfolio.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Our Work</a></li>
+            <li><a href="./blogs.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Blogs</a></li>
+            <li><a href="./career.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Career</a></li>
+            <li><a href="./contact.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Services with Divider -->
+        <!-- Added: col-span-1 -->
+        <div class="col-span-1 space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-6">
+          <div class="flex items-center gap-2 text-[#EC4D20] text-sm font-bold">
+            <i class="fa-solid fa-briefcase text-xl"></i>
+            <h4 class="text-white text-xl sm:text-2xl">Services</h4>
+          </div>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-zinc-400">
+            <li>
+              <a href="./service.html?best-social-media-agency-in-delhi"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-brands fa-facebook-messenger text-[#EC4D20] shrink-0"></i>
+                <span>Social Media Marketing</span>
+              </a>
+            </li>
+            <li>
+              <a href="./service.html?best-seo-agency-near-me"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-magnifying-glass-chart text-[#EC4D20] shrink-0"></i>
+                <span>Search Engine Optimization</span>
+              </a>
+            </li>
+            <li>
+              <a href="./service.html?affordable-web-developer-in-delhi"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-paint-brush text-[#EC4D20] shrink-0"></i>
+                <span>Website Designing</span>
+              </a>
+            </li>
+            <li>
+              <a href="./service.html?best-performance-marketing-in-delhi"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-chart-simple text-[#EC4D20] shrink-0"></i>
+                <span>Performance Marketing</span>
+              </a>
+            </li>
+            <li>
+              <a href="./service.html?affordable-logo-and-branding-near-me"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-signature text-[#EC4D20] shrink-0"></i>
+                <span>Logo & Branding</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./service.html?best-influencer-marketing-in-delhi"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-star text-[#EC4D20] shrink-0"></i>
+                <span>Influencer Marketing</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./service.html?proffessional-brand-shoots-in-delhi"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-camera-retro text-[#EC4D20] shrink-0"></i>
+                <span>Brand Shoots</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Info with Divider & Pay Now! Button -->
+        <!-- Added: col-span-2 sm:col-span-1 -->
+        <div
+          class="col-span-2 sm:col-span-1 space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-6">
+          <div class="flex items-center gap-2 text-[#EC4D20] text-sm font-bold">
+            <i class="fa-solid fa-phone text-xl"></i>
+            <h4 class="text-white text-xl sm:text-2xl">Contact Info</h4>
+          </div>
+          <ul class="space-y-4 text-xs sm:text-sm text-zinc-400">
+            <li class="flex items-center gap-3.5">
+              <div
+                class="w-9 h-9 rounded-xl bg-[#121212] border border-white/10 flex items-center justify-center text-[#EC4D20] shrink-0 shadow-sm">
+                <i class="fa-solid fa-phone text-xs"></i>
+              </div>
+              <a href="tel:+919354491934" class="hover:text-white transition text-base sm:text-lg font-medium">+91
+                93544 91934</a>
+            </li>
+            <li class="flex items-center gap-3.5">
+              <div
+                class="w-9 h-9 rounded-xl bg-[#121212] border border-white/10 flex items-center justify-center text-[#EC4D20] shrink-0 shadow-sm">
+                <i class="fa-solid fa-envelope text-xs"></i>
+              </div>
+              <a href="mailto:info@viraladsmedia.com"
+                class="hover:text-white transition text-base sm:text-lg font-medium break-all">info@viraladsmedia.com</a>
+            </li>
+            <li class="flex items-start gap-3.5">
+              <div
+                class="w-9 h-9 rounded-xl bg-[#121212] border border-white/10 flex items-center justify-center text-[#EC4D20] shrink-0 shadow-sm mt-0.5">
+                <i class="fa-solid fa-location-dot text-xs"></i>
+              </div>
+              <span class="leading-relaxed text-base sm:text-lg text-zinc-300">B-33, Khatu Shyam Mandir Road, near
+                Max Bazar, Budh Vihar Phase I, Delhi, 110086</span>
+            </li>
+          </ul>
+
+          <!-- Pay Now! Button added to Contact Info Column -->
+          <div class="pt-3">
+            <a href="https://razorpay.me/@viraladsmedia9256" target="_blank"
+              class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-orange-600 to-[#EC4D20] hover:opacity-95 rounded-xl font-bold text-white text-sm tracking-wide transition-all shadow-[0_0_20px_rgba(185,64,16,0.692)] flex items-center justify-center gap-2.5 cursor-pointer">
+              <i class="fa-solid fa-credit-card text-base"></i> Pay Now!
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 5: Certifications & Sponsorships with Divider (Preserving 2-item row grid exactly) -->
+        <!-- Added: col-span-2 sm:col-span-1 -->
+        <div
+          class="col-span-2 sm:col-span-1 space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-6">
+          <div class="flex items-start gap-2 text-[#EC4D20] text-sm font-bold">
+            <i class="fa-solid fa-certificate text-xl mt-1"></i>
+            <h4 class="text-white text-xl sm:text-sm leading-tight">Certifications &<br class="hidden sm:inline">
+              Sponsorships</h4>
+          </div>
+
+          <!-- Strict 2 items in a row grid layout for Certifications & Sponsorships -->
+          <div class="grid grid-cols-2 gap-3 items-center">
+            <img src="Assets/Certification/36.png" alt="Google Partner"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/37.png" alt="Facebook Marketing Partner"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/38.png" alt="ISO Certification"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/39.png" alt="Sponsor 1"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/40.png" alt="Certification 5"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/41.png" alt="Sponsor 2"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/42.png" alt="Certification 6"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <a href="https://www.dmca.com/r/prddr50" target="_blank" class="block w-full">
+              <img src="Assets/Certification/43.png" alt="DMCA Protected"
+                class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Feature Values Strip with Internal Dividers -->
+      <div
+        class="bg-[#0b0b0b] border border-white/10 rounded-2xl p-6 sm:p-8 lg:p-10 grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-6 relative ">
+
+        <!-- Value 1 -->
+        <div class="flex items-start gap-4">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-xs sm:text-sm text-white">Result Driven</h5>
+            <p class="text-zinc-400 text-[11px] mt-0.5">Strategies that deliver measurable growth.</p>
+          </div>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-xs sm:text-sm text-white">Creative Excellence</h5>
+            <p class="text-zinc-400 text-[11px] mt-0.5">Innovative ideas that make your brand stand out.</p>
+          </div>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-xs sm:text-sm text-white">Data Focused</h5>
+            <p class="text-zinc-400 text-[11px] mt-0.5">Insights that drive smarter decisions and better ROI.</p>
+          </div>
+        </div>
+
+        <!-- Value 4 -->
+        <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-xs sm:text-sm text-white">Client First</h5>
+            <p class="text-zinc-400 text-[11px] mt-0.5">Your success is our top priority.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Location Bar -->
+      <div
+        class="pt-6 border-t border-[#EC4D20]/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-mono">
+        <p>Viral Ads Media — <span class="text-[#EC4D20]">Believe</span> &copy; 2025</p>
+        <div class="flex items-center gap-2 text-white">
+          <i class="fa-solid fa-location-dot text-[#EC4D20]"></i>
+          <span>Delhi, India</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <!-- footer end -->
+
+  <script src="./src/script.js"></script>
+</body>
+
+</html>

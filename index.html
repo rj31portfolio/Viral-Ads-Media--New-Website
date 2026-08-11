@@ -1,0 +1,1637 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Viral Ads Media | Creative Digital Agency</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            serif: ["Playfair Display", "serif"],
+          },
+          colors: {
+            brand: "#c2e812",
+            darkBg: "#0f0f0f",
+            darkBorder: "#222222",
+            inputBg: "#141414",
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+  <link href="./src/input.css" rel="stylesheet" />
+  <link href="./src/style.css" rel="stylesheet" />
+  <link href="./src/home.css" rel="stylesheet" />
+</head>
+
+<body class="text-white elms-sans min-h-screen overflow-x-hidden selection:text-white z-1">
+  <div id="navbar-placeholder"></div>
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("navbar.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("navbar-placeholder").innerHTML = html;
+          if (typeof initNavbar === "function") {
+            initNavbar();
+          }
+        })
+        .catch((err) => { console.error("Navbar Load Error:", err); });
+    });
+  </script> -->
+
+  <!-- header start -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-black border-b border-white/10">
+    <nav class="max-w-9xl mx-auto h-[90px] px-4 md:px-8 lg:px-12 flex items-center justify-between">
+      <!-- LOGO -->
+      <div class="flex items-center shrink-0">
+        <a href="index.html">
+          <img src="Assets/animated logo.gif" alt="Viral Ads Media"
+            class="w-[120px] sm:w-[150px] lg:w-[180px] h-auto" />
+        </a>
+      </div>
+
+      <!-- DESKTOP MENU -->
+      <ul class="hidden lg:flex items-center justify-center gap-1 flex-1">
+        <li>
+          <a href="index.html" class="nav-item text-bold ">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+        </li>
+
+        <!-- SERVICES DROPDOWN (Desktop) -->
+        <li class="relative" id="servicesMenu">
+          <a href="services.html" class="nav-item flex items-center gap-1.5 cursor-pointer" id="servicesBtn">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Services</span>
+            <!-- <i
+                class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"
+                id="servicesArrow"
+              ></i> -->
+          </a>
+
+          <div id="servicesDropdown"
+            class="absolute left-1/2 -translate-x-1/2 top-full w-[340px] bg-[#0b0b0b] border border-white/10 rounded-2xl p-4 opacity-0 invisible translate-y-3 transition-all duration-300 shadow-2xl z-50 max-h-[70vh] overflow-y-auto">
+            <div class="grid gap-2">
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?best-social-media-agency-in-delhi">
+                <h4 class="font-bold text-sm text-white">
+                  Social Media Marketing
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Grow & engage your audience
+                </p>
+              </a>
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition" href="service.html?best-seo-agency-near-me">
+                <h4 class="font-bold text-sm text-white">
+                  Search Engine Optimization
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Rank higher & grow traffic organically
+                </p>
+              </a>
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?affordable-web-developer-in-delhi">
+                <h4 class="font-bold text-sm text-white">
+                  Website Designing
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Create stunning, high-converting websites
+                </p>
+              </a>
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?best-performance-marketing-in-delhi">
+                <h4 class="font-bold text-sm text-white">
+                  Performance Marketing
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Data-driven results for scaling brands
+                </p>
+              </a>
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?affordable-logo-and-branding-near-me">
+                <h4 class="font-bold text-sm text-white">Logo & Branding</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Brand Identity, Strategy & Design
+                </p>
+              </a>
+
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?best-influencer-marketing-in-delhi">
+                <h4 class="font-bold text-sm text-white">
+                  Influencer Marketing
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Boost visibility & trust
+                </p>
+              </a>
+
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?proffessional-brand-shoots-in-delhi">
+                <h4 class="font-bold text-sm text-white">Brand Shoots</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Professional corporate & product photography
+                </p>
+              </a>
+
+            </div>
+
+            <div class="border-t border-white/10 mt-3 pt-3">
+              <a href="services.html"
+                class="flex items-center justify-between text-sm font-semibold text-[var(--primary-color)] hover:underline">
+                <span>Explore All Services</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a href="portfolio.html" class="nav-item">
+            <i class="fa-solid fa-photo-film"></i>
+            <span>Portfolio</span>
+          </a>
+        </li>
+
+        <!-- INDUSTRIES DROPDOWN (Desktop - Fully Dynamic) -->
+        <li class="relative" id="industryMenu">
+          <a href="industries.html" class="nav-item flex items-center gap-1.5 cursor-pointer" id="industryBtn">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Industries</span>
+            <!-- <i
+                id="industryArrow"
+                class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"
+              ></i> -->
+          </a>
+
+          <div id="industryDropdown"
+            class="absolute left-1/2 -translate-x-1/2 top-full w-[340px] bg-[#0b0b0b] border border-white/10 rounded-2xl p-4 opacity-0 invisible translate-y-3 transition-all duration-300 shadow-2xl z-50 max-h-[70vh] overflow-y-auto">
+            <div class="grid gap-2">
+              <a href="industry-detail.html?affordable-e-commerce-website-development-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">E-Commerce</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Growth solutions for online brands</p>
+              </a>
+              <a href="industry-detail.html?healthcare-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Healthcare</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Digital solutions for healthcare brands</p>
+              </a>
+              <a href="industry-detail.html?manufacturing-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Manufacturing</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Industrial digital growth solutions</p>
+              </a>
+              <a href="industry-detail.html?real-estate-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Real Estate</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Generate quality property leads</p>
+              </a>
+              <a href="industry-detail.html?education-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Education</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Build powerful online presence</p>
+              </a>
+              <a href="industry-detail.html?fashion-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Fashion</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Create digital brand identity</p>
+              </a>
+              <a href="industry-detail.html?travel-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Travel</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Tourism & hospitality marketing</p>
+              </a>
+              <a href="industry-detail.html?appliances-marketing-service"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Appliances</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Home appliance brand scaling</p>
+              </a>
+              <a href="industry-detail.html?cosmetics-marketing-service"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Cosmetics</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Beauty & wellness customer acquisition</p>
+              </a>
+            </div>
+
+            <div class="border-t border-white/10 mt-3 pt-3">
+              <a href="industries.html"
+                class="flex items-center justify-between text-sm font-semibold text-[var(--primary-color)] hover:underline">
+                <span>Explore All Industries</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a href="about.html" class="nav-item">
+            <i class="fa-solid fa-building"></i>
+            <span>Company</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="blogs.html" class="nav-item">
+            <i class="fa-solid fa-pen-nib"></i>
+            <span>Blogs</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="career.html" class="nav-item">
+            <i class="fa-solid fa-rocket"></i>
+            <span>Career</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- RIGHT CTA -->
+      <div class="hidden lg:flex shrink-0 gap-4">
+        <a href="contact.html"
+          class="text-white px-5 py-3 flex flex-col items-center text-xs font-bold rounded-lg shadow-lg hover:scale-105 transition"
+          style="background: linear-gradient(to top,var(--primary-color) , #ff6a00);">
+          <i class="fa-solid fa-comments text-lg mb-0.5"></i>
+          Let's Talk
+        </a>
+        <a href="https://razorpay.me/@viraladsmedia9256" target="_blank"
+          class="text-white px-5 py-3 flex flex-col items-center text-xs font-bold rounded-lg shadow-lg hover:scale-105 transition"
+          style="background: linear-gradient(to top,var(--primary-color) , #ff6a00);">
+          <i class="fa-solid fa-credit-card text-lg mb-0.5"></i>
+          Pay Now!
+        </a>
+      </div>
+
+      <!-- MOBILE TOGGLE BUTTON -->
+      <button id="mobileBtn"
+        class="lg:hidden text-white border border-white/20 w-11 h-11 rounded-full flex items-center justify-center hover:border-[var(--primary-color)] transition cursor-pointer">
+        <i class="fa-solid fa-bars text-lg" id="mobileMenuIcon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- MOBILE MENU DRAWER (With Dynamic Submenus) -->
+  <div id="mobileMenu"
+    class="fixed top-[90px] left-0 w-full bg-black hidden lg:hidden z-40 shadow-2xl overflow-y-auto max-h-[calc(100vh-90px)]">
+    <div class="px-5 sm:px-8 py-5 space-y-1">
+      <a href="index.html" class="mobile-link"><span>Home</span></a>
+
+      <!-- Mobile Services Accordion -->
+      <div>
+        <div class="flex items-center justify-between py-3 overflow-y-auto">
+          <a href="services.html"
+            class="text-white text-base font-semibold hover:text-[var(--primary-color)]">Services</a>
+          <button id="mobileServicesToggle" class="text-white p-2 cursor-pointer">
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="mobileServicesArrow"></i>
+          </button>
+        </div>
+        <div id="mobileServicesSub" class="hidden pl-4 py-3 space-y-3 mt-1">
+          <a href="service.html?best-social-media-agency-in-delhi"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Social Media
+            Marketing</a>
+          <a href="service.html?best-seo-agency-near-me"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Search Engine
+            Optimization</a>
+          <a href="service.html?affordable-web-developer-in-delhi"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Website Designing</a>
+          <a href="service.html?best-performance-marketing-in-delhi"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Performance
+            Marketing</a>
+          <a href="services.html" class="block text-sm font-semibold text-[var(--primary-color)] pt-1">View All Services
+            →</a>
+        </div>
+      </div>
+
+      <a href="portfolio.html" class="mobile-link"><span>Portfolio</span></a>
+
+      <!-- Mobile Industries Accordion (Dynamic Links) -->
+      <div>
+        <div class="flex items-center justify-between py-3">
+          <a href="industries.html"
+            class="text-white text-base font-semibold hover:text-[var(--primary-color)]">Industries</a>
+          <button id="mobileIndustryToggle" class="text-white p-2 cursor-pointer">
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="mobileIndustryArrow"></i>
+          </button>
+        </div>
+        <div id="mobileIndustriesSub" class="hidden pl-4 py-3 space-y-3 mt-1">
+          <a href="industry-detail.html?affordable-e-commerce-website-development-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">E-Commerce</a>
+          <a href="industry-detail.html?healthcare-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Healthcare</a>
+          <a href="industry-detail.html?manufacturing-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Manufacturing</a>
+          <a href="industry-detail.html?real-estate-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Real Estate</a>
+          <a href="industry-detail.html?education-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Education</a>
+          <a href="industry-detail.html?fashion-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Fashion</a>
+          <a href="industry-detail.html?travel-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Travel</a>
+          <a href="industry-detail.html?appliances-marketing-service"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Appliances</a>
+          <a href="industry-detail.html?cosmetics-marketing-service"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Cosmetics</a>
+          <a href="industries.html" class="block text-sm font-semibold text-[var(--primary-color)] pt-1">View All
+            Industries Matrix →</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col space-y-4">
+        <a href="about.html" class="mobile-link"><span>Company</span></a>
+        <a href="blogs.html" class="mobile-link"><span>Blogs</span></a>
+        <a href="career.html" class="mobile-link"><span>Career</span></a>
+      </div>
+      <a href="contact.html"
+        class="block w-full text-center py-3.5 mt-6 bg-[var(--primary-color)] text-white font-bold rounded-lg">Let's
+        Talk</a>
+      <a href="https://razorpay.me/@viraladsmedia9256" target="_blank"
+        class="block w-full text-center py-3.5 mt-6 bg-[var(--primary-color)] text-white font-bold rounded-lg">Pay
+        Now</a>
+    </div>
+  </div>
+
+  <!-- header end -->
+
+  <!-- Hero Section Start (Left-aligned for all screen sizes) -->
+  <section class="relative w-full min-h-screen overflow-hidden flex items-start pt-28 sm:pt-32 lg:pt-36 pb-10">
+    <video autoplay muted loop playsinline class="absolute w-full h-full object-cover z-0">
+      <source src="Assets/bg.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+
+    <div
+      class="relative z-20 flex flex-col justify-center items-start min-h-full max-w-9xl mx-auto px-6 sm:px-12 lg:px-24 py-6 sm:py-8 text-white w-full text-left">
+      <p class="uppercase text-xs sm:text-sm text-[var(--primary-color)] mb-3 tracking-widest text-left">
+        Who We are?
+      </p>
+
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black leading-tight mb-5 text-left">
+        Ideas
+        <span
+          class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-2 px-3 py-1 rotate-[-2deg] hindi">
+          हमारे होते हैं...
+        </span> <br>
+        Viral Moment
+        <span
+          class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-2 px-3 py-1 rotate-[-2deg] hindi">
+          आपका होता है!
+        </span>
+      </h1>
+
+      <p class="mt-4 text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed text-left">
+        Transforming Brands with Creative Digital Solutions – From Social Media to Web, We Make Your Presence Viral!
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+        <a href="./contact.html"
+          class="px-8 py-3 bg-[var(--primary-color)] hover:bg-orange-600 rounded-lg font-semibold text-white transition-transform transform hover:-translate-y-1 text-left sm:text-center">
+          Let's Start
+        </a>
+        <a href="./portfolio.html"
+          class="px-8 py-3 border border-white hover:bg-white hover:text-black rounded-lg font-semibold text-white transition text-left sm:text-center">
+          Watch Showreel
+        </a>
+      </div>
+
+      <div class="mt-10 flex flex-col gap-4 text-white w-full text-sm sm:text-base text-left">
+        <div class="flex items-center gap-3">
+          <i class="fas fa-bullseye text-[var(--primary-color)] text-xl shrink-0"></i>
+          <span>Result Driven Strategies</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="fas fa-bolt text-[var(--primary-color)] text-xl shrink-0"></i>
+          <span>Creative That Performs</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="fas fa-chart-line text-[var(--primary-color)] text-xl shrink-0"></i>
+          <span>Brands That Grow</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Hero Section End -->
+
+  <!-- Toolkit Section -->
+  <section id="scroll-section" class="h-screen flex items-center overflow-hidden">
+    <div id="wrapper" class="flex flex-nowrap px-6 md:px-24 gap-12 md:gap-24 items-end">
+      <div class="service-card card-odd flex flex-col justify-end">
+        <div class="heading-container">
+          <h2 class="text-6xl md:text-6xl font-black uppercase tracking-tighter">Website<br />Designing</h2>
+          <p class="overlap-sub text-xs md:text-sm uppercase">Engineered for absolute digital conversion</p>
+        </div>
+        <div class="w-full h-full bg-gray-900 border border-white/15">
+          <img src="Assets/services/web.jpg" class="w-full h-full object-cover opacity-60" />
+        </div>
+      </div>
+      <div class="service-card card-even flex flex-col justify-end">
+        <div class="heading-container">
+          <h2 class="text-6xl md:text-6xl font-black uppercase tracking-tighter">Performance <br />Marketing</h2>
+          <p class="overlap-sub text-xs md:text-sm uppercase">Data driven results for scaling brands</p>
+        </div>
+        <div class="w-full h-full bg-gray-900 border border-white/15">
+          <img src="Assets/services/performance.jpg" class="w-full h-full object-cover opacity-60" />
+        </div>
+      </div>
+      <div class="service-card card-odd flex flex-col justify-end">
+        <div class="heading-container">
+          <h2 class="text-6xl md:text-6xl font-black uppercase tracking-tighter">Logo &<br />Branding</h2>
+          <p class="overlap-sub text-xs md:text-sm uppercase">Identity design for market leading growth</p>
+        </div>
+        <div class="w-full h-full bg-gray-900 border border-white/15">
+          <img src="Assets/services/logo.jpg" class="w-full h-full object-cover opacity-60" />
+        </div>
+      </div>
+      <div class="service-card card-even flex flex-col justify-end">
+        <div class="heading-container">
+          <h2 class="text-6xl md:text-6xl font-black uppercase tracking-tighter">Influencer<br />Marketing</h2>
+          <p class="overlap-sub text-xs md:text-sm uppercase">Authentic voices driving massive organic reach</p>
+        </div>
+        <div class="w-full h-full bg-gray-900 border border-white/15">
+          <img src="Assets/services/influence.jpg" class="w-full h-full object-cover opacity-60" />
+        </div>
+      </div>
+      <div class="service-card card-odd flex flex-col justify-end">
+        <div class="heading-container">
+          <h2 class="text-6xl md:text-6xl font-black uppercase tracking-tighter">SEO<br />Management</h2>
+          <p class="overlap-sub text-xs md:text-sm uppercase">Identity design for market leading growth</p>
+        </div>
+        <div class="w-full h-full bg-gray-900 border border-white/15">
+          <img src="Assets/services/seo.jpg" class="w-full h-full object-cover opacity-60" />
+        </div>
+      </div>
+      <div class="service-card card-even flex flex-col justify-end">
+        <div class="heading-container">
+          <h2 class="text-6xl md:text-6xl font-black uppercase tracking-tighter">ADS<br />Campaign</h2>
+          <p class="overlap-sub text-xs md:text-sm uppercase">Authentic voices driving massive organic reach</p>
+        </div>
+        <div class="w-full h-full bg-gray-900 border border-white/15">
+          <img src="Assets/services/ads.jpg" class="w-full h-full object-cover opacity-60" />
+        </div>
+      </div>
+      <div class="service-card card-odd flex flex-col justify-end">
+        <div class="heading-container">
+          <h2 class="text-6xl md:text-6xl font-black uppercase tracking-tighter">Graphics & <br />Video Editing</h2>
+          <p class="overlap-sub text-xs md:text-sm uppercase">Identity design for market leading growth</p>
+        </div>
+        <div class="w-full h-full bg-gray-900 border border-white/15">
+          <img src="Assets/services/graphic.jpg" class="w-full h-full object-cover opacity-60" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Work Showcase Section (Strict 2x2 grid for small screens) -->
+  <section id="selected-work" class="py-24 px-6 lg:px-24 text-white relative overflow-hidden border-t border-white/5">
+    <div class="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#EC4D20]/10 blur-[150px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div
+        class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 work-header opacity-0 translate-y-8">
+        <div>
+          <span
+            class="text-[#EC4D20] text-[10px] md:text-xs tracking-[0.3em] uppercase mb-4 block font-mono font-semibold">
+            [02] Selected Work / Portfolio
+          </span>
+          <h2 class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight">
+            Crafted for
+            <span
+              class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-4 px-3 py-1 rotate-[-2deg] hindi">इम्पैक्ट.</span>
+          </h2>
+        </div>
+        <p class="text-zinc-400 text-sm md:text-base max-w-sm leading-relaxed font-light">
+          High-performance creative productions, viral campaigns, and digital architecture built for scaling brands.
+        </p>
+      </div>
+
+      <!-- Forced 2x2 grid layout via grid-cols-2 for all screens including mobile -->
+      <div class="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-12">
+        <!-- Project Card 1 -->
+        <div
+          class="work-card group relative rounded-2xl overflow-hidden bg-[#0c0c0c] border border-white/10 opacity-0 translate-y-12">
+          <a href="./portfolio.html" class="block relative aspect-[4/5] md:aspect-[16/12] overflow-hidden">
+            <img src="Assets/Project/20.jpg" alt="Topson"
+              class="work-img w-full h-full object-cover filter grayscale contrast-105 brightness-75 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-95" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-90">
+            </div>
+          </a>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-3 sm:p-6 md:p-8 flex items-end justify-between pointer-events-none">
+            <div>
+              <span class="font-mono text-[9px] sm:text-xs text-[#EC4D20] tracking-widest uppercase block mb-1">Brand
+                Launch · 2026</span>
+              <h3
+                class="font-bold text-sm sm:text-2xl md:text-3xl text-white group-hover:text-[#EC4D20] transition-colors">
+                TOPSON PLAST</h3>
+            </div>
+            <a href="./portfolio.html"
+              class="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white backdrop-blur-md group-hover:bg-[#EC4D20] group-hover:border-[#EC4D20] transition-all pointer-events-auto">
+              <i
+                class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform text-[10px] sm:text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div
+          class="work-card group relative rounded-2xl overflow-hidden bg-[#0c0c0c] border border-white/10 opacity-0 translate-y-12">
+          <a href="./portfolio.html" class="block relative aspect-[4/5] md:aspect-[16/12] overflow-hidden">
+            <img src="Assets/Project/21.jpg" alt="Lumen Skincare"
+              class="work-img w-full h-full object-cover filter grayscale contrast-105 brightness-75 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-95" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-90">
+            </div>
+          </a>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-3 sm:p-6 md:p-8 flex items-end justify-between pointer-events-none">
+            <div>
+              <span class="font-mono text-[9px] sm:text-xs text-[#EC4D20] tracking-widest uppercase block mb-1">Content
+                Series · 2026</span>
+              <h3
+                class="font-bold text-sm sm:text-2xl md:text-3xl text-white group-hover:text-[#EC4D20] transition-colors">
+                DRAPPLE</h3>
+            </div>
+            <a href="./portfolio.html"
+              class="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white backdrop-blur-md group-hover:bg-[#EC4D20] group-hover:border-[#EC4D20] transition-all pointer-events-auto">
+              <i
+                class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform text-[10px] sm:text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div
+          class="work-card group relative rounded-2xl overflow-hidden bg-[#0c0c0c] border border-white/10 opacity-0 translate-y-12">
+          <a href="./portfolio.html" class="block relative aspect-[4/5] md:aspect-[16/12] overflow-hidden">
+            <img src="Assets/Project/22.png" alt="Pulse Fitness"
+              class="work-img w-full h-full object-cover filter grayscale contrast-105 brightness-75 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-95" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-90">
+            </div>
+          </a>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-3 sm:p-6 md:p-8 flex items-end justify-between pointer-events-none">
+            <div>
+              <span class="font-mono text-[9px] sm:text-xs text-[#EC4D20] tracking-widest uppercase block mb-1">Social
+                Campaign · 2025</span>
+              <h3
+                class="font-bold text-sm sm:text-2xl md:text-3xl text-white group-hover:text-[#EC4D20] transition-colors">
+                ALLIED TAPS</h3>
+            </div>
+            <a href="./portfolio.html"
+              class="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white backdrop-blur-md group-hover:bg-[#EC4D20] group-hover:border-[#EC4D20] transition-all pointer-events-auto">
+              <i
+                class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform text-[10px] sm:text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Card 4 -->
+        <div
+          class="work-card group relative rounded-2xl overflow-hidden bg-[#0c0c0c] border border-white/10 opacity-0 translate-y-12">
+          <a href="./portfolio.html" class="block relative aspect-[4/5] md:aspect-[16/12] overflow-hidden">
+            <img src="Assets/Project/23.jpg" alt="Stratos Sportswear"
+              class="work-img w-full h-full object-cover filter grayscale contrast-105 brightness-75 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-95" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-90">
+            </div>
+          </a>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-3 sm:p-6 md:p-8 flex items-end justify-between pointer-events-none">
+            <div>
+              <span class="font-mono text-[9px] sm:text-xs text-[#EC4D20] tracking-widest uppercase block mb-1">Global
+                Launch · 2026</span>
+              <h3
+                class="font-bold text-sm sm:text-2xl md:text-3xl text-white group-hover:text-[#EC4D20] transition-colors">
+                OCEAN BEAUTY</h3>
+            </div>
+            <a href="./portfolio.html"
+              class="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white backdrop-blur-md group-hover:bg-[#EC4D20] group-hover:border-[#EC4D20] transition-all pointer-events-auto">
+              <i
+                class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform text-[10px] sm:text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center work-cta opacity-0">
+        <a href="portfolio.html"
+          class="inline-flex items-center gap-2 sm:gap-3 px-4 py-3 sm:px-8 sm:py-4 rounded-full border border-white/20 text-white font-medium hover:bg-[#EC4D20] hover:border-[#EC4D20] transition-all duration-300 w-full sm:w-auto justify-center text-base sm:text-lg">
+          <span class="truncate">Explore All Case Studies</span>
+          <i class="fa-solid fa-arrow-right text-xs sm:text-sm"></i>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- interactive section -->
+  <section id="interactive-area" class="hidden md:block relative h-screen w-full -mt-16">
+    <div id="cursor-pool" aria-hidden="true" class="absolute inset-0 pointer-events-none"></div>
+    <div class="center-logo absolute inset-0 flex items-center justify-center pointer-events-none">
+      <img src="Assets/VAM logo.png" class="w-[18rem] md:w-[24em]" alt="" />
+    </div>
+  </section>
+
+  <!-- Our Clients Section (2, then 3, then 2, then 3 for small screens; 3, then 5, then 3 for large screens) -->
+  <!-- Clients Section Start -->
+  <section id="clients" class="relative py-24 px-4 sm:py-6 overflow-hidden bg-[#050505]">
+    <div class="max-w-[1400px] mx-auto">
+      <!-- Heading -->
+      <div class="mb-16 text-center lg:text-left lg:ml-10">
+        <h2 class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white">
+          Our <span
+            class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-4 px-3 py-1 rotate-[-2deg] hindi">क्लाइंट्स.</span>
+        </h2>
+      </div>
+
+      <!-- 
+      =========================================
+      DESKTOP & LARGE SCREENS (lg:flex)
+      =========================================
+      Horizontal wave up to 6 items deep. Total: 36 Clients.
+      Positions are fixed and static without GSAP animations.
+    -->
+      <div class="hidden lg:flex justify-center items-center gap-4 w-full py-10">
+
+        <!-- Col 1 (3 items) -->
+        <div class="flex flex-col gap-4 translate-y-16">
+          <div class="client-box"><img src="./Assets/brands/saptron.png" alt="Client 1" /></div>
+          <div class="client-box"><img src="./Assets/brands/allied.png" alt="Client 2" /></div>
+          <div class="client-box"><img src="./Assets/brands/aryan.png" alt="Client 3" /></div>
+        </div>
+
+        <!-- Col 2 (4 items) -->
+        <div class="flex flex-col gap-4 translate-y-4">
+          <div class="client-box"><img src="./Assets/brands/bakery.png" alt="Client 4" /></div>
+          <div class="client-box"><img src="./Assets/brands/balaji.png" alt="Client 5" /></div>
+          <div class="client-box"><img src="./Assets/brands/component.png" alt="Client 6" /></div>
+          <div class="client-box"><img src="./Assets/brands/dd carpet.png" alt="Client 7" /></div>
+        </div>
+
+        <!-- Col 3 (5 items) -->
+        <div class="flex flex-col gap-4 -translate-y-6">
+          <div class="client-box"><img src="./Assets/brands/dd carpet.png" alt="Client 8" /></div>
+          <div class="client-box"><img src="./Assets/brands/delmont.png" alt="Client 9" /></div>
+          <div class="client-box"><img src="./Assets/brands/drapple.png" alt="Client 10" /></div>
+          <div class="client-box"><img src="./Assets/brands/electric universe.png" alt="Client 11" /></div>
+          <div class="client-box"><img src="./Assets/brands/eltons.png" alt="Client 12" /></div>
+        </div>
+
+        <!-- Col 4 (6 items) -->
+        <div class="flex flex-col gap-4 -translate-y-12">
+          <div class="client-box"><img src="./Assets/brands/franklite.png" alt="Client 13" /></div>
+          <div class="client-box"><img src="./Assets/brands/frendz_forever.png" alt="Client 14" /></div>
+          <div class="client-box"><img src="./Assets/brands/gboss.png" alt="Client 15" /></div>
+          <div class="client-box"><img src="./Assets/brands/glamfam.png" alt="Client 16" /></div>
+          <div class="client-box"><img src="./Assets/brands/guruji.png" alt="Client 17" /></div>
+          <div class="client-box"><img src="./Assets/brands/hi choice.png" alt="Client 18" /></div>
+        </div>
+
+
+        <!-- Col 6 (5 items) -->
+        <div class="flex flex-col gap-4 -translate-y-6">
+          <div class="client-box"><img src="./Assets/brands/hoot beauty.png" alt="Client 25" /></div>
+          <div class="client-box"><img src="./Assets/brands/jbj.png" alt="Client 26" /></div>
+          <div class="client-box"><img src="./Assets/brands/jyoti.png" alt="Client 27" /></div>
+          <div class="client-box"><img src="./Assets/brands/kamal.png" alt="Client 28" /></div>
+          <div class="client-box"><img src="./Assets/brands/sketch.png" alt="Client 29" /></div>
+        </div>
+
+        <!-- Col 7 (4 items) -->
+        <div class="flex flex-col gap-4 translate-y-4">
+          <div class="client-box"><img src="./Assets/brands/mango.png" alt="Client 30" /></div>
+          <div class="client-box"><img src="./Assets/brands/medyra.png" alt="Client 31" /></div>
+          <div class="client-box"><img src="./Assets/brands/minar.png" alt="Client 32" /></div>
+          <div class="client-box"><img src="./Assets/brands/navigator.png" alt="Client 33" /></div>
+        </div>
+
+        <!-- Col 8 (3 items) -->
+        <div class="flex flex-col gap-4 translate-y-16">
+          <div class="client-box"><img src="./Assets/brands/nipex.png" alt="Client 34" /></div>
+          <div class="client-box"><img src="./Assets/brands/nippon.png" alt="Client 35" /></div>
+          <div class="client-box"><img src="./Assets/brands/nugraj.png" alt="Client 36" /></div>
+        </div>
+      </div>
+
+      <!-- 
+      =========================================
+      MOBILE & TABLET (lg:hidden)
+      =========================================
+      Vertical cascading diamond stack. Total: 36 Clients.
+      Positions are fixed and static.
+    -->
+      <div class="lg:hidden flex flex-col items-center gap-3 py-6">
+        <div class="flex justify-center gap-3 w-full">
+          <div class="client-box"><img src="./Assets/brands/allied.png" alt="1" /></div>
+        </div>
+
+        <div class="flex justify-center gap-3 w-full">
+          <div class="client-box"><img src="./Assets/brands/allied.png" alt="2" /></div>
+          <div class="client-box"><img src="./Assets/brands/ocean beauty.png" alt="3" /></div>
+        </div>
+
+        <div class="flex justify-center gap-3 w-full">
+          <div class="client-box"><img src="./Assets/brands/pixel-cable.png" alt="4" /></div>
+          <div class="client-box"><img src="./Assets/brands/presco.png" alt="5" /></div>
+          <div class="client-box"><img src="./Assets/brands/saptron.png" alt="6" /></div>
+        </div>
+
+        <div class="flex justify-center gap-3 w-full">
+          <div class="client-box"><img src="./Assets/brands/savele.png" alt="7" /></div>
+          <div class="client-box"><img src="./Assets/brands/shri-shyam.png" alt="8" /></div>
+        </div>
+
+        <div class="flex justify-center gap-3 w-full">
+          <div class="client-box"><img src="./Assets/brands/sketch.png" alt="9" /></div>
+          <div class="client-box"><img src="./Assets/brands/tdii.png" alt="10" /></div>
+          <div class="client-box"><img src="./Assets/brands/tiptop.png" alt="11" /></div>
+        </div>
+
+        <div class="flex justify-center gap-3 w-full">
+          <div class="client-box"><img src="./Assets/brands/topson.png" alt="12" /></div>
+          <div class="client-box"><img src="./Assets/brands/trophy.png" alt="13" /></div>
+        </div>
+
+        <div class="flex justify-center gap-3 w-full">
+          <div class="client-box"><img src="./Assets/brands/bakery.png" alt="14" /></div>
+          <div class="client-box"><img src="./Assets/brands/dd carpet.png" alt="15" /></div>
+          <div class="client-box"><img src="./Assets/brands/jbj.png" alt="16" /></div>
+        </div>
+
+        <div class="flex justify-center gap-3 w-full">
+          <div class="client-box"><img src="./Assets/brands/jyoti.png" alt="17" /></div>
+          <div class="client-box"><img src="./Assets/brands/nipex.png" alt="18" /></div>
+        </div>
+
+        <div class="flex justify-center gap-3 w-full">
+          <div class="client-box"><img src="./Assets/brands/nippon.png" alt="19" /></div>
+          <div class="client-box"><img src="./Assets/brands/frendz_forever.png" alt="20" /></div>
+          <div class="client-box"><img src="./Assets/brands/gboss.png" alt="21" /></div>
+        </div>
+
+        <div class="flex justify-center gap-3 w-full">
+          <div class="client-box"><img src="./Assets/brands/kamal.png" alt="22" /></div>
+          <div class="client-box"><img src="./Assets/brands/minar.png" alt="23" /></div>
+        </div>
+
+
+      </div>
+
+      <!-- Bottom Action Bar -->
+      <div class="mt-16 flex flex-col sm:flex-row justify-between items-center gap-6 lg:mx-10">
+        <p class="text-zinc-300 text-sm md:text-base text-center sm:text-left">
+          Helping new brands start up and old ones start over.
+        </p>
+        <a href="./contact.html"
+          class="px-8 py-3 bg-[var(--primary-color)] hover:bg-orange-600 rounded-full font-semibold text-white transition-transform transform hover:-translate-y-1 text-center">
+          View All Clients
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- Clients Section End -->
+  <!-- Clients Section End -->
+
+  <!-- Process Section (2x2 grid for small screens) -->
+  <section id="process"
+    class="relative min-h-max pt-24 pb-28 px-6 lg:px-24 text-white border-t border-white/5 overflow-hidden">
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#EC4D20]/10 blur-[150px] pointer-events-none">
+    </div>
+
+    <div id="pin-container" class="max-w-8xl mx-auto w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-5">
+          <span
+            class="text-[#EC4D20] text-[14px] md:text-md tracking-[0.3em] uppercase mb-4 block font-mono font-semibold">
+            [04] Process / How We Work
+          </span>
+          <h2 class="text-4xl sm:text-5xl md:text-8xl font-bold tracking-tight leading-tight">
+            From brief to
+            <span
+              class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white px-3 py-1 rotate-[-2deg] hindi">एक्ज़ीक्यूशन.</span>
+          </h2>
+          <p class="text-zinc-400 text-sm md:text-base mt-6 font-light leading-relaxed max-w-md">
+            Our structural engineering methodology turns bold strategies into lightning-fast interactive architectures
+            with complete step-by-step transparency.
+          </p>
+        </div>
+
+        <!-- Cards Grid System: 2x2 grid on small screens, absolute stacking pin on large screens -->
+        <div id="process-cards-wrapper"
+          class="lg:col-span-7 relative w-full grid grid-cols-1 sm:grid-cols-2 gap-6 lg:block lg:h-[380px]">
+          <!-- Step 01 -->
+          <div
+            class="process-card lg:absolute w-full bg-[#0c0c0c] border border-white/10 rounded-3xl flex justify-between items-center p-6 sm:p-8 h-auto lg:h-[300px] shadow-2xl origin-top">
+            <div class="flex flex-col sm:flex-row lg:flex-row justify-between items-center gap-6 w-full">
+              <div class="max-w-md">
+                <div class="flex items-center gap-3 mb-3">
+                  <span
+                    class="text-[10px] font-mono px-3 py-1 border border-white/10 rounded-full text-zinc-400 uppercase tracking-widest">Phase
+                    01</span>
+                  <span class="text-xs font-mono text-[#EC4D20] uppercase tracking-wider">Discovery</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">Strategic Alignment</h3>
+                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
+                  We align directly with your core vision, target demographic goals, and technical limitations.
+                </p>
+              </div>
+              <div class="text-5xl sm:text-6xl font-light font-mono text-zinc-800/60 select-none">01</div>
+            </div>
+          </div>
+
+          <!-- Step 02 -->
+          <div
+            class="process-card lg:absolute w-full bg-[#0c0c0c] border border-white/10 rounded-3xl flex justify-between items-center p-6 sm:p-8 h-auto lg:h-[300px] shadow-2xl origin-top">
+            <div class="flex flex-col sm:flex-row lg:flex-row justify-between items-center gap-6 w-full">
+              <div class="max-w-md">
+                <div class="flex items-center gap-3 mb-3">
+                  <span
+                    class="text-[10px] font-mono px-3 py-1 border border-white/10 rounded-full text-zinc-400 uppercase tracking-widest">Phase
+                    02</span>
+                  <span class="text-xs font-mono text-[#EC4D20] uppercase tracking-wider">Blueprints</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">Interactive Wireframing</h3>
+                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
+                  Translating raw requirements into sleek high-contrast mockups and custom typography layouts.
+                </p>
+              </div>
+              <div class="text-5xl sm:text-6xl font-light font-mono text-zinc-800/60 select-none">02</div>
+            </div>
+          </div>
+
+          <!-- Step 03 -->
+          <div
+            class="process-card lg:absolute w-full bg-[#0c0c0c] border border-white/10 rounded-3xl h-auto lg:h-[300px] flex justify-between items-center p-6 sm:p-8 shadow-2xl origin-top">
+            <div class="flex flex-col sm:flex-row lg:flex-row justify-between w-full items-center gap-6">
+              <div class="max-w-md">
+                <div class="flex items-center gap-3 mb-3">
+                  <span
+                    class="text-[10px] font-mono px-3 py-1 border border-white/10 rounded-full text-zinc-400 uppercase tracking-widest">Phase
+                    03</span>
+                  <span class="text-xs font-mono text-[#EC4D20] uppercase tracking-wider">Engineering</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">Development & Optimization</h3>
+                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
+                  Coding clean systems using top-tier performance tech stacks to achieve lightning-fast speed.
+                </p>
+              </div>
+              <div class="text-5xl sm:text-6xl font-light font-mono text-zinc-800/60 select-none">03</div>
+            </div>
+          </div>
+
+          <!-- Step 04 -->
+          <div
+            class="process-card lg:absolute w-full bg-[#0c0c0c] border border-[#EC4D20]/40 rounded-3xl h-auto lg:h-[300px] flex justify-between items-center p-6 sm:p-8 shadow-[0_0_40px_rgba(236,77,32,0.15)] origin-top">
+            <div class="flex flex-col sm:flex-row lg:flex-row justify-between items-center w-full gap-6">
+              <div class="max-w-md">
+                <div class="flex items-center gap-3 mb-3">
+                  <span
+                    class="text-[10px] font-mono px-3 py-1 border border-[#EC4D20]/30 text-[#EC4D20] bg-[#EC4D20]/10 rounded-full uppercase tracking-widest">Phase
+                    04</span>
+                  <span class="text-xs font-mono text-[#EC4D20] uppercase tracking-wider">Deployment</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">Seamless Launch</h3>
+                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
+                  Rigorous quality assurance audits followed by server deployment and analytics setup.
+                </p>
+              </div>
+              <div
+                class="text-5xl sm:text-6xl font-light font-mono text-[#EC4D20] opacity-80 select-none drop-shadow-[0_0_15px_rgba(236,77,32,0.4)]">
+                04</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements & Results Section (2x2 grid for small screens) -->
+  <section id="achievements-section" class="py-6 px-6 lg:px-12 text-white relative overflow-hidden">
+    <!-- Subtle Background Glow -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#EC4D20]/15 blur-[160px] pointer-events-none">
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10 space-y-8">
+      <!-- Top Header -->
+      <div class="text-center space-y-3 achieve-header opacity-0 translate-y-8">
+        <div class="inline-flex items-center gap-3 text-xs tracking-[0.4em] uppercase text-[#EC4D20] font-mono">
+          <span class="w-8 h-[1px] bg-[#EC4D20]"></span>
+          OUR ACHIEVEMENTS
+          <span class="w-8 h-[1px] bg-[#EC4D20]"></span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+          Results That Speak <br class="hidden sm:block" />
+          <span
+            class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white px-3 py-1 rotate-[-2deg] hindi">लाउडर
+          </span>
+          Than Promises.
+        </h2>
+        <p class="text-zinc-400 text-sm md:text-base font-light">
+          Real numbers. Real growth. Real impact for our clients.
+        </p>
+      </div>
+
+      <!-- Row 1: 4 Key Metric Cards (2x2 grid on mobile/small screens, 4 columns on large screens) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <!-- Card 1 -->
+        <div
+          class="achieve-card bg-[#0c0c0c] border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col justify-between hover:border-[#EC4D20]/50 transition-colors opacity-0 translate-y-10">
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#EC4D20]/20 text-[#EC4D20] flex items-center justify-center text-lg sm:text-xl mb-4 sm:mb-6 shadow-[0_0_20px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl sm:text-4xl font-bold tracking-tight mb-2 text-white">
+              300+
+            </h3>
+            <p class="text-[10px] sm:text-xs font-mono uppercase text-[#EC4D20] tracking-wider mb-1">
+              BRANDS SCALED
+            </p>
+            <p class="text-zinc-400 text-[11px] sm:text-xs">
+              From startups to established businesses.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="achieve-card bg-[#0c0c0c] border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col justify-between hover:border-[#EC4D20]/50 transition-colors opacity-0 translate-y-10">
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#EC4D20]/20 text-[#EC4D20] flex items-center justify-center text-lg sm:text-xl mb-4 sm:mb-6 shadow-[0_0_20px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl sm:text-4xl font-bold tracking-tight mb-2 text-white">
+              500+
+            </h3>
+            <p class="text-[10px] sm:text-xs font-mono uppercase text-[#EC4D20] tracking-wider mb-1">
+              SUCCESSFUL CAMPAIGNS
+            </p>
+            <p class="text-zinc-400 text-[11px] sm:text-xs">
+              Data-driven campaigns that deliver results.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="achieve-card bg-[#0c0c0c] border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col justify-between hover:border-[#EC4D20]/50 transition-colors opacity-0 translate-y-10">
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#EC4D20]/20 text-[#EC4D20] flex items-center justify-center text-lg sm:text-xl mb-4 sm:mb-6 shadow-[0_0_20px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl sm:text-4xl font-bold tracking-tight mb-2 text-white">
+              10M+
+            </h3>
+            <p class="text-[10px] sm:text-xs font-mono uppercase text-[#EC4D20] tracking-wider mb-1">
+              ORGANIC & PAID REACH
+            </p>
+            <p class="text-zinc-400 text-[11px] sm:text-xs">
+              Across platforms that drive real engagement.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="achieve-card bg-[#0c0c0c] border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col justify-between hover:border-[#EC4D20]/50 transition-colors opacity-0 translate-y-10">
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#EC4D20]/20 text-[#EC4D20] flex items-center justify-center text-lg sm:text-xl mb-4 sm:mb-6 shadow-[0_0_20px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl sm:text-4xl font-bold tracking-tight mb-2 text-white">
+              95%
+            </h3>
+            <p class="text-[10px] sm:text-xs font-mono uppercase text-[#EC4D20] tracking-wider mb-1">
+              CLIENT RETENTION RATE
+            </p>
+            <p class="text-zinc-400 text-[11px] sm:text-xs">
+              Long-term partnerships built on trust.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Growth Journey Chart & Digital Solutions List -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Left: 12 Months Growth Chart Box -->
+        <div
+          class="achieve-block lg:col-span-7 bg-[#0c0c0c] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden opacity-0 translate-y-12">
+          <div>
+            <p class="text-[10px] font-mono tracking-[0.3em] uppercase text-[#EC4D20] mb-2">
+              12 MONTHS OF GROWTH JOURNEY
+            </p>
+            <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+              Consistent Growth.<br /><span class="text-[#EC4D20]">Real Results.</span>
+            </h3>
+          </div>
+
+          <!-- Embedded SVG Growth Curve Line Chart -->
+          <div class="relative my-8 h-56 w-full flex items-end">
+            <!-- Axis Grid Lines -->
+            <div
+              class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20 text-[10px] font-mono text-zinc-500">
+              <div class="border-b border-white/15 w-full flex justify-between">
+                <span>100K</span>
+              </div>
+              <div class="border-b border-white/15 w-full flex justify-between">
+                <span>75K</span>
+              </div>
+              <div class="border-b border-white/15 w-full flex justify-between">
+                <span>50K</span>
+              </div>
+              <div class="border-b border-white/15 w-full flex justify-between">
+                <span>25K</span>
+              </div>
+              <div class="border-b border-white/15 w-full flex justify-between">
+                <span>0</span>
+              </div>
+            </div>
+
+            <!-- SVG Path Curve -->
+            <svg class="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 600 200"
+              preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#EC4D20" stop-opacity="0.3"></stop>
+                  <stop offset="100%" stop-color="#EC4D20" stop-opacity="0"></stop>
+                </linearGradient>
+              </defs>
+              <path d="M 0,180 Q 100,175 180,150 T 360,110 T 540,40 L 540,200 L 0,200 Z" fill="url(#chartGradient)">
+              </path>
+              <path id="growth-path" d="M 0,180 Q 100,175 180,150 T 360,110 T 540,40" fill="none" stroke="#EC4D20"
+                stroke-width="3" class="drop-shadow-[0_0_10px_rgba(236,77,32,0.8)]"></path>
+            </svg>
+
+            <!-- Milestone Tooltips on Graph -->
+            <div
+              class="absolute top-[35%] left-[18%] bg-black/85 border border-white/15 px-3 py-1.5 rounded-xl text-center backdrop-blur-md">
+              <p class="text-[10px] font-mono text-zinc-400">Campaign</p>
+              <p class="text-xs font-bold text-white">Launch</p>
+            </div>
+
+            <div
+              class="absolute top-[48%] left-[38%] bg-black/85 border border-white/15 px-3 py-1.5 rounded-xl text-center backdrop-blur-md">
+              <p class="text-[10px] font-mono text-zinc-400">SEO</p>
+              <p class="text-xs font-bold text-white">Growth</p>
+            </div>
+
+            <div
+              class="absolute top-[22%] left-[62%] bg-black/85 border border-white/15 px-3 py-1.5 rounded-xl text-center backdrop-blur-md">
+              <p class="text-[10px] font-mono text-zinc-400">Paid Ads</p>
+              <p class="text-xs font-bold text-white">Optimization</p>
+            </div>
+
+            <div
+              class="absolute top-2 right-10 bg-black/90 border border-[#EC4D20]/50 px-3 py-1.5 rounded-lg text-center shadow-[0_0_15px_rgba(236,77,32,0.2)]">
+              <span class="text-[10px] font-mono text-[#EC4D20] block uppercase tracking-wider">Revenue</span>
+              <span class="text-xs font-bold text-white">Growth</span>
+            </div>
+
+            <!-- Pulsing Marker on Peak -->
+            <div
+              class="absolute top-[20%] right-[10%] w-3 h-3 bg-[#EC4D20] rounded-full shadow-[0_0_15px_#EC4D20] animate-ping">
+            </div>
+            <div class="absolute top-[20%] right-[10%] w-3 h-3 bg-[#EC4D20] rounded-full"></div>
+          </div>
+
+          <!-- Months X-Axis Labels -->
+          <div
+            class="grid grid-cols-12 text-[10px] font-mono text-zinc-500 uppercase text-center pt-2 border-t border-white/10 overflow-x-auto">
+            <span>JAN</span><span>FEB</span><span>MAR</span><span>APR</span><span>MAY</span><span>JUN</span><span>JUL</span><span>AUG</span><span>SEP</span><span>OCT</span><span>NOV</span><span>DEC</span>
+          </div>
+        </div>
+
+        <!-- Right: Digital Solutions List Box -->
+        <div
+          class="achieve-block lg:col-span-5 bg-[#0c0c0c] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between opacity-0 translate-y-12">
+          <p class="text-[10px] font-mono tracking-[0.3em] uppercase text-[#EC4D20] mb-6">
+            DIGITAL SOLUTIONS BUILT FOR GROWTH
+          </p>
+
+          <div class="space-y-3.5">
+            <div
+              class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[02] border border-white/5 hover:border-[#EC4D20]/40 transition group cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 rounded-xl bg-[#EC4D20]/10 text-[#EC4D20] flex items-center justify-center text-base shrink-0">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-sm text-black group-hover:text-[#EC4D20] transition-colors">
+                    Performance Marketing
+                  </h4>
+                  <p class="text-zinc-400 text-xs mt-0.5">
+                    ROI-focused campaigns that generate leads and boost sales.
+                  </p>
+                </div>
+              </div>
+              <i
+                class="fa-solid fa-chevron-right text-xs text-zinc-600 group-hover:text-[var(--primary-color)] transition-colors shrink-0 pl-2"></i>
+            </div>
+
+            <div
+              class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[02] border border-white/5 hover:border-[#EC4D20]/40 transition group cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 rounded-xl bg-[#EC4D20]/10 text-[#EC4D20] flex items-center justify-center text-base shrink-0">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-sm text-black group-hover:text-[#EC4D20] transition-colors">
+                    SEO Strategy
+                  </h4>
+                  <p class="text-zinc-400 text-xs mt-0.5">
+                    Rank higher on Google and attract high intent organic
+                    traffic.
+                  </p>
+                </div>
+              </div>
+              <i
+                class="fa-solid fa-chevron-right text-xs text-zinc-600 group-hover:text-[var(--primary-color)] transition-colors shrink-0 pl-2"></i>
+            </div>
+
+            <div
+              class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[02] border border-white/5 hover:border-[#EC4D20]/40 transition group cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 rounded-xl bg-[#EC4D20]/10 text-[#EC4D20] flex items-center justify-center text-base shrink-0">
+                  <i class="fa-solid fa-pen-nib"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-sm text-black group-hover:text-[#EC4D20] transition-colors">
+                    Creative Branding
+                  </h4>
+                  <p class="text-zinc-400 text-xs mt-0.5">
+                    Unique designs that build brand identity and recognition.
+                  </p>
+                </div>
+              </div>
+              <i
+                class="fa-solid fa-chevron-right text-xs text-zinc-600 group-hover:text-[var(--primary-color)] transition-colors shrink-0 pl-2"></i>
+            </div>
+
+            <div
+              class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[02] border border-white/5 hover:border-[#EC4D20]/40 transition group cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 rounded-xl bg-[#EC4D20]/10 text-[#EC4D20] flex items-center justify-center text-base shrink-0">
+                  <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-sm text-black group-hover:text-[#EC4D20] transition-colors">
+                    Data Driven Marketing
+                  </h4>
+                  <p class="text-zinc-400 text-xs mt-0.5">
+                    Smart insights and analytics to make better marketing
+                    decisions.
+                  </p>
+                </div>
+              </div>
+              <i
+                class="fa-solid fa-chevron-right text-xs text-zinc-600 group-hover:text-[var(--primary-color)] transition-colors shrink-0 pl-2"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Trusted by Businesses Across Industries Bar -->
+      <div
+        class="achieve-block bg-[#141010] border border-[#EC4D20]/30 rounded-2xl p-6 text-center opacity-0 translate-y-12">
+        <p class="text-[11px] font-mono tracking-[0.37em] uppercase mb-6 text-[var(--primary-color)]">
+          TRUSTED BY BUSINESSES ACROSS INDUSTRIES
+        </p>
+
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-9 gap-4 items-center justify-center text-xs font-bold uppercase tracking-wider">
+          <div class="flex flex-col items-center gap-2 group cursor-pointer hover:text-white transition-colors">
+            <i class="fa-solid fa-cart-shopping text-xl" style="color: var(--primary-color);"></i>
+            <span class="text-[var(--primary-color)]">E-COMMERCE</span>
+          </div>
+          <div class="flex flex-col items-center gap-2 group cursor-pointer hover:text-white transition-colors">
+            <i class="fa-solid fa-suitcase-medical text-xl" style="color: var(--primary-color);"></i>
+            <span class="text-[var(--primary-color)]">HEALTHCARE</span>
+          </div>
+          <div class="flex flex-col items-center gap-2 group cursor-pointer hover:text-white transition-colors">
+            <i class="fa-solid fa-industry text-xl" style="color: var(--primary-color);"></i>
+            <span class="text-[var(--primary-color)]">MANUFACTURING</span>
+          </div>
+          <div class="flex flex-col items-center gap-2 group cursor-pointer hover:text-white transition-colors">
+            <i class="fa-solid fa-building text-xl" style="color: var(--primary-color);"></i>
+            <span class="text-[var(--primary-color)]">REAL ESTATE</span>
+          </div>
+          <div class="flex flex-col items-center gap-2 group cursor-pointer hover:text-white transition-colors">
+            <i class="fa-solid fa-graduation-cap text-xl" style="color: var(--primary-color);"></i>
+            <span class="text-[var(--primary-color)]">EDUCATION</span>
+          </div>
+          <div class="flex flex-col items-center gap-2 group cursor-pointer hover:text-white transition-colors">
+            <i class="fa-solid fa-shirt text-xl" style="color: var(--primary-color);"></i>
+            <span class="text-[var(--primary-color)]">FASHION</span>
+          </div>
+          <div class="flex flex-col items-center gap-2 group cursor-pointer hover:text-white transition-colors">
+            <i class="fa-solid fa-plane text-xl" style="color: var(--primary-color);"></i>
+            <span class="text-[var(--primary-color)]">TRAVEL</span>
+          </div>
+          <div class="flex flex-col items-center gap-2 group cursor-pointer hover:text-white transition-colors">
+            <i class="fa-solid fa-blender text-xl" style="color: var(--primary-color);"></i>
+            <span class="text-[var(--primary-color)]">APPLIANCES</span>
+          </div>
+          <div class="flex flex-col items-center gap-2 group cursor-pointer hover:text-white transition-colors">
+            <i class="fa-solid fa-wand-magic-sparkles text-xl" style="color: var(--primary-color);"></i>
+            <span class="text-[var(--primary-color)]">COSMETICS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Conversion Callout Bar -->
+      <div
+        class="achieve-block bg-gradient-to-r from-[#111] via-[#0c0c0c] to-[#111] border border-white/10 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-6 opacity-0 translate-y-12">
+        <div class="flex items-center gap-4 text-center sm:text-left">
+          <div
+            class="w-12 h-12 rounded-xl bg-[#EC4D20]/20 text-[#EC4D20] flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-white">
+              Let's Grow Your Business Together.
+            </h3>
+            <p class="text-zinc-400 text-xs">
+              Book a quick consultation call to see how we can scale your
+              brand.
+            </p>
+          </div>
+        </div>
+        <a href="./contact.html"
+          class="px-8 py-3.5 bg-[#EC4D20] hover:bg-orange-600 rounded-xl font-bold text-white transition-all shadow-[0_0_20px_rgba(236,77,32,0.4)] flex items-center gap-2 shrink-0">
+          Enquire Now <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- <div id="footer-placeholder"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((html) => {document.getElementById("footer-placeholder").innerHTML = html;})
+        .catch((err) => {console.error("Failed to load footer:", err);});
+    });
+  </script> -->
+
+    <!-- footer start -->
+
+  <footer
+    class="text-white pt-16 pb-8 px-4 sm:px-6 lg:px-12 relative overflow-hidden border-t border-white/5 font-sans bg-[#050505]">
+
+    <div class="max-w-8xl mx-auto relative z-10 space-y-12">
+
+      <!-- Top Callout Banner -->
+      <div
+        class="relative bg-gradient-to-r from-[#0c0705] via-[#100806] to-[#070403] rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-[0_0_60px_rgba(236,77,32,0.15)] overflow-hidden border border-[#EC4D20]/50">
+
+        <!-- Subtle curved orange glow on the right bottom edge -->
+        <div
+          class="absolute -bottom-10 right-10 w-64 h-64 bg-[#EC4D20]/25 rounded-full blur-[60px] pointer-events-none">
+        </div>
+
+        <!-- Left side graphic icon & text -->
+        <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left relative z-10">
+          <div class="w-20 flex items-center justify-center text-3xl shrink-0">
+            <img src="Assets/brand mark.png" alt="Brand Mark" class="w-full h-auto object-contain">
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">Let's <span
+                class="text-[#EC4D20]">Grow Your Brand</span></h3>
+            <p class="text-zinc-300 text-sm sm:text-base font-normal">Powerful strategies. Creative ideas. Real
+              results.</p>
+            <p class="text-zinc-500 text-xs sm:text-sm">Partner with Viral Ads Media and take your business to the
+              next level.</p>
+          </div>
+        </div>
+
+        <!-- Enquire Now Button -->
+        <a href="https://wa.me/919354491934" target="_blank"
+          class="relative z-10 px-8 py-4 bg-gradient-to-r from-[#EC4D20] to-[#d8370d] hover:opacity-95 rounded-2xl font-bold text-white text-sm tracking-wide transition-all shadow-[0_0_35px_rgba(236,77,32,0.5),inset_0_1px_2px_rgba(255,255,255,0.3)] flex items-center gap-3 shrink-0 cursor-pointer">
+          <i class="fa-brands fa-whatsapp text-xl"></i> ENQUIRE NOW
+        </a>
+
+      </div>
+
+      <!-- Middle Content Columns Grid (5 Columns, Responsive & Certifications/Sponsorships 2-item grid preserved) -->
+      <!-- Middle Content Columns Grid (Responsive 2-column mobile, 5-column desktop) -->
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-8 pt-4 items-start">
+
+        <!-- Column 1: Brand Info & Socials -->
+        <!-- Added: col-span-2 sm:col-span-1 -->
+        <div class="col-span-2 sm:col-span-1 space-y-6 lg:pr-2">
+          <div class="flex items-center gap-3">
+            <div class="w-full flex items-center justify-start text-[#EC4D20] shrink-0">
+              <img src="Assets/VAM logo.png" alt="Viral Ads Media Logo" class="w-48 h-auto object-contain">
+            </div>
+          </div>
+          <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
+            We are a creative digital agency helping brands grow with innovative ideas, data-driven strategies, and
+            impactful marketing.
+          </p>
+          <!-- Follow Us Section -->
+          <div class="space-y-3 pt-2">
+            <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-zinc-500 font-semibold">FOLLOW US</p>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="https://www.facebook.com/theviraladsmedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-facebook text-xs"></i></a>
+              <a href="https://www.instagram.com/theviraladsmedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-instagram text-xs"></i></a>
+              <a href="https://www.behance.net/viraladsmedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-behance text-xs"></i></a>
+              <a href="https://www.linkedin.com/in/viral-ads-media-34ba19280/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-linkedin-in text-xs"></i></a>
+              <a href="https://www.youtube.com/@ViralAdsMedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-youtube text-xs"></i></a>
+              <a href="https://x.com/viraladsmedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-x-twitter text-xs"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links with Divider -->
+        <!-- Added: col-span-1 -->
+        <div class="col-span-1 space-y-4 border-t sm:border-t-0 sm:border-l border-white/10 pt-6 sm:pt-0 sm:pl-6">
+          <div class="flex items-center gap-2 text-[#EC4D20] text-sm font-bold">
+            <i class="fa-solid fa-link text-xl"></i>
+            <h4 class="text-white text-xl sm:text-2xl">Quick Links</h4>
+          </div>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-zinc-400">
+            <li><a href="./index.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Home</a></li>
+            <li><a href="./about.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Company</a></li>
+            <li><a href="./services.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Services</a></li>
+            <li><a href="./portfolio.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Our Work</a></li>
+            <li><a href="./blogs.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Blogs</a></li>
+            <li><a href="./career.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Career</a></li>
+            <li><a href="./contact.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Services with Divider -->
+        <!-- Added: col-span-1 -->
+        <div class="col-span-1 space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-6">
+          <div class="flex items-center gap-2 text-[#EC4D20] text-sm font-bold">
+            <i class="fa-solid fa-briefcase text-xl"></i>
+            <h4 class="text-white text-xl sm:text-2xl">Services</h4>
+          </div>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-zinc-400">
+            <li>
+              <a href="./service.html?best-social-media-agency-in-delhi"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-brands fa-facebook-messenger text-[#EC4D20] shrink-0"></i>
+                <span>Social Media Marketing</span>
+              </a>
+            </li>
+            <li>
+              <a href="./service.html?best-seo-agency-near-me"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-magnifying-glass-chart text-[#EC4D20] shrink-0"></i>
+                <span>Search Engine Optimization</span>
+              </a>
+            </li>
+            <li>
+              <a href="./service.html?affordable-web-developer-in-delhi"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-paint-brush text-[#EC4D20] shrink-0"></i>
+                <span>Website Designing</span>
+              </a>
+            </li>
+            <li>
+              <a href="./service.html?best-performance-marketing-in-delhi"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-chart-simple text-[#EC4D20] shrink-0"></i>
+                <span>Performance Marketing</span>
+              </a>
+            </li>
+            <li>
+              <a href="./service.html?affordable-logo-and-branding-near-me"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-signature text-[#EC4D20] shrink-0"></i>
+                <span>Logo & Branding</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./service.html?best-influencer-marketing-in-delhi"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-star text-[#EC4D20] shrink-0"></i>
+                <span>Influencer Marketing</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./service.html?proffessional-brand-shoots-in-delhi"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-camera-retro text-[#EC4D20] shrink-0"></i>
+                <span>Brand Shoots</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Info with Divider & Pay Now! Button -->
+        <!-- Added: col-span-2 sm:col-span-1 -->
+        <div
+          class="col-span-2 sm:col-span-1 space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-6">
+          <div class="flex items-center gap-2 text-[#EC4D20] text-sm font-bold">
+            <i class="fa-solid fa-phone text-xl"></i>
+            <h4 class="text-white text-xl sm:text-2xl">Contact Info</h4>
+          </div>
+          <ul class="space-y-4 text-xs sm:text-sm text-zinc-400">
+            <li class="flex items-center gap-3.5">
+              <div
+                class="w-9 h-9 rounded-xl bg-[#121212] border border-white/10 flex items-center justify-center text-[#EC4D20] shrink-0 shadow-sm">
+                <i class="fa-solid fa-phone text-xs"></i>
+              </div>
+              <a href="tel:+919354491934" class="hover:text-white transition text-base sm:text-lg font-medium">+91
+                93544 91934</a>
+            </li>
+            <li class="flex items-center gap-3.5">
+              <div
+                class="w-9 h-9 rounded-xl bg-[#121212] border border-white/10 flex items-center justify-center text-[#EC4D20] shrink-0 shadow-sm">
+                <i class="fa-solid fa-envelope text-xs"></i>
+              </div>
+              <a href="mailto:info@viraladsmedia.com"
+                class="hover:text-white transition text-base sm:text-lg font-medium break-all">info@viraladsmedia.com</a>
+            </li>
+            <li class="flex items-start gap-3.5">
+              <div
+                class="w-9 h-9 rounded-xl bg-[#121212] border border-white/10 flex items-center justify-center text-[#EC4D20] shrink-0 shadow-sm mt-0.5">
+                <i class="fa-solid fa-location-dot text-xs"></i>
+              </div>
+              <span class="leading-relaxed text-base sm:text-lg text-zinc-300">B-33, Khatu Shyam Mandir Road, near
+                Max Bazar, Budh Vihar Phase I, Delhi, 110086</span>
+            </li>
+          </ul>
+
+          <!-- Pay Now! Button added to Contact Info Column -->
+          <div class="pt-3">
+            <a href="https://razorpay.me/@viraladsmedia9256" target="_blank"
+              class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-orange-600 to-[#EC4D20] hover:opacity-95 rounded-xl font-bold text-white text-sm tracking-wide transition-all shadow-[0_0_20px_rgba(185,64,16,0.692)] flex items-center justify-center gap-2.5 cursor-pointer">
+              <i class="fa-solid fa-credit-card text-base"></i> Pay Now!
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 5: Certifications & Sponsorships with Divider (Preserving 2-item row grid exactly) -->
+        <!-- Added: col-span-2 sm:col-span-1 -->
+        <div
+          class="col-span-2 sm:col-span-1 space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-6">
+          <div class="flex items-start gap-2 text-[#EC4D20] text-sm font-bold">
+            <i class="fa-solid fa-certificate text-xl mt-1"></i>
+            <h4 class="text-white text-xl sm:text-sm leading-tight">Certifications &<br class="hidden sm:inline">
+              Sponsorships</h4>
+          </div>
+
+          <!-- Strict 2 items in a row grid layout for Certifications & Sponsorships -->
+          <div class="grid grid-cols-2 gap-3 items-center">
+            <img src="Assets/Certification/36.png" alt="Google Partner"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/37.png" alt="Facebook Marketing Partner"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/38.png" alt="ISO Certification"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/39.png" alt="Sponsor 1"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/40.png" alt="Certification 5"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/41.png" alt="Sponsor 2"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/42.png" alt="Certification 6"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <a href="https://www.dmca.com/r/prddr50" target="_blank" class="block w-full">
+              <img src="Assets/Certification/43.png" alt="DMCA Protected"
+                class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Feature Values Strip with Internal Dividers -->
+      <div
+        class="bg-[#0b0b0b] border border-white/10 rounded-2xl p-6 sm:p-8 lg:p-10 grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-6 relative ">
+
+        <!-- Value 1 -->
+        <div class="flex items-start gap-4">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-xs sm:text-sm text-white">Result Driven</h5>
+            <p class="text-zinc-400 text-[11px] mt-0.5">Strategies that deliver measurable growth.</p>
+          </div>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-xs sm:text-sm text-white">Creative Excellence</h5>
+            <p class="text-zinc-400 text-[11px] mt-0.5">Innovative ideas that make your brand stand out.</p>
+          </div>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-xs sm:text-sm text-white">Data Focused</h5>
+            <p class="text-zinc-400 text-[11px] mt-0.5">Insights that drive smarter decisions and better ROI.</p>
+          </div>
+        </div>
+
+        <!-- Value 4 -->
+        <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-xs sm:text-sm text-white">Client First</h5>
+            <p class="text-zinc-400 text-[11px] mt-0.5">Your success is our top priority.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Location Bar -->
+      <div
+        class="pt-6 border-t border-[#EC4D20]/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-mono">
+        <p>Viral Ads Media — <span class="text-[#EC4D20]">Believe</span> &copy; 2025</p>
+        <div class="flex items-center gap-2 text-white">
+          <i class="fa-solid fa-location-dot text-[#EC4D20]"></i>
+          <span>Delhi, India</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <!-- footer end -->
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="./src/script.js"></script>
+  <script src="./src/home.js"></script>
+</body>
+
+</html>
