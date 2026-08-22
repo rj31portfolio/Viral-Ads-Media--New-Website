@@ -6,8 +6,8 @@
     { key: "affordable-logo-and-branding-near-me", name: "Logo & Branding", icon: "fa-pen-nib" },
     { key: "best-influencer-marketing-in-delhi", name: "Influencer Marketing", icon: "fa-users" },
     { key: "best-seo-agency-near-me", name: "SEO Management", icon: "fa-magnifying-glass" },
-    { key: "affordable-logo-and-branding-near-me", name: "Ads Campaign", icon: "fa-rocket" },
-    { key: "best-social-media-agency-in-delhi", name: "Social Media", icon: "fa-share-nodes" },
+    { key: "affordable-ads-campaign-agency-in-delhi-NCR", name: "Ads Campaign", icon: "fa-rocket" },
+    { key: "proffessional-video-editor-in-delhi", name: "Graphics & Editing", icon: "fa-video" },
     { key: "best-social-media-agency-in-delhi", name: "Social Media", icon: "fa-share-nodes" },
   ];
 
@@ -75,7 +75,7 @@
     csGrid.innerHTML = "";
     data.caseStudies.forEach(cs => {
       const item = document.createElement("a");
-      item.href = `/category-records/${catKey}`;
+      item.href = cs.link || `/category-records/${catKey}`;
       item.className = "group block relative rounded-2xl overflow-hidden bg-surface border border-line";
       item.innerHTML = `
         <div class="relative aspect-[16/10] overflow-hidden">
