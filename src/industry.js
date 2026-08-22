@@ -14,7 +14,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
    // 1. Extract the key directly from window.location.search (after the "?")
-   let indSlug = window.location.search.substring(1);
+   let indSlug = window.cleanUrlRoutes?.getRouteSlug("/industry-detail") || "";
     
    // 2. Fallback default if opened without query parameters
    if (!indSlug) {
@@ -106,7 +106,7 @@
     const otherGrid = document.getElementById("otherIndustriesGrid");
     ALL_INDUSTRIES.filter(i => i.slug !== indSlug).forEach(ind => {
       const card = document.createElement("a");
-      card.href = `industry-detail.html?${ind.slug}`;
+      card.href = `/industry-detail/${ind.slug}`;
       card.className = "p-6 rounded-2xl bg-surface border border-line hover:border-accent/40 transition group flex flex-col justify-between";
       card.innerHTML = `
         <div class="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-lg mb-4">

@@ -134,7 +134,7 @@ const POSTS = [
     function renderFeatured(p) {
       const wrap = document.getElementById("featuredPost");
       wrap.innerHTML = `
-        <a href="blog-post.html?slug=${p.slug}" class="media-card group block relative overflow-hidden rounded-sm bg-surface h-[42vh] lg:h-[58vh]" aria-label="Read ${p.title}">
+        <a href="/blog-post/${p.slug}" class="media-card group block relative overflow-hidden rounded-sm bg-surface h-[42vh] lg:h-[58vh]" aria-label="Read ${p.title}">
           <img class="media-img" src="${picsum(p.seed, 1400, 1500, p)}" alt="" loading="lazy" decoding="async">
         </a>
         <div>
@@ -142,7 +142,7 @@ const POSTS = [
             <span class="chip bg-accent text-ink">Featured</span>
             <span class="chip border border-line text-smoke">${p.category}</span>
           </div>
-          <a href="blog-post.html?slug=${p.slug}" class="block group">
+          <a href="/blog-post/${p.slug}" class="block group">
             <h2 class="font-display text-3xl lg:text-5xl tracking-wide leading-tight group-hover:text-accent transition-colors">${p.title}</h2>
           </a>
           <p class="text-smoke mt-4 max-w-lg leading-relaxed">${p.excerpt}</p>
@@ -151,10 +151,10 @@ const POSTS = [
             <p class="font-mono text-xs text-smoke uppercase tracking-wider">${p.author} · ${formatDate(p.date)} · ${p.readTime}</p>
           </div>
           <div class="flex items-center gap-6 mt-7">
-            <a href="blog-post.html?slug=${p.slug}" class="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent">
+            <a href="/blog-post/${p.slug}" class="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent">
               Read Article <span class="group-hover:translate-x-1 transition-transform inline-block">→</span>
             </a>
-            ${p.relatedProject ? `<a href="/category-records?${p.relatedProject}" class="font-mono text-xs uppercase tracking-widest text-smoke hover:text-bone transition-colors">View the case study →</a>` : ""}
+            ${p.relatedProject ? `<a href="/category-records/${p.relatedProject}" class="font-mono text-xs uppercase tracking-widest text-smoke hover:text-bone transition-colors">View the case study →</a>` : ""}
           </div>
         </div>`;
     }
@@ -191,7 +191,7 @@ const POSTS = [
     grid.innerHTML = ""; // Remove previous cards
     filtered.forEach(p => {
       const card = document.createElement("a");
-      card.href = `blog-post.html?slug=${p.slug}`;
+      card.href = `/blog-post/${p.slug}`;
       card.className = "media-card group block grid-item";
       card.innerHTML = `
         <div class="relative overflow-hidden rounded-sm bg-surface h-[32vh] lg:h-[36vh]">

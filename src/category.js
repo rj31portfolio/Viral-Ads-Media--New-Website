@@ -7,14 +7,14 @@
     { key: "best-influencer-marketing-in-delhi", name: "Influencer Marketing", icon: "fa-users" },
     { key: "best-seo-agency-near-me", name: "SEO Management", icon: "fa-magnifying-glass" },
     { key: "affordable-logo-and-branding-near-me", name: "Ads Campaign", icon: "fa-rocket" },
-    { key: "proffessional-video-editor-in-delhi", name: "Graphics & Editing", icon: "fa-video" },
+    { key: "best-social-media-agency-in-delhi", name: "Social Media", icon: "fa-share-nodes" },
     { key: "best-social-media-agency-in-delhi", name: "Social Media", icon: "fa-share-nodes" },
   ];
 
 
   document.addEventListener("DOMContentLoaded", () => {
     // 1. Extract the key directly from window.location.search (after the "?")
-    let catKey = window.location.search.substring(1);
+    let catKey = window.cleanUrlRoutes?.getRouteSlug("/category-records") || "";
     
     // 2. Fallback default if opened without query parameters
     if (!catKey) {
@@ -75,7 +75,7 @@
     csGrid.innerHTML = "";
     data.caseStudies.forEach(cs => {
       const item = document.createElement("a");
-      item.href = cs.link;
+      item.href = `/category-records/${catKey}`;
       item.className = "group block relative rounded-2xl overflow-hidden bg-surface border border-line";
       item.innerHTML = `
         <div class="relative aspect-[16/10] overflow-hidden">
@@ -97,7 +97,7 @@
     otherGrid.innerHTML = "";
     ALL_SERVICES_LIST.filter(s => s.key !== catKey).forEach(serv => {
       const servCard = document.createElement("a");
-      servCard.href = `category-records.html?${serv.key}`;
+      servCard.href = `/category-records/${serv.key}`;
       servCard.className = "p-6 rounded-2xl bg-surface border border-line hover:border-accent/40 transition group flex flex-col justify-between";
       servCard.innerHTML = `
         <div class="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-lg mb-4">

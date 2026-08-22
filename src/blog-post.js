@@ -762,7 +762,7 @@ document.addEventListener("DOMContentLoaded", () => {
     normalizeScroll: true,
   });
 
-  const slug = new URLSearchParams(window.location.search).get("slug");
+  const slug = window.cleanUrlRoutes?.getRouteSlug("/blog-post", "slug") || "";
   const post = POSTS[slug];
 
   if (!post) {
@@ -795,7 +795,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (p.relatedProject) {
       const link = document.getElementById("relatedProjectLink");
-      link.href = `/category-records?${p.relatedProject}`;
+      link.href = `/category-records/${p.relatedProject}`;
       link.classList.remove("hidden");
     }
 
@@ -842,7 +842,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="font-display text-2xl tracking-wide">${p.author}</p>
         <p class="font-mono text-[10px] uppercase tracking-widest text-accent mt-1">${authorInfo.role}</p>
         <p class="text-smoke mt-3 leading-relaxed">${authorInfo.bio}</p>
-        ${otherByAuthor.length ? `<p class="font-mono text-[10px] uppercase tracking-widest text-smoke mt-4">Also by ${p.author}: ${otherByAuthor.map(([s, post2]) => `<a href="blog-post.html?slug=${s}" class="text-bone hover:text-accent transition-colors underline underline-offset-2">${post2.title}</a>`).join(", ")}</p>` : ""}
+        ${otherByAuthor.length ? `<p class="font-mono text-[10px] uppercase tracking-widest text-smoke mt-4">Also by ${p.author}: ${otherByAuthor.map(([s, post2]) => `<a href="/blog-post/${s}" class="text-bone hover:text-accent transition-colors underline underline-offset-2">${post2.title}</a>`).join(", ")}</p>` : ""}
       </div>`;
 
     // Copy-link button
@@ -859,7 +859,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const idx = POST_ORDER.indexOf(postSlug);
     const nextSlug = POST_ORDER[(idx + 1) % POST_ORDER.length];
     const nextPost = POSTS[nextSlug];
-    document.getElementById("nextArticleLink").href = `blog-post.html?slug=${nextSlug}`;
+    document.getElementById("nextArticleLink").href = `/blog-post/${nextSlug}`;
     document.getElementById("nextArticleTitle").textContent = nextPost.title;
   }
 
@@ -875,7 +875,7 @@ document.addEventListener("DOMContentLoaded", () => {
     others.forEach((s) => {
       const p = POSTS[s];
       const card = document.createElement("a");
-      card.href = `blog-post.html?slug=${s}`;
+      card.href = `/blog-post/${s}`;
       card.className = "media-card group block more-article-item";
       card.setAttribute("aria-label", `Read ${p.title}`);
       card.innerHTML = `

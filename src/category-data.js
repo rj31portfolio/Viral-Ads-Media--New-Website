@@ -16,8 +16,8 @@ const CATEGORIES_DATA = {
       { name: "Electric Universe", logo: "Assets/brands/electric universe.png", desc: "Interactive brand showcase portal." }
     ],
     caseStudies: [
-      { title: "Topson Plast Digital Storefront", client: "Topson Plast", year: "2026", img: "./Assets/case-study/topson.png", link: "category-records.html?id=topson-plast-industrial" },
-      { title: "Drapple Global Web Architecture", client: "Drapple", year: "2026", img: "./Assets/case-study/drapple.png", link: "category-records.html?id=drapple-b2b" }
+      { title: "Topson Plast Digital Storefront", client: "Topson Plast", year: "2026", img: "./Assets/case-study/topson.png", link: "/category-records/affordable-web-developer-in-delhi" },
+      { title: "Drapple Global Web Architecture", client: "Drapple", year: "2026", img: "./Assets/case-study/drapple.png", link: "/category-records/affordable-web-developer-in-delhi" }
     ]
   },
   "best-performance-marketing-in-delhi": {
@@ -37,8 +37,8 @@ const CATEGORIES_DATA = {
       { name: "Presco", logo: "Assets/brands/presco.png", desc: "Lead gen pipeline optimization." }
     ],
     caseStudies: [
-      { title: "Allied Taps Scale Sprint", client: "Allied Taps", year: "2025", img: "./Assets/case-study/allied.png", link: "category-records.html?id=allied-taps-home-fittings" },
-      { title: "Saptron Funnel Automation", client: "Saptron", year: "2026", img: "./Assets/case-study/saptron.png", link: "category-records.html?id=saptron-appliances-ecommerce" }
+      { title: "Allied Taps Scale Sprint", client: "Allied Taps", year: "2025", img: "./Assets/case-study/allied.png", link: "/category-records/best-performance-marketing-in-delhi" },
+      { title: "Saptron Funnel Automation", client: "Saptron", year: "2026", img: "./Assets/case-study/saptron.png", link: "/category-records/best-performance-marketing-in-delhi" }
     ]
   },
   "affordable-logo-and-branding-near-me": {
@@ -58,8 +58,8 @@ const CATEGORIES_DATA = {
       { name: "Glamfam", logo: "Assets/brands/Glamfam.png", desc: "Lifestyle brand asset styling." }
     ],
     caseStudies: [
-      { title: "Ocean Beauty Rebrand", client: "Ocean Beauty", year: "2026", img: "./Assets/case-study/ocean.png", link: "category-records.html?id=ocean-beauty-cosmetics" },
-      { title: "Hoot Beauty Identity Suite", client: "Hoot Beauty", year: "2025", img: "./Assets/case-study/hoot.png", link: "category-records.html?id=hoot-beauty-cosmetics" }
+      { title: "Ocean Beauty Rebrand", client: "Ocean Beauty", year: "2026", img: "./Assets/case-study/ocean.png", link: "/category-records/affordable-logo-and-branding-near-me" },
+      { title: "Hoot Beauty Identity Suite", client: "Hoot Beauty", year: "2025", img: "./Assets/case-study/hoot.png", link: "/category-records/affordable-logo-and-branding-near-me" }
     ]
   },
   "best-influencer-marketing-in-delhi": {
@@ -78,8 +78,8 @@ const CATEGORIES_DATA = {
       { name: "Frendz Forever", logo: "Assets/brands/frendz_forever.png", desc: "Ambassador network management." }
     ],
     caseStudies: [
-      { title: "Glamfam Creator Blitz", client: "Glamfam", year: "2026", img: "./Assets/case-study/glamfam.png", link: "category-records.html?id=glamfam-lifestyle" },
-      { title: "Frendz Forever", client: "Frendz Forever", year: "2026", img: "./Assets/case-study/frendz.png", link: "category-records.html?id=frendz-forever-petcare" }
+      { title: "Glamfam Creator Blitz", client: "Glamfam", year: "2026", img: "./Assets/case-study/glamfam.png", link: "/category-records/best-influencer-marketing-in-delhi" },
+      { title: "Frendz Forever", client: "Frendz Forever", year: "2026", img: "./Assets/case-study/frendz.png", link: "/category-records/best-influencer-marketing-in-delhi" }
     ]
   },
   "best-seo-agency-near-me": {
@@ -98,8 +98,8 @@ const CATEGORIES_DATA = {
       { name: "TDII", logo: "Assets/brands/tdii.png", desc: "B2B technical search architecture." }
     ],
     caseStudies: [
-      { title: "Pixel Cables Search Domination", client: "Pixel Cables", year: "2025", img: "./Assets/case-study/pixel.png", link: "category-records.html?id=pixel-cables-ecommerce" },
-      { title: "TDII", client: "TDII", year: "2025", img: "./Assets/case-study/tdii.png", link: "category-records.html?id=tdii-b2b" },
+      { title: "Pixel Cables Search Domination", client: "Pixel Cables", year: "2025", img: "./Assets/case-study/pixel.png", link: "/category-records/best-seo-agency-near-me" },
+      { title: "TDII", client: "TDII", year: "2025", img: "./Assets/case-study/tdii.png", link: "/category-records/best-seo-agency-near-me" },
     ]
   },
   "affordable-ads-campaign-agency-in-delhi-NCR": {
@@ -118,8 +118,8 @@ const CATEGORIES_DATA = {
       { name: "Tiptop", logo: "Assets/brands/tiptop.png", desc: "Targeted regional acquisition campaigns." }
     ],
     caseStudies: [
-      { title: "SS Light National Push", client: "SS Light", year: "2026", img: "./Assets/case-study/ss.png", link: "category-records.html?id=ss-light-lighting" },
-      { title: "Tiptop", client: "Tiptop", year: "2026", img: "./Assets/case-study/tiptop.png", link: "category-records.html?id=tiptop-retail" },
+      { title: "SS Light National Push", client: "SS Light", year: "2026", img: "./Assets/case-study/ss.png", link: "/category-records/affordable-ads-campaign-agency-in-delhi-NCR" },
+      { title: "Tiptop", client: "Tiptop", year: "2026", img: "./Assets/case-study/tiptop.png", link: "/category-records/affordable-ads-campaign-agency-in-delhi-NCR" },
     ]
   },
   "proffessional-video-editor-in-delhi": {
@@ -138,8 +138,8 @@ const CATEGORIES_DATA = {
       { name: "Hoot Beauty", logo: "Assets/brands/hoot beauty.png", desc: "High-retention social reel editing." }
     ],
     caseStudies: [
-      { title: "DD Carpet Cinematic Showcase", client: "DD Carpet", year: "2025", img: "./Assets/case-study/dd_carpet.png", link: "category-records.html?id=dd-carpet-furnishing" },
-      { title: "Hoot Beauty", client: "Hoot Beauty", year: "2025", img: "./Assets/case-study/hoot.png", link: "category-records.html?id=hoot-beauty-cosmetics" },
+      { title: "DD Carpet Cinematic Showcase", client: "DD Carpet", year: "2025", img: "./Assets/case-study/dd_carpet.png", link: "/category-records/proffessional-brand-shoots-in-delhi" },
+      { title: "Hoot Beauty", client: "Hoot Beauty", year: "2025", img: "./Assets/case-study/hoot.png", link: "/category-records/affordable-logo-and-branding-near-me" },
     ]
   },
   "best-social-media-agency-in-delhi": {
@@ -158,8 +158,8 @@ const CATEGORIES_DATA = {
       { name: "Glamfam", logo: "Assets/brands/Glamfam.png", desc: "Daily editorial social programming." }
     ],
     caseStudies: [
-      { title: "Frendz Forever Community Build", client: "Frendz Forever", year: "2026", img: "./Assets/case-study/frendz.png", link: "category-records.html?id=frendz-forever-petcare" },
-      { title: "Glamfam", client: "Glamfam", year: "2026", img: "./Assets/case-study/glamfam.png", link: "category-records.html?id=glamfam-lifestyle" }
+      { title: "Frendz Forever Community Build", client: "Frendz Forever", year: "2026", img: "./Assets/case-study/frendz.png", link: "/category-records/best-influencer-marketing-in-delhi" },
+      { title: "Glamfam", client: "Glamfam", year: "2026", img: "./Assets/case-study/glamfam.png", link: "/category-records/best-influencer-marketing-in-delhi" }
     ]
   }
 };

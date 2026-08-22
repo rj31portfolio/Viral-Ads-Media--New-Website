@@ -13,7 +13,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     // 1. Get everything after the "?" in the URL (e.g., gets "best-seo-agency-near-me")
-    let slug = window.location.search.substring(1);
+    let slug = window.cleanUrlRoutes?.getRouteSlug("/service") || "";
 
     // 2. Default fallback if the page is opened without a query
     if (!slug) {
@@ -141,7 +141,7 @@
     const card = document.createElement("a");
     
     // Update this line to match your ? format
-    card.href = `service.html?${serv.slug}`;
+    card.href = `/service/${serv.slug}`;
     
     card.className = "p-6 rounded-2xl bg-surface border border-line hover:border-orange/40 transition group flex flex-col justify-between";
     card.innerHTML = `

@@ -31,6 +31,75 @@
     "services.html": "/services",
   };
 
+  const DYNAMIC_ROUTE_CONFIG = {
+    "service.html": {
+      cleanBase: "/service",
+      getSlug(url) {
+        return url.search ? url.search.slice(1) : "";
+      },
+    },
+    "blog-post.html": {
+      cleanBase: "/blog-post",
+      getSlug(url) {
+        return url.searchParams.get("slug") || "";
+      },
+    },
+    "category-records.html": {
+      cleanBase: "/category-records",
+      getSlug(url) {
+        return url.search.slice(1).replace(/^id=/, "");
+      },
+    },
+    "industry-detail.html": {
+      cleanBase: "/industry-detail",
+      getSlug(url) {
+        return url.search ? url.search.slice(1) : "";
+      },
+    },
+  };
+
+  function buildCleanDynamicPath(fileName, slug) {
+    const config = DYNAMIC_ROUTE_CONFIG[fileName];
+    if (!config || !slug) {
+      return null;
+    }
+
+    return `${config.cleanBase}/${encodeURIComponent(slug)}`;
+  }
+
+  function getPathSlug(basePath) {
+    const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+    if (currentPath === basePath) {
+      return "";
+    }
+
+    if (!currentPath.startsWith(`${basePath}/`)) {
+      return "";
+    }
+
+    return decodeURIComponent(currentPath.slice(basePath.length + 1));
+  }
+
+  function getRouteSlug(basePath, fallbackSearchParam) {
+    const pathSlug = getPathSlug(basePath);
+    if (pathSlug) {
+      return pathSlug;
+    }
+
+    if (fallbackSearchParam) {
+      const searchSlug = new URLSearchParams(window.location.search).get(fallbackSearchParam);
+      if (searchSlug) {
+        return searchSlug;
+      }
+    }
+
+    const rawSearch = window.location.search.startsWith("?")
+      ? window.location.search.slice(1)
+      : window.location.search;
+
+    return rawSearch.replace(/^id=/, "");
+  }
+
   function toCleanHref(rawHref) {
     if (!rawHref || rawHref.startsWith("#")) {
       return rawHref;
@@ -43,7 +112,16 @@
       }
 
       const fileName = url.pathname.split("/").pop();
-      if (!fileName || !(fileName in FILE_TO_CLEAN_PATH)) {
+      if (!fileName) {
+        return rawHref;
+      }
+
+      const dynamicPath = buildCleanDynamicPath(fileName, DYNAMIC_ROUTE_CONFIG[fileName]?.getSlug(url));
+      if (dynamicPath) {
+        return `${dynamicPath}${url.hash}`;
+      }
+
+      if (!(fileName in FILE_TO_CLEAN_PATH)) {
         return rawHref;
       }
 
@@ -71,12 +149,15 @@
       return;
     }
 
-    window.history.replaceState({}, "", `${cleanPath}${window.location.search}${window.location.hash}`);
+    const dynamicPath = buildCleanDynamicPath(fileName, DYNAMIC_ROUTE_CONFIG[fileName]?.getSlug(new URL(window.location.href)));
+    const nextPath = dynamicPath || cleanPath;
+    window.history.replaceState({}, "", `${nextPath}${window.location.hash}`);
   }
 
   window.cleanUrlRoutes = Object.freeze({
     routes: ROUTES,
     toCleanHref,
+    getRouteSlug,
   });
 
   document.addEventListener("DOMContentLoaded", () => {

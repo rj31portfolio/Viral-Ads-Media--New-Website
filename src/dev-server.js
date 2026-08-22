@@ -16,15 +16,47 @@ const ROUTES = {
   "/services": "/services.html",
 };
 
+const DYNAMIC_ROUTE_RESOLVERS = [
+  {
+    prefix: "/service/",
+    resolve: (slug) => `/service.html?${encodeURIComponent(slug)}`,
+  },
+  {
+    prefix: "/blog-post/",
+    resolve: (slug) => `/blog-post.html?slug=${encodeURIComponent(slug)}`,
+  },
+  {
+    prefix: "/category-records/",
+    resolve: (slug) => `/category-records.html?${encodeURIComponent(slug)}`,
+  },
+  {
+    prefix: "/industry-detail/",
+    resolve: (slug) => `/industry-detail.html?${encodeURIComponent(slug)}`,
+  },
+];
+
 function resolveRoute(requestUrl) {
   const url = new URL(requestUrl, "http://localhost");
   const resolvedPath = ROUTES[url.pathname];
 
-  if (!resolvedPath) {
-    return requestUrl;
+  if (resolvedPath) {
+    return `${resolvedPath}${url.search}`;
   }
 
-  return `${resolvedPath}${url.search}`;
+  for (const route of DYNAMIC_ROUTE_RESOLVERS) {
+    if (!url.pathname.startsWith(route.prefix)) {
+      continue;
+    }
+
+    const slug = decodeURIComponent(url.pathname.slice(route.prefix.length));
+    if (!slug) {
+      return requestUrl;
+    }
+
+    return `${route.resolve(slug)}${url.hash}`;
+  }
+
+  return requestUrl;
 }
 
 function cleanUrlMiddleware(req, _res, next) {
