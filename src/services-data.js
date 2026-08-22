@@ -1,5 +1,7 @@
 const SINGLE_SERVICE_DATABASE = {
   "best-social-media-agency-in-delhi": {
+    metaTitle: "Social Media Marketing Agency in Delhi | Creative Growth Partner",
+    metaDescription: "Transform your brand presence with Viral Ads Media, a creative social media marketing agency in Delhi offering reels, content strategy, paid ads and growth solutions.",
     heading: `Social Media <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">बवाल मचाओ</span> — Scale Community!`,
     shortDesc: "We plan, create, and manage high-engagement feeds across Instagram, LinkedIn, and Facebook that turn casual viewers into loyal brand advocates.",
     tools: [
@@ -29,6 +31,8 @@ const SINGLE_SERVICE_DATABASE = {
     ]
   },
   "best-seo-agency-near-me": {
+    metaTitle: "SEO Agency in Delhi NCR | Data-Driven Growth Partner - Viral Ads Media",
+    metaDescription: "Partner with Viral Ads Media, a result-driven SEO agency in Delhi delivering SEO audits, technical optimization, content marketing and strategies that increase traffic and leads.",
     heading: `Google पर <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">नंबर 1</span> Rank करो!`,
     shortDesc: "Dominate search engine result pages with technical audits, semantic keyword mapping, and high-authority backlink campaigns that compound traffic.",
     tools: [
@@ -58,6 +62,8 @@ const SINGLE_SERVICE_DATABASE = {
     ]
   },
   "affordable-web-developer-in-delhi": {
+    metaTitle: "Website Designing Agency Delhi NCR | Creative Websites That Convert",
+    metaDescription: "Transform your digital presence with Viral Ads Media, a creative website designing agency in Delhi NCR offering custom web design, ecommerce solutions and conversion-focused experiences.",
     heading: `Aesthetic वेबसाइट्स जो <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">कन्वर्जन</span> कराएं!`,
     shortDesc: "Stop losing customers to clunky templates. We design bespoke, lightning-fast digital storefronts engineered for maximum conversion.",
     tools: [
@@ -85,6 +91,8 @@ const SINGLE_SERVICE_DATABASE = {
     ]
   },
   "best-performance-marketing-in-delhi": {
+    metaTitle: "Performance Marketing Agency in Delhi NCR | Google Ads, Meta Ads & Growth",
+    metaDescription: "Scale your business with Viral Ads Media, a performance marketing agency in Delhi creating high-converting ad campaigns, smart funnels and ROI-focused strategies for growth.",
     heading: `हर Ad पर मिले <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">बेहतरीन</span> ROAS!`,
     shortDesc: "Scale revenue predictably across Meta and Google Ads with data-driven funnels, rigorous A/B creative testing, and profit-focused attribution.",
     tools: [
@@ -110,6 +118,8 @@ const SINGLE_SERVICE_DATABASE = {
     ]
   },
   "affordable-logo-and-branding-near-me": {
+    metaTitle: "Best Logo & Branding Agency in Delhi NCR| Logo Design, Identity & Creative Strategy",
+    metaDescription: "Transform your business identity with Viral Ads Media, a branding agency in Delhi creating strategic logos, visual identities and creative brand experiences that inspire growth.",
     heading: `Brand Identity जो कोई <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">भुला न</span> पाए!`,
     shortDesc: "Craft iconic visual systems, typography guidelines, and brand narratives that set your business apart in competitive markets.",
     tools: [
@@ -161,6 +171,8 @@ const SINGLE_SERVICE_DATABASE = {
   //   ]
   // },
   "best-influencer-marketing-in-delhi": {
+    metaTitle: "Influencer Marketing Agency Delhi NCR | Creators, Reels & Brand Growth",
+    metaDescription: "Grow your brand with Viral Ads Media, an influencer marketing agency in Delhi NCR creating viral creator campaigns, Instagram reels, collaborations and content strategies that drive results.",
     heading: `बड़े Influencers के साथ करो <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">धमाका!</span>`,
     shortDesc: "Partner with authentic creator voices to drive massive organic reach, viral unboxings, and high-converting social proof.",
     tools: [
@@ -206,6 +218,8 @@ const SINGLE_SERVICE_DATABASE = {
   //   ]
   // },
   "proffessional-brand-shoots-in-delhi": {
+    metaTitle: "Professional Brand Shoot Agency in Delhi NCR | Viral Ads Media",
+    metaDescription: "Viral Ads Media offers professional brand shoots in Delhi NCR, creating high-quality product photography, campaign visuals and creative content that helps brands stand out.",
     heading: `Cinematic Visuals जो सीधे <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">दिल जीत</span> लें!`,
     shortDesc: "Professional corporate photography, commercial product videography, and lifestyle shoots designed to elevate your brand prestige instantly.",
     tools: [

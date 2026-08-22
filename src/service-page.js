@@ -26,8 +26,14 @@
       return;
     }
 
+    // Apply page-specific SEO metadata from the service dataset.
+    document.title = data.metaTitle || `${data.heading.replace(/<[^>]*>?/gm, '')} — Viral Ads Media`;
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+    if (descriptionMeta && data.metaDescription) {
+      descriptionMeta.setAttribute("content", data.metaDescription);
+    }
+
     // Populate Hero Heading / Short Desc
-    document.title = `${data.heading.replace(/<[^>]*>?/gm, '')} — Viral Ads Media`;
     document.getElementById("servHeading").innerHTML = data.heading;
     document.getElementById("servShortDesc").textContent = data.shortDesc;
 
