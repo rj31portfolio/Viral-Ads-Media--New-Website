@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm-run-all --parallel dev:css dev:server",
     "dev:css": "node ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./src/input.css -o ./src/style.css --watch",
-    "dev:server": "browser-sync start --server --files './**/*.{html,css,js}'",
+    "dev:server": "node ./src/dev-server.js",
     "build:css": "node ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./src/input.css -o ./src/style.css"
   },
   "devDependencies": {

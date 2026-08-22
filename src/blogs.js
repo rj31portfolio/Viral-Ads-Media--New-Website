@@ -1,7 +1,6 @@
 /* =================================================================
    POST DATA — add an object here to publish a new article.
-   Cards link to /blog-post.html?slug=<slug> (build that page the
-   same way /project.html was built for the portfolio, when ready).
+   Cards link to /blog-post?slug=<slug>.
 ================================================================= */
 
 const POSTS = [
@@ -155,7 +154,7 @@ const POSTS = [
             <a href="blog-post.html?slug=${p.slug}" class="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent">
               Read Article <span class="group-hover:translate-x-1 transition-transform inline-block">→</span>
             </a>
-            ${p.relatedProject ? `<a href="/project.html?id=${p.relatedProject}" class="font-mono text-xs uppercase tracking-widest text-smoke hover:text-bone transition-colors">View the case study →</a>` : ""}
+            ${p.relatedProject ? `<a href="/category-records?${p.relatedProject}" class="font-mono text-xs uppercase tracking-widest text-smoke hover:text-bone transition-colors">View the case study →</a>` : ""}
           </div>
         </div>`;
     }

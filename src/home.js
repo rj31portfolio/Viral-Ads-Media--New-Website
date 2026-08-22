@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Smooth Scroll Initialization (Lenis)
   // ==========================================
   try {
-      if (!window.location.pathname.includes('blog-post.html')) {
+      if (!/\/blog-post(?:\.html)?$/.test(window.location.pathname)) {
           const lenis = new Lenis({
               duration: 1.2,
               easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
