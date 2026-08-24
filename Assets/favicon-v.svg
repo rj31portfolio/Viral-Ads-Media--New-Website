@@ -1,8 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
   <title>Viral Ads Media favicon</title>
-  <rect width="64" height="64" rx="18" fill="#120700" />
+  <rect width="128" height="128" fill="#000"/>
+
   <path
-    d="M16 14h11.5L32 28.6 36.5 14H48L37.2 50H26.8L16 14Z"
-    fill="#ff7a00"
+    d="M20 98
+       A50 50 0 0 1 76 18"
+    fill="none"
+    stroke="#fff"
+    stroke-width="9"
+    stroke-linecap="round"
+  />
+  <path
+    d="M34 98
+       A37 37 0 0 1 76 33"
+    fill="none"
+    stroke="#fff"
+    stroke-width="8"
+    stroke-linecap="round"
+  />
+  <path
+    d="M48 98
+       A24 24 0 0 1 76 48"
+    fill="none"
+    stroke="#fff"
+    stroke-width="7"
+    stroke-linecap="round"
+  />
+
+  <path
+    d="M80 12
+       V90
+       L63 107
+       L46 90"
+    fill="none"
+    stroke="#fff"
+    stroke-width="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M57 108
+       H93"
+    fill="none"
+    stroke="#fff"
+    stroke-width="10"
+    stroke-linecap="round"
   />
 </svg>
