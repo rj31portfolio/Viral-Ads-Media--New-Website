@@ -51,6 +51,58 @@
   <link href="./src/input.css" rel="stylesheet" />
   <link href="./src/style.css" rel="stylesheet" />
   <link href="./src/home.css" rel="stylesheet" />
+  <style>
+    body.popup-open { overflow: hidden; }
+    .home-popup-overlay{position:fixed;inset:0;z-index:140;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(6,4,14,.42);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:opacity .24s ease,visibility .24s ease}
+    .home-popup-overlay.is-visible{opacity:1;visibility:visible}
+    .home-popup-card{position:relative;width:min(100%,500px);height:540px;max-height:min(540px,calc(100vh - 40px));margin:0 auto;border-radius:26px;background:linear-gradient(180deg,#fff 0%,#f7f2ff 100%);box-shadow:0 28px 70px rgba(11,8,25,.34);border:1px solid rgba(114,74,201,.16);color:#160d2b;overflow:hidden;transform:translateY(14px) scale(.98);transition:transform .24s ease}
+    .home-popup-overlay.is-visible .home-popup-card{transform:translateY(0) scale(1)}
+    .home-popup-card:before{content:"";position:absolute;left:-66px;top:-78px;width:220px;height:220px;border-radius:999px;background:radial-gradient(circle,rgba(168,85,247,.16),transparent 68%);pointer-events:none}
+    .home-popup-card:after{content:"";position:absolute;right:-70px;bottom:-70px;width:180px;height:180px;border-radius:999px;background:radial-gradient(circle,rgba(124,58,237,.12),transparent 70%);pointer-events:none}
+    .home-popup-close{position:absolute;top:14px;right:14px;z-index:3;width:32px;height:32px;border:0;border-radius:999px;background:#23133c;color:#fff;font-size:17px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 12px 22px rgba(35,19,60,.24)}
+    .home-popup-shell{position:relative;z-index:1;padding:14px;display:grid;grid-template-rows:auto auto auto auto;gap:9px;overflow-y:auto}
+    .home-popup-top{display:grid;grid-template-columns:156px 1fr;gap:12px;align-items:stretch}
+    .home-popup-brand{display:flex;flex-direction:column;justify-content:space-between;padding:14px;border:1px solid rgba(94,63,171,.12);border-radius:20px;background:linear-gradient(180deg,#ffffff 0%,#f4edff 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.78)}
+    .home-popup-pill{display:inline-flex;align-items:center;align-self:flex-start;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,#7c3aed,#a855f7);color:#fff;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .home-popup-brand-row{display:flex;flex-direction:column;gap:8px;align-items:flex-start;margin-top:10px}
+    .home-popup-brand-logo{width:106px;height:auto;display:block;object-fit:contain}
+    .home-popup-brand-copy{display:flex;flex-direction:column;gap:4px}
+    .home-popup-brand-sub{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6d28d9}
+    .home-popup-brand-title{font-size:21px;font-weight:900;letter-spacing:-.04em;color:#1d1032;line-height:1}
+    .home-popup-divider{display:flex;align-items:center;gap:8px;margin:8px 0 7px;color:#74678f;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .home-popup-divider:before,.home-popup-divider:after{content:"";height:1px;flex:1;background:rgba(76,29,149,.14)}
+    .home-popup-vam-logo{width:92px;height:auto;display:block}
+    .home-popup-brand-note p{margin:7px 0 0;font-size:9px;line-height:1.4;color:#5b5470}
+    .home-popup-copy{display:flex;flex-direction:column;justify-content:center;padding:4px 2px 4px 0}
+    .home-popup-kicker{display:inline-flex;align-items:center;gap:6px;color:#6d28d9;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .home-popup-kicker:before{content:"";width:22px;height:2px;border-radius:999px;background:#6d28d9}
+    .home-popup-copy h2{margin:7px 0 0;font-size:15px;font-weight:800;line-height:1.14;color:#1a1230}
+    .home-popup-copy h2 strong{display:block;margin-top:4px;color:#6d28d9;font-size:28px;line-height:1.02;letter-spacing:-.05em}
+    .home-popup-copy p{margin:7px 0 0;color:#5f5674;font-size:11px;line-height:1.45;max-width:34ch}
+    .home-popup-points{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
+    .home-popup-point{display:flex;align-items:flex-start;gap:7px;padding:7px 8px;border-radius:13px;background:rgba(109,40,217,.05);border:1px solid rgba(109,40,217,.08)}
+    .home-popup-point-mark{width:20px;height:20px;border-radius:999px;background:#efe6ff;color:#6d28d9;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;flex:0 0 auto}
+    .home-popup-point span:last-child{font-size:9px;font-weight:700;line-height:1.28;color:#433a57}
+    .home-popup-offer{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#5320b1 0%,#7c3aed 52%,#4c1d95 100%);color:#fff;box-shadow:0 16px 34px rgba(91,33,182,.24)}
+    .home-popup-offer:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.07) 0 1px,transparent 1px 100%),linear-gradient(180deg,rgba(255,255,255,.04) 0 1px,transparent 1px 100%);background-size:120px 120px,120px 120px;opacity:.35;pointer-events:none}
+    .home-popup-offer:after{content:"";position:absolute;right:-32px;top:-22px;width:132px;height:132px;border-radius:999px;background:radial-gradient(circle,rgba(255,255,255,.2),transparent 68%);pointer-events:none}
+    .home-popup-offer-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr 58px;gap:10px;align-items:center;padding:12px}
+    .home-popup-offer-tag{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;background:#f8e71c;color:#35155e;font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .home-popup-offer-value{margin-top:5px;font-size:33px;line-height:.9;font-weight:900;letter-spacing:-.06em}.home-popup-offer-value span{font-size:14px;vertical-align:top;margin-left:1px}
+    .home-popup-offer-text{margin-top:3px;font-size:10px;font-weight:600;line-height:1.28;color:rgba(255,255,255,.92)}
+    .home-popup-code-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.8);text-transform:uppercase;letter-spacing:.08em}
+    .home-popup-code-row{display:flex;align-items:center;gap:7px;margin-top:7px}
+    .home-popup-code{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 11px;border-radius:11px;border:1px solid rgba(255,255,255,.28);background:rgba(18,10,34,.24);font-size:14px;font-weight:900;letter-spacing:.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+    .home-popup-copy-btn{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 12px;border-radius:11px;border:1px solid rgba(255,255,255,.22);background:#fff;color:#5b21b6;font-size:11px;font-weight:800;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease}
+    .home-popup-copy-btn.is-copied{background:#dcfce7;color:#166534;border-color:#86efac}
+    .home-popup-code-copy{margin-top:5px;font-size:9px;line-height:1.35;color:rgba(255,255,255,.82)}
+    .home-popup-stack{display:flex;justify-content:center;align-items:center;position:relative;min-height:66px}.home-popup-stack:before,.home-popup-stack:after{content:"";position:absolute;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}.home-popup-stack:before{width:34px;height:48px;transform:translate(7px,0) rotate(-10deg)}.home-popup-stack:after{width:34px;height:48px;transform:translate(-9px,7px) rotate(12deg)}.home-popup-stack-core{position:relative;width:39px;height:54px;border-radius:14px;background:linear-gradient(180deg,#a78bfa 0%,#6d28d9 100%);border:1px solid rgba(255,255,255,.34);box-shadow:0 12px 24px rgba(31,8,73,.34)}.home-popup-stack-core:before,.home-popup-stack-core:after{content:"";position:absolute;left:8px;right:8px;height:5px;border-radius:999px;background:rgba(255,255,255,.38)}.home-popup-stack-core:before{top:13px}.home-popup-stack-core:after{top:25px}.home-popup-burst{position:absolute;right:-1px;bottom:4px;width:26px;height:26px;border-radius:999px;background:radial-gradient(circle,#c4b5fd 0%,#8b5cf6 52%,#6d28d9 100%);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900}
+    .home-popup-features{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}.home-popup-feature{min-height:56px;border-radius:14px;background:rgba(255,255,255,.92);border:1px solid rgba(102,67,179,.1);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:7px 5px;text-align:center;box-shadow:0 8px 18px rgba(95,64,165,.06)}.home-popup-feature-icon{width:24px;height:24px;border-radius:9px;background:linear-gradient(180deg,#f4f0ff 0%,#ede7ff 100%);border:1px solid rgba(109,40,217,.1);color:#6d28d9;display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:900}.home-popup-feature span{color:#4f4565;font-size:8px;font-weight:700;line-height:1.2}
+    .home-popup-actions{display:flex;flex-direction:column;align-items:center;gap:8px}.home-popup-cta{display:inline-flex;align-items:center;justify-content:center;min-width:min(100%,255px);min-height:40px;padding:0 16px;border-radius:13px;border:0;background:linear-gradient(90deg,#6d28d9 0%,#7c3aed 100%);color:#fff;font-size:13px;font-weight:800;letter-spacing:.01em;text-decoration:none;box-shadow:0 14px 24px rgba(109,40,217,.22)}.home-popup-link{color:#6d28d9;font-size:10px;font-weight:700;text-decoration:none}
+    @media (max-width:560px){.home-popup-overlay{padding:12px}.home-popup-card{width:min(100%,390px);height:auto;max-height:calc(100vh - 24px);border-radius:22px}.home-popup-shell{padding:13px;display:flex;flex-direction:column;gap:9px}.home-popup-top,.home-popup-offer-inner,.home-popup-points{grid-template-columns:1fr}.home-popup-brand{gap:12px}.home-popup-brand-logo{width:120px}.home-popup-copy{padding:0}.home-popup-copy h2{font-size:15px}.home-popup-copy h2 strong{font-size:25px}.home-popup-features{grid-template-columns:repeat(2,minmax(0,1fr))}.home-popup-stack{min-height:54px}.home-popup-code-row{flex-wrap:wrap}.home-popup-code,.home-popup-copy-btn{width:100%}}
+    @media (max-width:420px){.home-popup-overlay{padding:10px}.home-popup-card{width:100%;max-height:calc(100vh - 20px);border-radius:20px}.home-popup-shell{padding:12px}.home-popup-features{grid-template-columns:1fr}.home-popup-feature{min-height:54px;flex-direction:row;justify-content:flex-start;text-align:left;padding:10px 12px}.home-popup-cta{width:100%;min-width:0}}
+  </style>
+
 </head>
 
 <body class="text-white elms-sans min-h-screen overflow-x-hidden selection:text-white z-1">
@@ -222,7 +274,7 @@
                 <h4 class="font-bold text-sm text-white">Education</h4>
                 <p class="text-xs text-zinc-400 mt-0.5">Build powerful online presence</p>
               </a>
-              <a href="industry-detail.html?fashion-marketing-services"
+                        <a href="industry-detail.html?fashion-marketing-services"
                 class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
                 <h4 class="font-bold text-sm text-white">Fashion</h4>
                 <p class="text-xs text-zinc-400 mt-0.5">Create digital brand identity</p>
@@ -328,7 +380,7 @@
             class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Performance
             Marketing</a>
           <a href="services.html" class="block text-sm font-semibold text-[var(--primary-color)] pt-1">View All Services
-            ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢</a>
+            â†’</a>
         </div>
       </div>
 
@@ -363,7 +415,7 @@
           <a href="industry-detail.html?cosmetics-marketing-service"
             class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Cosmetics</a>
           <a href="industries.html" class="block text-sm font-semibold text-[var(--primary-color)] pt-1">View All
-            Industries Matrix →</a>
+            Industries Matrix â†’</a>
         </div>
       </div>
 
@@ -383,6 +435,65 @@
 
   <!-- header end -->
 
+  <div class="home-popup-overlay" data-home-popup>
+    <div class="home-popup-card" role="dialog" aria-modal="true" aria-labelledby="home-popup-title">
+      <button class="home-popup-close" type="button" aria-label="Close popup" data-popup-close>&times;</button>
+      <div class="home-popup-shell">
+        <div class="home-popup-top">
+          <div class="home-popup-brand">
+            <span class="home-popup-pill">New Partnership</span>
+            <div class="home-popup-brand-row">
+              <img class="home-popup-brand-logo" src="Assets/popup/hostinger-partner-logo.webp" alt="Hostinger partner logo" />
+              <div class="home-popup-brand-copy">
+                <span class="home-popup-brand-sub">Official Partner</span>
+                <span class="home-popup-brand-title">Hostinger</span>
+              </div>
+            </div>
+            <div class="home-popup-brand-note">
+              <div class="home-popup-divider">Presented by</div>
+              <img class="home-popup-vam-logo" src="Assets/popup/logo-black.png" alt="Viral Ads Media logo" />
+              <p>Official partner offer for hosting and domain setup.</p>
+            </div>
+          </div>
+          <div class="home-popup-copy">
+            <div class="home-popup-kicker">Hosting Partnership Offer</div>
+            <h2 id="home-popup-title">We Are<br /><strong>Hostinger Verified Partner</strong></h2>
+            <p>Get hosting and domains with an exclusive Viral Ads Media offer.</p>
+            <div class="home-popup-points">
+              <div class="home-popup-point"><span class="home-popup-point-mark">1</span><span>20% off on Hostinger services</span></div>
+              <div class="home-popup-point"><span class="home-popup-point-mark">2</span><span>Copy the promo code and use it at checkout</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="home-popup-offer">
+          <div class="home-popup-offer-inner">
+            <div>
+              <span class="home-popup-offer-tag">Exclusive Offer</span>
+              <div class="home-popup-offer-value">20<span>%</span> OFF</div>
+              <div class="home-popup-offer-text">on hosting, domains and website tools</div>
+            </div>
+            <div>
+              <div class="home-popup-code-label">Promotion Code</div>
+              <div class="home-popup-code-row">
+                <div class="home-popup-code" data-copy-code>VIRALADSMEDIA</div>
+                <button class="home-popup-copy-btn" type="button" data-copy-btn>Copy Code</button>
+              </div>
+              <div class="home-popup-code-copy">Click once to copy the code and paste it directly during checkout.</div>
+            </div>
+            <div class="home-popup-stack" aria-hidden="true">
+              <div class="home-popup-stack-core"></div>
+              <div class="home-popup-burst">%</div>
+            </div>
+          </div>
+        </div>
+        <div class="home-popup-actions">
+          <a class="home-popup-cta" href="https://www.hostinger.com/?REFERRALCODE=VIRALADSMEDIA" target="_blank" rel="noopener noreferrer">Claim 20% Discount Now</a>
+          <a class="home-popup-link" href="https://www.hostinger.com/" target="_blank" rel="noopener noreferrer">Learn More About Hostinger</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Hero Section Start (Left-aligned for all screen sizes) -->
   <section class="relative w-full min-h-screen overflow-hidden flex items-start pt-28 sm:pt-32 lg:pt-36 pb-10">
     <video autoplay muted loop playsinline class="absolute w-full h-full object-cover z-0">
@@ -399,14 +510,10 @@
       <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black leading-tight mb-5 text-left">
         Ideas
         <span
-          class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-2 px-3 py-1 rotate-[-2deg] hindi">
-          हमारे होते हैं...
-        </span> <br>
+          class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-2 px-3 py-1 rotate-[-2deg] hindi">हमारे होते हैं...</span> <br>
         Viral Moment
         <span
-          class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-2 px-3 py-1 rotate-[-2deg] hindi">
-          आपका होता है!
-        </span>
+          class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white mt-2 px-3 py-1 rotate-[-2deg] hindi">आपका होता है!</span>
       </h1>
 
       <p class="mt-4 text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed text-left">
@@ -548,7 +655,7 @@
             class="absolute bottom-0 left-0 right-0 p-3 sm:p-6 md:p-8 flex items-end justify-between pointer-events-none">
             <div>
               <span class="font-mono text-[9px] sm:text-xs text-[#EC4D20] tracking-widest uppercase block mb-1">Brand
-                Launch Ãƒâ€šÃ‚Â· 2026</span>
+                Launch · 2026</span>
               <h3
                 class="font-bold text-sm sm:text-2xl md:text-3xl text-white group-hover:text-[#EC4D20] transition-colors">
                 TOPSON PLAST</h3>
@@ -574,7 +681,7 @@
             class="absolute bottom-0 left-0 right-0 p-3 sm:p-6 md:p-8 flex items-end justify-between pointer-events-none">
             <div>
               <span class="font-mono text-[9px] sm:text-xs text-[#EC4D20] tracking-widest uppercase block mb-1">Content
-                Series Ãƒâ€šÃ‚Â· 2026</span>
+                Series · 2026</span>
               <h3
                 class="font-bold text-sm sm:text-2xl md:text-3xl text-white group-hover:text-[#EC4D20] transition-colors">
                 DRAPPLE</h3>
@@ -600,7 +707,7 @@
             class="absolute bottom-0 left-0 right-0 p-3 sm:p-6 md:p-8 flex items-end justify-between pointer-events-none">
             <div>
               <span class="font-mono text-[9px] sm:text-xs text-[#EC4D20] tracking-widest uppercase block mb-1">Social
-                Campaign Ãƒâ€šÃ‚Â· 2025</span>
+                Campaign · 2025</span>
               <h3
                 class="font-bold text-sm sm:text-2xl md:text-3xl text-white group-hover:text-[#EC4D20] transition-colors">
                 ALLIED TAPS</h3>
@@ -626,7 +733,7 @@
             class="absolute bottom-0 left-0 right-0 p-3 sm:p-6 md:p-8 flex items-end justify-between pointer-events-none">
             <div>
               <span class="font-mono text-[9px] sm:text-xs text-[#EC4D20] tracking-widest uppercase block mb-1">Global
-                Launch Ãƒâ€šÃ‚Â· 2026</span>
+                Launch · 2026</span>
               <h3
                 class="font-bold text-sm sm:text-2xl md:text-3xl text-white group-hover:text-[#EC4D20] transition-colors">
                 OCEAN BEAUTY</h3>
@@ -951,8 +1058,7 @@
         <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
           Results That Speak <br class="hidden sm:block" />
           <span
-            class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white px-3 py-1 rotate-[-2deg] hindi">लाउडर
-          </span>
+            class="inline-block bg-gradient-to-r from-[var(--primary-color)] to-red-800 text-white px-3 py-1 rotate-[-2deg] hindi">लाउडर</span>
           Than Promises.
         </h2>
         <p class="text-zinc-400 text-sm md:text-base font-light">
@@ -1589,23 +1695,10 @@
           <div>
             <h5 class="font-bold text-xs sm:text-sm text-white">Creative Excellence</h5>
             <p class="text-zinc-400 text-[11px] mt-0.5">Innovative ideas that make your brand stand out.</p>
-          </div>
         </div>
 
         <!-- Value 3 -->
-        <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
-          <div
-            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
-            <i class="fa-solid fa-bullseye"></i>
-          </div>
-          <div>
-            <h5 class="font-bold text-xs sm:text-sm text-white">Data Focused</h5>
-            <p class="text-zinc-400 text-[11px] mt-0.5">Insights that drive smarter decisions and better ROI.</p>
-          </div>
-        </div>
-
-        <!-- Value 4 -->
-        <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
+        <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6" gap-4 lg:border-l lg:border-white/10 lg:pl-6">
           <div
             class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
             <i class="fa-solid fa-user"></i>
@@ -1639,6 +1732,50 @@
   <script src="./src/clean-url.js"></script>
   <script src="./src/script.js"></script>
   <script src="./src/home.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var popup = document.querySelector("[data-home-popup]");
+      if (!popup) return;
+      var copyButton = popup.querySelector("[data-copy-btn]");
+      var codeField = popup.querySelector("[data-copy-code]");
+      var closePopup = function () {
+        popup.classList.remove("is-visible");
+        document.body.classList.remove("popup-open");
+      };
+      requestAnimationFrame(function () {
+        popup.classList.add("is-visible");
+        document.body.classList.add("popup-open");
+      });
+      popup.addEventListener("click", function (event) {
+        if (event.target === popup || event.target.closest("[data-popup-close]")) {
+          closePopup();
+        }
+      });
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") closePopup();
+      });
+      if (copyButton && codeField) {
+        copyButton.addEventListener("click", async function () {
+          var code = codeField.textContent.trim();
+          try {
+            await navigator.clipboard.writeText(code);
+            copyButton.textContent = "Copied";
+            copyButton.classList.add("is-copied");
+            setTimeout(function () {
+              copyButton.textContent = "Copy Code";
+              copyButton.classList.remove("is-copied");
+            }, 1500);
+          } catch (error) {
+            copyButton.textContent = code;
+            setTimeout(function () {
+              copyButton.textContent = "Copy Code";
+            }, 1500);
+          }
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
