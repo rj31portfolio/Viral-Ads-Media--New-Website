@@ -812,7 +812,98 @@
 <script src="./src/industry-data.js"></script>
 <script src="./src/industry.js"></script>
 
+<!-- Floating Call & WhatsApp Buttons -->
 
+<a href="tel:+919354491934" class="call-widget" aria-label="Call Now">
+    ☎
+</a>
+
+<a href="https://wa.me/919354491934" target="_blank" class="whatsapp-widget" aria-label="WhatsApp">
+    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/960px-WhatsApp.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20220228223904" alt="">
+</a>
+
+
+<style>
+
+/* Call Button Left */
+.call-widget {
+    position: fixed;
+    left: 20px;
+    bottom: 25px;
+    width: 60px;
+    height: 60px;
+    background:#ff5a00;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    text-decoration:none;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+    z-index:9999;
+    animation:pulse 1.8s infinite;
+}
+
+
+/* WhatsApp Button Right */
+.whatsapp-widget {
+    position: fixed;
+    right:20px;
+    bottom:25px;
+    width:60px;
+    height:60px;
+    background:#d34e25;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+    z-index:9999;
+}
+
+
+.whatsapp-widget svg {
+    width:35px;
+    height:35px;
+    fill:white;
+}
+
+
+/* Animation */
+@keyframes pulse {
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.12);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+
+/* Mobile Size */
+@media(max-width:768px){
+
+.call-widget,
+.whatsapp-widget{
+    width:55px;
+    height:55px;
+}
+
+.call-widget{
+    left:15px;
+}
+
+.whatsapp-widget{
+    right:15px;
+}
+
+}
+
+</style>
 </body>
 </html>
 
