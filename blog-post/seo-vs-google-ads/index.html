@@ -22,7 +22,8 @@
       try {
         const response = await fetch('../../blog-post.html');
         const html = await response.text();
-        const withBase = html.replace('<head>', '<head><base href="../../">');
+        const siteBase = new URL('../../', window.location.href).href;
+        const withBase = html.replace('<head>', `<head><base href="${siteBase}">`);
         const cleanPath = window.location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
         if (cleanPath) {
           window.history.replaceState({}, '', cleanPath);

@@ -48,7 +48,7 @@ function resolveRoute(requestUrl) {
       continue;
     }
 
-    const slug = decodeURIComponent(url.pathname.slice(route.prefix.length));
+    const slug = decodeURIComponent(url.pathname.slice(route.prefix.length)).replace(/\/+$/, "");
     if (!slug) {
       return requestUrl;
     }

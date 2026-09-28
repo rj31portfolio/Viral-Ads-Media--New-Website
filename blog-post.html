@@ -483,19 +483,6 @@
         </section>
 
         <div id="footer-placeholder"></div>
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            fetch("footer.html")
-              .then((res) => res.text())
-              .then((html) => {
-                document.getElementById("footer-placeholder").innerHTML =
-                  html;
-              })
-              .catch((err) => {
-                console.error("Failed to load footer:", err);
-              });
-          });
-        </script>
       </main>
     </div>
   </div>
@@ -519,6 +506,7 @@
   <script src="src/clean-url.js"></script>
   <script src="src/script.js"></script>
   <script src="src/blog-post.js"></script>
+  <script src="src/footer.js"></script>
   <!-- Floating Call & WhatsApp Buttons -->
 
 <a href="tel:+919354491934" class="call-widget" aria-label="Call Now">
