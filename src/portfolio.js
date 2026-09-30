@@ -83,3 +83,51 @@ cards.forEach(card => {
     }
   });
 });
+
+document.querySelectorAll("[data-portfolio-keys]").forEach(grid => {
+  const serviceKeys = grid.dataset.portfolioKeys.split(",");
+  const projects = serviceKeys.flatMap(serviceKey => {
+    const serviceProjects = SINGLE_SERVICE_DATABASE[serviceKey]?.portfolio || [];
+    const categoryProjects = CATEGORIES_DATA[serviceKey]?.caseStudies || [];
+
+    return [...serviceProjects, ...categoryProjects].map(project => ({ ...project, serviceKey }));
+  });
+  const uniqueProjects = [...new Map(
+    projects.map(project => [project.img, project])
+  ).values()];
+  const serviceTitle = grid.closest(".portfolio-service-row").querySelector("h3").textContent.trim();
+
+  grid.replaceChildren(...uniqueProjects.map(project => {
+    const card = document.createElement("a");
+    card.className = "portfolio-showcase-card";
+    card.href = `service.html?${encodeURIComponent(project.serviceKey)}`;
+
+    const preview = document.createElement("div");
+    preview.className = "portfolio-preview";
+
+    const image = document.createElement("img");
+    image.className = "portfolio-preview-image";
+    image.src = project.img.replace(/^\.\//, "");
+    image.alt = `${project.client}: ${project.title}`;
+    image.loading = "lazy";
+
+    const label = document.createElement("span");
+    label.className = "portfolio-preview-label";
+    label.textContent = serviceTitle.toUpperCase();
+    preview.append(image, label);
+
+    const caption = document.createElement("div");
+    caption.className = "portfolio-card-caption";
+
+    const title = document.createElement("span");
+    title.textContent = project.title;
+
+    const details = document.createElement("span");
+    details.textContent = [project.client, project.year].filter(Boolean).join(" / ");
+    caption.append(title, details);
+
+    card.append(preview, caption);
+    return card;
+  }));
+});
+
