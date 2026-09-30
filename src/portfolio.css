@@ -157,7 +157,7 @@ html, body {
 .portfolio-preview-image {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 130%;
   object-fit: cover;
   object-position: top center;
   transition: transform 1.5s cubic-bezier(0.2, 0.65, 0.3, 1);
@@ -165,7 +165,18 @@ html, body {
 
 .portfolio-showcase-card:hover .portfolio-preview-image,
 .portfolio-showcase-card:focus-visible .portfolio-preview-image {
-  transform: scale(1.08) translateY(-7%);
+  transform: translateY(-23%);
+}
+
+.portfolio-fullpage-image {
+  height: auto;
+  object-fit: initial;
+  transition: transform 5s linear;
+}
+
+.portfolio-showcase-card:hover .portfolio-fullpage-image,
+.portfolio-showcase-card:focus-visible .portfolio-fullpage-image {
+  transform: translateY(min(0px, calc(522px - 100%)));
 }
 
 .portfolio-preview-label {
@@ -227,6 +238,12 @@ html, body {
 
   .portfolio-card-caption {
     font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .portfolio-showcase-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
