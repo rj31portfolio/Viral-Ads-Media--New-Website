@@ -1,11 +1,12 @@
 /*! tailwindcss v4.3.1 | MIT License | https://tailwindcss.com */
+@import url("https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=The+Nautigal:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap");
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(63.7% 0.237 25.331);
@@ -14,14 +15,11 @@
     --color-orange-700: oklch(55.3% 0.195 38.402);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-900: oklch(21% 0.034 264.665);
-    --color-zinc-100: oklch(96.7% 0.001 286.375);
     --color-zinc-300: oklch(87.1% 0.006 286.286);
     --color-zinc-400: oklch(70.5% 0.015 286.067);
     --color-zinc-500: oklch(55.2% 0.016 285.938);
     --color-zinc-600: oklch(44.2% 0.017 285.786);
-    --color-zinc-700: oklch(37% 0.013 285.805);
     --color-zinc-800: oklch(27.4% 0.006 286.033);
-    --color-zinc-900: oklch(21% 0.006 285.885);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -60,8 +58,6 @@
     --text-7xl--line-height: 1;
     --text-8xl: 6rem;
     --text-8xl--line-height: 1;
-    --text-9xl: 8rem;
-    --text-9xl--line-height: 1;
     --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
@@ -71,7 +67,6 @@
     --font-weight-black: 900;
     --tracking-tighter: -0.05em;
     --tracking-tight: -0.025em;
-    --tracking-normal: 0em;
     --tracking-wide: 0.025em;
     --tracking-wider: 0.05em;
     --tracking-widest: 0.1em;
@@ -84,16 +79,12 @@
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
-    --drop-shadow-2xl: 0 25px 25px rgb(0 0 0 / 0.15);
-    --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --animate-ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-    --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --animate-bounce: bounce 1s infinite;
     --blur-sm: 8px;
     --blur-md: 12px;
-    --blur-xl: 24px;
     --blur-2xl: 40px;
     --blur-3xl: 64px;
     --default-transition-duration: 150ms;
@@ -2604,12 +2595,6 @@
       outline-style: none;
     }
   }
-  .focus-visible\:outline {
-    &:focus-visible {
-      outline-style: var(--tw-outline-style);
-      outline-width: 1px;
-    }
-  }
   .focus-visible\:outline-2 {
     &:focus-visible {
       outline-style: var(--tw-outline-style);
@@ -3659,8 +3644,6 @@
     }
   }
 }
-@import url("https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=The+Nautigal:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap");
 :root {
   --primary-color: #ec4d20;
   --background-color: #050505;
@@ -3670,9 +3653,15 @@
 .elms-sans {
   font-family: "Elms Sans", sans-serif;
 }
-.hindi {
+.hindi, .font-hindi {
   font-family: "Amita", cursive;
+}
+.hindi {
   margin-top: 12px;
+}
+.hindi.bg-gradient-to-r, .font-hindi.bg-gradient-to-r {
+  background-color: var(--primary-color);
+  background-image: linear-gradient(to right, var(--primary-color), #991b1b) !important;
 }
 html, body {
   overflow-x: hidden;
@@ -3773,91 +3762,6 @@ html, body {
 footer li.flex.items-start > span {
   font-size: 0.875rem !important;
   line-height: 1.5 !important;
-}
-.call-widget, .whatsapp-widget {
-  position: fixed !important;
-  bottom: 1.25rem !important;
-  z-index: 9999 !important;
-  display: flex !important;
-  width: 3.75rem !important;
-  height: 3.75rem !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border: 1px solid rgba(255, 255, 255, 0.75) !important;
-  border-radius: 9999px !important;
-  color: #fff !important;
-  text-decoration: none !important;
-  transition: transform 180ms ease, box-shadow 180ms ease !important;
-  animation: none !important;
-}
-.call-widget {
-  left: 1.25rem !important;
-  right: auto !important;
-  background: linear-gradient(145deg, #ff8747, #e0441e) !important;
-  box-shadow: 0 10px 28px rgba(224, 68, 30, 0.38), 0 0 0 5px rgba(236, 77, 32, 0.12) !important;
-}
-.whatsapp-widget {
-  right: 1.25rem !important;
-  left: auto !important;
-  background: linear-gradient(145deg, #39d98a, #087d59) !important;
-  box-shadow: 0 10px 28px rgba(8, 125, 89, 0.38), 0 0 0 5px rgba(57, 217, 138, 0.12) !important;
-}
-.whatsapp-widget img, .whatsapp-widget svg {
-  width: 2.125rem !important;
-  height: 2.125rem !important;
-  object-fit: contain !important;
-}
-.whatsapp-widget img {
-  padding: 2px !important;
-  border-radius: 50% !important;
-  background: #fff !important;
-}
-.call-widget:hover, .call-widget:focus-visible, .whatsapp-widget:hover, .whatsapp-widget:focus-visible {
-  transform: translateY(-3px) scale(1.06) !important;
-}
-.call-widget:focus-visible, .whatsapp-widget:focus-visible {
-  outline: 3px solid #fff !important;
-  outline-offset: 4px !important;
-}
-@media (min-width: 769px) {
-  .call-widget::after, .whatsapp-widget::after {
-    position: absolute;
-    top: 50%;
-    padding: 0.45rem 0.7rem;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 9999px;
-    background: #111;
-    color: #fff;
-    font: 600 0.7rem/1 ui-sans-serif, system-ui, sans-serif;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-50%);
-    transition: opacity 180ms ease;
-  }
-  .call-widget::after {
-    right: calc(100% + 0.65rem);
-    content: "CALL US";
-  }
-  .whatsapp-widget::after {
-    left: calc(100% + 0.65rem);
-    content: "CHAT WITH US";
-  }
-  .call-widget:hover::after, .call-widget:focus-visible::after, .whatsapp-widget:hover::after, .whatsapp-widget:focus-visible::after {
-    opacity: 1;
-  }
-}
-@media (max-width: 768px) {
-  .call-widget, .whatsapp-widget {
-    bottom: 1rem !important;
-    width: 3.375rem !important;
-    height: 3.375rem !important;
-  }
-  .call-widget {
-    left: 1rem !important;
-  }
-  .whatsapp-widget {
-    right: 1rem !important;
-  }
 }
 @property --tw-translate-x {
   syntax: "*";
@@ -4149,11 +4053,6 @@ footer li.flex.items-start > span {
   75%, 100% {
     transform: scale(2);
     opacity: 0;
-  }
-}
-@keyframes pulse {
-  50% {
-    opacity: 0.5;
   }
 }
 @keyframes bounce {

@@ -1,0 +1,62 @@
+/* Shared floating contact widgets. */
+.call-widget, .whatsapp-widget {
+  --widget-color: #ec4d20;
+  position: fixed;
+  bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  box-sizing: border-box;
+  min-height: 60px;
+  padding: 8px 20px 8px 8px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff783f, #ce3716);
+  box-shadow: 0 8px 26px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.25);
+  color: #fff;
+  text-decoration: none;
+  font-family: "Elms Sans", Arial, sans-serif;
+  line-height: 1.2;
+  isolation: isolate;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.call-widget { left: max(20px, env(safe-area-inset-left, 0px)); }
+.whatsapp-widget {
+  --widget-color: #159f64;
+  right: max(20px, env(safe-area-inset-right, 0px));
+  background: linear-gradient(135deg, #20bd78, #087949);
+}
+.call-widget .contact-widget-icon, .whatsapp-widget .contact-widget-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.18);
+}
+.call-widget svg, .whatsapp-widget svg { width: 24px; height: 24px; display: block; }
+.call-widget .contact-widget-copy, .whatsapp-widget .contact-widget-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.call-widget small, .whatsapp-widget small { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #fff; }
+.call-widget strong, .whatsapp-widget strong { font-size: 15px; font-weight: 700; color: #fff; }
+.call-widget:hover, .whatsapp-widget:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.35), 0 0 0 5px color-mix(in srgb, var(--widget-color) 20%, transparent);
+}
+.call-widget:focus-visible, .whatsapp-widget:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+@media (max-width: 640px) {
+  .call-widget, .whatsapp-widget { min-height: 56px; width: 56px; padding: 6px; gap: 0; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+  .call-widget { left: max(14px, env(safe-area-inset-left, 0px)); }
+  .whatsapp-widget { right: max(14px, env(safe-area-inset-right, 0px)); }
+  .call-widget .contact-widget-copy, .whatsapp-widget .contact-widget-copy { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .call-widget, .whatsapp-widget { transition: none; }
+  .call-widget:hover, .whatsapp-widget:hover { transform: none; }
+}
