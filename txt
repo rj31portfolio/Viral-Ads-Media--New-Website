@@ -1,15 +1,18 @@
 Daily Website Development Report
-Date: 27/08/2026
+Date: 30/09/2026
 Name: Raju Ali
-Project Name: Rajan Maluja, viral ads media, plastosonic
-Work In Progress:-  Viral Ads Media make popup hostinger partner
-                    Rajan Maluja feature work imgaes update
-                    Plastosonic video update
-                    Domain Tranfer and renew this month
+Project Name: viral ads media
+Work In Progress:-
+in home page seo section so by read more
+in footer adress small for all pages changes
+broken text fix in all pages 
+call and whatapp button make good 
+make create portfolio page 
+with animated project showcas  
 Website Live Link  https://viraladsmedia.com/
 Issues / Challenges:- Na
 Feedback Call Update:- Na
 Pending From Client / Team:- Na
-Google Ads - Ads Manages and change ads|
+Google Ads - Ads Manages
 
 
