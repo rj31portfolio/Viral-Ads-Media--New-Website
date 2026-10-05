@@ -33,8 +33,8 @@ const SINGLE_SERVICE_DATABASE = {
   "best-seo-agency-near-me": {
     metaTitle: "SEO Agency in Delhi NCR | Data-Driven Growth Partner - Viral Ads Media",
     metaDescription: "Partner with Viral Ads Media, a result-driven SEO agency in Delhi delivering SEO audits, technical optimization, content marketing and strategies that increase traffic and leads.",
-    heading: `Google पर <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">नंबर 1</span> Rank करो!`,
-    shortDesc: "Dominate search engine result pages with technical audits, semantic keyword mapping, and high-authority backlink campaigns that compound traffic.",
+    heading: "SEO Agency in Delhi NCR That Helps You Get Found, Called, and Chosen",
+    shortDesc: "When someone searches for what you sell, they should find you first. That's our whole job.",
     tools: [
       { name: "Google Keyword Planner", logo: "./Assets/tools/g-keyword-planner.png" },
       { name: "Google Search Console", logo: "./Assets/tools/g-search-console.png" },
@@ -55,10 +55,38 @@ const SINGLE_SERVICE_DATABASE = {
       { title: "Shri Component", client: "Shri Component", year: "2026", img: "./Assets/case-study/components.png" }
     ],
     faqs: [
-      { q: "How long does SEO take to produce measurable leads?", a: "Sustainable organic rankings typically compound visibly within 3 to 6 months of technical implementation." },
-      { q: "Do you fix website speed and Core Web Vitals?", a: "Absolute optimization of site performance and mobile responsiveness is built directly into our SEO protocol." },
-      { q: "Do you publish blogs on our behalf?", a: "Yes, our expert copywriters craft SEO-optimized, high-intent articles mapped to buyer search queries every month." },
-      { q: "What tools do you use for keyword tracking?", a: "We leverage industry gold-standards like Semrush, Ahrefs, and Google Search Console for precise tracking." }
+      {
+        "q": "How long does it take to rank on Google?",
+        "a": "Most sites see clear results in three to six months. Competitive industries can take six to twelve months. Local SEO can move faster. Anyone who promises page one in a few weeks isn't being honest with you."
+      },
+      {
+        "q": "What's the best SEO agency in Delhi for small businesses?",
+        "a": "The best fit is an agency that shows real results, explains its work simply, and prices fairly. Ask for case studies and named clients. We focus on local SEO first for small businesses because it brings calls faster and costs less."
+      },
+      {
+        "q": "Do you offer affordable SEO services in Delhi NCR?",
+        "a": "Yes. We build your plan around your budget and start with the work that pays back fastest. Affordable doesn't mean cheap shortcuts. We tell you exactly what's included so there are no surprises."
+      },
+      {
+        "q": "Do you work with startups?",
+        "a": "Yes. Startups usually need a few strong pages, a good Google listing, and helpful content. We build these first, then grow. We are happy to set up a lean plan that fits an early-stage budget."
+      },
+      {
+        "q": "What is local SEO?",
+        "a": "Local SEO helps people near you find your business. It includes your Google Business Profile, local pages, reviews, and listings. It's the fastest way for shops, clinics, and service businesses in Delhi to get calls."
+      },
+      {
+        "q": "What's the difference between on-page and off-page SEO?",
+        "a": "On-page SEO is work on your own website, like titles, text, and page speed. Off-page SEO is work outside your site, mainly earning links from other trusted websites. You need both."
+      },
+      {
+        "q": "Can you help me show up in AI Overviews?",
+        "a": "We can improve your chances the honest way: clear answers, real proof, a fast site, and correct business details. Nobody can guarantee a spot in an AI answer, but the same good SEO helps you there too."
+      },
+      {
+        "q": "Do you also run ads and social media?",
+        "a": "Yes. We run Google Ads, Meta ads, social media, website design, and branding. Many clients use SEO for long-term growth and ads for quick leads. We can plan both together."
+      }
     ]
   },
   "affordable-web-developer-in-delhi": {

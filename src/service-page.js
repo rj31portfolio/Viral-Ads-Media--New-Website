@@ -37,6 +37,16 @@
     document.getElementById("servHeading").innerHTML = data.heading;
     document.getElementById("servShortDesc").textContent = data.shortDesc;
 
+    // Keep the supplied long-form content exclusive to the SEO service.
+    const seoContent = document.getElementById("servSeoContent");
+    if (seoContent && slug === "best-seo-agency-near-me") {
+      seoContent.hidden = false;
+      document.getElementById("serviceDetailMain").classList.add("seo-service-page");
+      const faqSection = document.getElementById("servFaqList").closest("section");
+      faqSection.querySelector("h2").textContent = "FAQ";
+      faqSection.querySelector(".text-zinc-400").hidden = true;
+    }
+
     // Populate Tools with Logo Images matching reference style
     const toolsGrid = document.getElementById("servToolsGrid");
     data.tools.forEach(tool => {
