@@ -58,13 +58,20 @@
     },
   };
 
+  function normalizeServiceSlug(slug) {
+    return slug === "best-social-media-agency-in-delhi"
+      ? "social-media-marketing-agency-in-delhi"
+      : slug;
+  }
+
   function buildCleanDynamicPath(fileName, slug) {
     const config = DYNAMIC_ROUTE_CONFIG[fileName];
     if (!config || !slug) {
       return null;
     }
 
-    return `${config.cleanBase}/${encodeURIComponent(slug)}`;
+    const routeSlug = fileName === "service.html" ? normalizeServiceSlug(slug) : slug;
+    return `${config.cleanBase}/${encodeURIComponent(routeSlug)}`;
   }
 
   function getPathSlug(basePath) {
@@ -83,7 +90,7 @@
   function getRouteSlug(basePath, fallbackSearchParam) {
     const pathSlug = getPathSlug(basePath);
     if (pathSlug) {
-      return pathSlug;
+      return basePath === "/service" ? normalizeServiceSlug(pathSlug) : pathSlug;
     }
 
     if (fallbackSearchParam) {
@@ -97,7 +104,8 @@
       ? window.location.search.slice(1)
       : window.location.search;
 
-    return rawSearch.replace(/^id=/, "");
+    const querySlug = rawSearch.replace(/^id=/, "");
+    return basePath === "/service" ? normalizeServiceSlug(querySlug) : querySlug;
   }
 
   function toCleanHref(rawHref) {
@@ -142,6 +150,11 @@
   }
 
   function replaceCurrentUrl() {
+    if (window.location.pathname.replace(/\/+$/, "") === "/service/best-social-media-agency-in-delhi") {
+      window.history.replaceState({}, "", `/service/social-media-marketing-agency-in-delhi${window.location.hash}`);
+      return;
+    }
+
     const fileName = window.location.pathname.split("/").pop();
     const cleanPath = FILE_TO_CLEAN_PATH[fileName];
 

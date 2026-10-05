@@ -2,7 +2,7 @@
 
 
   const ALL_SERVICES_ARRAY = [
-    { slug: "best-social-media-agency-in-delhi", title: "Social Media Marketing", icon: "fa-users" },
+    { slug: "social-media-marketing-agency-in-delhi", title: "Social Media Marketing", icon: "fa-users" },
     { slug: "best-seo-agency-near-me", title: "Search Engine Optimization", icon: "fa-magnifying-glass" },
     { slug: "affordable-web-developer-in-delhi", title: "Website Designing", icon: "fa-display" },
     { slug: "best-performance-marketing-in-delhi", title: "Performance Marketing", icon: "fa-chart-line" },
@@ -17,7 +17,7 @@
 
     // 2. Default fallback if the page is opened without a query
     if (!slug) {
-      slug = "best-social-media-agency-in-delhi";
+      slug = "social-media-marketing-agency-in-delhi";
     }
     const data = SINGLE_SERVICE_DATABASE[slug];
 

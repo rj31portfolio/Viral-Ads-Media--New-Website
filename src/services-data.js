@@ -1,5 +1,5 @@
 const SINGLE_SERVICE_DATABASE = {
-  "best-social-media-agency-in-delhi": {
+  "social-media-marketing-agency-in-delhi": {
     metaTitle: "Social Media Marketing Agency in Delhi | Creative Growth Partner",
     metaDescription: "Transform your brand presence with Viral Ads Media, a creative social media marketing agency in Delhi offering reels, content strategy, paid ads and growth solutions.",
     heading: `Social Media <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">बवाल मचाओ</span> — Scale Community!`,
