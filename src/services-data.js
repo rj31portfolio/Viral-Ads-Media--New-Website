@@ -2,8 +2,8 @@ const SINGLE_SERVICE_DATABASE = {
   "social-media-marketing-agency-in-delhi": {
     metaTitle: "Social Media Marketing Agency in Delhi | Creative Growth Partner",
     metaDescription: "Transform your brand presence with Viral Ads Media, a creative social media marketing agency in Delhi offering reels, content strategy, paid ads and growth solutions.",
-    heading: `Social Media <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">बवाल मचाओ</span> — Scale Community!`,
-    shortDesc: "We plan, create, and manage high-engagement feeds across Instagram, LinkedIn, and Facebook that turn casual viewers into loyal brand advocates.",
+    heading: "Social Media Agency in Delhi That Brings You Customers, Not Just Likes",
+    shortDesc: "A social media agency in Delhi plans, creates and runs your posts, Reels and ads on Instagram, Facebook, LinkedIn and YouTube. Viral Ads Media does this from Rohini, Delhi. Strategy, content, ads and reports sit in one team, and we track leads and sales, not just likes.",
     tools: [
       { name: "Instagram", logo: "./Assets/tools/instagram.png" },
       { name: "Facebook", logo: "./Assets/tools/facebook.png" },
@@ -24,10 +24,46 @@ const SINGLE_SERVICE_DATABASE = {
       { title: "Allied Taps Aesthetic Push", client: "Allied Taps", year: "2026", img: "./Assets/case-study/allied.png" }
     ],
     faqs: [
-      { q: "How many posts and reels do we get per month?", a: "Our standard retainer packs include custom-designed carousels, static graphics, and high-retention short-form reels tailored to your growth tier." },
-      { q: "Do you handle community engagement and comments?", a: "Yes! Our team manages active engagement, direct messages, and comment moderation to maintain high audience retention." },
-      { q: "Can we review content before it goes live?", a: "Absolutely. We provide a full monthly content calendar via Notion or Google Drive for your approval 7 days prior to publishing." },
-      { q: "What platforms do you specialize in?", a: "We manage robust multi-channel growth strategies across Instagram, LinkedIn, Facebook, YouTube Shorts, and TikTok." }
+      {
+        "q": "What is included in social media marketing packages in Delhi?",
+        "a": "A package usually covers a plan, a content calendar, a set number of posts and Reels, captions, posting, replies to comments and a monthly report. Ads are often extra. Our Starter, Growth and Scale packages above show exact counts, so you can compare us with any other quote line by line."
+      },
+      {
+        "q": "What is the difference between social media management and social media marketing?",
+        "a": "Management is the daily upkeep: posting, replying and reporting. Marketing is bigger. It adds strategy, paid ads, influencers and lead goals. Management keeps your page alive. Marketing tries to bring customers. Most growing businesses need both, and we offer them together."
+      },
+      {
+        "q": "How long does it take to see results?",
+        "a": "Paid ads can bring first enquiries within a few weeks. Organic growth usually needs three to six months of steady posting and testing. Anyone promising overnight results is guessing. We put a 90-day goal in writing and review it with you every month."
+      },
+      {
+        "q": "Is Instagram or Facebook better for my business?",
+        "a": "It depends on who buys from you. Instagram suits shops, food, fashion, beauty and younger buyers. Facebook suits local services, older buyers and lead forms. LinkedIn and YouTube help B2B and factories. Many brands use Instagram for content and Facebook and Instagram ads together."
+      },
+      {
+        "q": "Do you guarantee followers or sales?",
+        "a": "No. No honest agency can control the algorithm or your buyers' choices. What we promise is a clear plan, steady work, honest reports and quick changes when numbers drop. We track leads and cost per lead, not only likes."
+      },
+      {
+        "q": "Who owns my accounts and content?",
+        "a": "You do. Your pages, logins, photos and videos belong to your business. We ask for admin access, not ownership. If we ever part ways, we hand everything back."
+      },
+      {
+        "q": "Do I have to shoot the Reels myself?",
+        "a": "No. We write the idea and script, shoot or edit your clips, add captions and post. If you want to be on camera, we'll coach you. If you send raw phone clips, we'll edit them."
+      },
+      {
+        "q": "How do you measure results?",
+        "a": "We track reach, watch time, saves, sends, profile visits, link clicks, leads and cost per lead, then compare month to month. Likes alone tell you little. A Reel with fewer likes can bring more customers if the right people watch it."
+      },
+      {
+        "q": "What makes the best social media agency in Delhi?",
+        "a": "Look for proof over promises: real work in your industry, prices in writing, a named team, monthly reports with lead numbers, and you owning your accounts. Ask to speak to a current client. The best fit for a shop may not be the best fit for a factory."
+      },
+      {
+        "q": "Do influencers have to label paid posts in India?",
+        "a": "Yes. Every paid, gifted or affiliate post must be clearly labelled as an ad under ASCI and CCPA rules, and India's 2026 IT Rules expect AI-made content to be labelled. Brands share the risk with creators, so we put the label rules in every influencer contract."
+      }
     ]
   },
   "seo-agency-in-delhi-ncr": {

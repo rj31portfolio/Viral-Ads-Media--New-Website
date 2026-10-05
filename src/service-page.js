@@ -47,6 +47,15 @@
       faqSection.querySelector(".text-zinc-400").hidden = true;
     }
 
+    const socialContent = document.getElementById("servSocialContent");
+    if (socialContent && slug === "social-media-marketing-agency-in-delhi") {
+      socialContent.hidden = false;
+      document.getElementById("serviceDetailMain").classList.add("social-service-page");
+      const faqSection = document.getElementById("servFaqList").closest("section");
+      faqSection.querySelector("h2").textContent = "FAQ\u2019s";
+      faqSection.querySelector(".text-zinc-400").hidden = true;
+    }
+
     // Populate Tools with Logo Images matching reference style
     const toolsGrid = document.getElementById("servToolsGrid");
     data.tools.forEach(tool => {
