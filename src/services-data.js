@@ -125,11 +125,11 @@ const SINGLE_SERVICE_DATABASE = {
       }
     ]
   },
-  "affordable-web-developer-in-delhi": {
-    metaTitle: "Website Designing Agency Delhi NCR | Creative Websites That Convert",
-    metaDescription: "Transform your digital presence with Viral Ads Media, a creative website designing agency in Delhi NCR offering custom web design, ecommerce solutions and conversion-focused experiences.",
-    heading: `Aesthetic वेबसाइट्स जो <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">कन्वर्जन</span> कराएं!`,
-    shortDesc: "Stop losing customers to clunky templates. We design bespoke, lightning-fast digital storefronts engineered for maximum conversion.",
+  "website-designing-company-in-delhi": {
+    metaTitle: "Website Designing Company in Delhi | Viral Ads Media",
+    metaDescription: "Viral Ads Media is a website designing company in Delhi NCR. Get fast, mobile-friendly, SEO-friendly websites with clear pricing. Free quote on WhatsApp.",
+    heading: "Website Designing Company in Delhi That Builds Sites Customers Actually Use",
+    shortDesc: "Viral Ads Media is a website designing company in Delhi, based in Rohini. We design and build fast, mobile-friendly websites that bring you more calls, enquiries and orders. Design, code, SEO and ads sit under one roof, so you don't have to run after five different vendors.",
     tools: [
       { name: "HTML", logo: "./Assets/tools/html.png" },
       { name: "React", logo: "./Assets/tools/react.png" },
@@ -148,10 +148,22 @@ const SINGLE_SERVICE_DATABASE = {
       { title: "Medyra", client: "Medyra", year: "2025", img: "./Assets/case-study/medyra.png" }
     ],
     faqs: [
-      { q: "Are your websites mobile-responsive?", a: "Every single web architecture we build follows a strict mobile-first design system with flawless responsiveness." },
-      { q: "Can we update the website text ourselves later?", a: "Yes, we integrate secure, user-friendly Content Management Systems (CMS) so you can easily update products and blogs." },
-      { q: "What tech stack do you code with?", a: "We build clean, ultra-fast sites using Tailwind CSS, modern JavaScript, and optimized frontend frameworks." },
-      { q: "Do you include security and SSL certificates?", a: "All deployed web properties come with enterprise-grade security configurations and SSL setup included." }
+      {
+        "q": "How much does website designing cost in Delhi?",
+        "a": "Most small business websites cost between ₹30,000 and ₹1,50,000. Simple sites can start near ₹10,000, while ecommerce sites and custom apps cost more. The price depends on pages, design, features and content. Send us your needs for an exact quote."
+      },
+      {
+        "q": "What is the difference between website designing and website development?",
+        "a": "Designing is how the site looks and feels: layout, colors, images and user flow. Development is how it works: code, forms, payments and databases. A website development agency in Delhi like ours does both, so the look and the tech fit together."
+      },
+      {
+        "q": "Will my website be SEO-friendly and mobile-ready?",
+        "a": "Yes. We build every site mobile-first, optimize speed, and set up page titles, descriptions, clean URLs and schema markup. SEO doesn't stop at launch, though. Ranking takes ongoing work, and our SEO team can handle that."
+      },
+      {
+        "q": "Do you use ready-made templates or custom designs?",
+        "a": "Both, depending on your budget and goal. A template can work well for a simple, low-cost site. If you want to stand out, we design custom. We'll tell you honestly which one suits you."
+      }
     ]
   },
   "best-performance-marketing-in-delhi": {

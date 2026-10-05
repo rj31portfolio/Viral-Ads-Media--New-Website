@@ -102,8 +102,10 @@
 }
 
 .seo-service-page #servHeading,
+.website-service-page #servHeading,
 .social-service-page #servHeading { font-size: clamp(2.2rem, 4.5vw, 4rem); }
 .seo-service-page .faq-item.active .faq-panel,
+.website-service-page .faq-item.active .faq-panel,
 .social-service-page .faq-item.active .faq-panel { max-height: none; }
 
 .seo-service-content .social-content-steps {

@@ -37,6 +37,9 @@ const DYNAMIC_ROUTE_RESOLVERS = [
 
 function resolveRoute(requestUrl) {
   const url = new URL(requestUrl, "http://localhost");
+  if (url.pathname.replace(/\/+$/, "") === "/website-designing-company-in-delhi") {
+    return "/service.html?website-designing-company-in-delhi";
+  }
   const resolvedPath = ROUTES[url.pathname];
 
   if (resolvedPath) {

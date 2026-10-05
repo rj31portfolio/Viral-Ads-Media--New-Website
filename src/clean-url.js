@@ -59,6 +59,9 @@
   };
 
   function normalizeServiceSlug(slug) {
+    if (slug === "affordable-web-developer-in-delhi") {
+      return "website-designing-company-in-delhi";
+    }
     if (slug === "best-seo-agency-near-me") {
       return "seo-agency-in-delhi-ncr";
     }
@@ -74,6 +77,9 @@
     }
 
     const routeSlug = fileName === "service.html" ? normalizeServiceSlug(slug) : slug;
+    if (fileName === "service.html" && routeSlug === "website-designing-company-in-delhi") {
+      return "/website-designing-company-in-delhi/";
+    }
     return `${config.cleanBase}/${encodeURIComponent(routeSlug)}`;
   }
 
@@ -91,6 +97,9 @@
   }
 
   function getRouteSlug(basePath, fallbackSearchParam) {
+    if (basePath === "/service" && window.location.pathname.replace(/\/+$/, "") === "/website-designing-company-in-delhi") {
+      return "website-designing-company-in-delhi";
+    }
     const pathSlug = getPathSlug(basePath);
     if (pathSlug) {
       return basePath === "/service" ? normalizeServiceSlug(pathSlug) : pathSlug;
@@ -120,6 +129,10 @@
       const url = new URL(rawHref, window.location.origin);
       if (url.origin !== window.location.origin) {
         return rawHref;
+      }
+
+      if (/^\/service\/(?:affordable-web-developer-in-delhi|website-designing-company-in-delhi)\/?$/.test(url.pathname)) {
+        return `/website-designing-company-in-delhi/${url.hash}`;
       }
 
       const fileName = url.pathname.split("/").pop();
@@ -153,6 +166,10 @@
   }
 
   function replaceCurrentUrl() {
+    if (/^\/(?:website-designing-company-in-delhi|service\/(?:affordable-web-developer-in-delhi|website-designing-company-in-delhi))\/?$/.test(window.location.pathname)) {
+      window.history.replaceState({}, "", `/website-designing-company-in-delhi/${window.location.hash}`);
+      return;
+    }
     if (window.location.pathname.replace(/\/+$/, "") === "/service/best-seo-agency-near-me") {
       window.history.replaceState({}, "", `/service/seo-agency-in-delhi-ncr${window.location.hash}`);
       return;
