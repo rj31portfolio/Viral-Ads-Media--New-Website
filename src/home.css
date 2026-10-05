@@ -179,6 +179,14 @@
   /* ==========================================================
      6. Toolkit / Services Section & Card Layouts
      ========================================================== */
+  #scroll-section {
+    box-sizing: border-box;
+    height: 100svh;
+    min-height: calc(550px + 9rem);
+    padding-top: 7rem;
+    padding-bottom: 2rem;
+  }
+
   .service-card {
     min-width: 450px;
   }
