@@ -3,7 +3,7 @@
 
   const ALL_SERVICES_ARRAY = [
     { slug: "social-media-marketing-agency-in-delhi", title: "Social Media Marketing", icon: "fa-users" },
-    { slug: "best-seo-agency-near-me", title: "Search Engine Optimization", icon: "fa-magnifying-glass" },
+    { slug: "seo-agency-in-delhi-ncr", title: "Search Engine Optimization", icon: "fa-magnifying-glass" },
     { slug: "affordable-web-developer-in-delhi", title: "Website Designing", icon: "fa-display" },
     { slug: "best-performance-marketing-in-delhi", title: "Performance Marketing", icon: "fa-chart-line" },
     { slug: "affordable-logo-and-branding-near-me", title: "Logo & Branding", icon: "fa-pen-nib" },
@@ -12,7 +12,7 @@
   ];
 
   document.addEventListener("DOMContentLoaded", () => {
-    // 1. Get everything after the "?" in the URL (e.g., gets "best-seo-agency-near-me")
+    // 1. Get everything after the "?" in the URL (e.g., gets "seo-agency-in-delhi-ncr")
     let slug = window.cleanUrlRoutes?.getRouteSlug("/service") || "";
 
     // 2. Default fallback if the page is opened without a query
@@ -39,7 +39,7 @@
 
     // Keep the supplied long-form content exclusive to the SEO service.
     const seoContent = document.getElementById("servSeoContent");
-    if (seoContent && slug === "best-seo-agency-near-me") {
+    if (seoContent && slug === "seo-agency-in-delhi-ncr") {
       seoContent.hidden = false;
       document.getElementById("serviceDetailMain").classList.add("seo-service-page");
       const faqSection = document.getElementById("servFaqList").closest("section");

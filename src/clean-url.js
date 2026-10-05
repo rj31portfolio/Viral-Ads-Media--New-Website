@@ -59,6 +59,9 @@
   };
 
   function normalizeServiceSlug(slug) {
+    if (slug === "best-seo-agency-near-me") {
+      return "seo-agency-in-delhi-ncr";
+    }
     return slug === "best-social-media-agency-in-delhi"
       ? "social-media-marketing-agency-in-delhi"
       : slug;
@@ -150,6 +153,10 @@
   }
 
   function replaceCurrentUrl() {
+    if (window.location.pathname.replace(/\/+$/, "") === "/service/best-seo-agency-near-me") {
+      window.history.replaceState({}, "", `/service/seo-agency-in-delhi-ncr${window.location.hash}`);
+      return;
+    }
     if (window.location.pathname.replace(/\/+$/, "") === "/service/best-social-media-agency-in-delhi") {
       window.history.replaceState({}, "", `/service/social-media-marketing-agency-in-delhi${window.location.hash}`);
       return;

@@ -30,7 +30,7 @@ const SINGLE_SERVICE_DATABASE = {
       { q: "What platforms do you specialize in?", a: "We manage robust multi-channel growth strategies across Instagram, LinkedIn, Facebook, YouTube Shorts, and TikTok." }
     ]
   },
-  "best-seo-agency-near-me": {
+  "seo-agency-in-delhi-ncr": {
     metaTitle: "SEO Agency in Delhi NCR | Data-Driven Growth Partner - Viral Ads Media",
     metaDescription: "Partner with Viral Ads Media, a result-driven SEO agency in Delhi delivering SEO audits, technical optimization, content marketing and strategies that increase traffic and leads.",
     heading: "SEO Agency in Delhi NCR That Helps You Get Found, Called, and Chosen",
