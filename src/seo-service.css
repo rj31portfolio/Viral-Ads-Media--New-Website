@@ -102,9 +102,11 @@
 }
 
 .seo-service-page #servHeading,
+.branding-service-page #servHeading,
 .website-service-page #servHeading,
 .social-service-page #servHeading { font-size: clamp(2.2rem, 4.5vw, 4rem); }
 .seo-service-page .faq-item.active .faq-panel,
+.branding-service-page .faq-item.active .faq-panel,
 .website-service-page .faq-item.active .faq-panel,
 .social-service-page .faq-item.active .faq-panel { max-height: none; }
 
@@ -134,6 +136,8 @@
 .social-platform-table tbody th { color: #fff; font-weight: 600; }
 .social-platform-table tbody tr:last-child > * { border-bottom: 0; }
 .social-platform-table tbody tr:hover { background: #ffffff04; }
+
+#servBrandingContent .seo-content-card { margin-top: 1.25rem; }
 
 @media (max-width: 767px) {
   .seo-content-grid, .seo-content-columns { grid-template-columns: 1fr; }

@@ -6,7 +6,7 @@
     { slug: "seo-agency-in-delhi-ncr", title: "Search Engine Optimization", icon: "fa-magnifying-glass" },
     { slug: "website-designing-company-in-delhi", title: "Website Designing", icon: "fa-display" },
     { slug: "best-performance-marketing-in-delhi", title: "Performance Marketing", icon: "fa-chart-line" },
-    { slug: "affordable-logo-and-branding-near-me", title: "Logo & Branding", icon: "fa-pen-nib" },
+    { slug: "branding-agency-in-delhi", title: "Logo & Branding", icon: "fa-pen-nib" },
     { slug: "best-influencer-marketing-in-delhi", title: "Influencer Marketing", icon: "fa-user-astronaut" },
     { slug: "proffessional-brand-shoots-in-delhi", title: "Brand Shoots", icon: "fa-camera-retro" },
   ];
@@ -37,7 +37,24 @@
     document.getElementById("servHeading").innerHTML = data.heading;
     document.getElementById("servShortDesc").textContent = data.shortDesc;
 
-    // Keep the supplied long-form content exclusive to the SEO service.
+    const brandingContent = document.getElementById("servBrandingContent");
+    if (brandingContent && slug === "branding-agency-in-delhi") {
+      brandingContent.hidden = false;
+      document.getElementById("servBrandingTagline").hidden = false;
+      document.getElementById("serviceDetailMain").classList.add("branding-service-page");
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.rel = "canonical";
+        document.head.appendChild(canonical);
+      }
+      canonical.href = new URL("/service/branding-agency-in-delhi/", window.location.origin).href;
+      const faqSection = document.getElementById("servFaqList").closest("section");
+      faqSection.querySelector("h2").textContent = "FAQ\u2019s";
+      faqSection.querySelector(".text-zinc-400").hidden = true;
+    }
+
+    // Keep the supplied long-form content exclusive to its service.
     const seoContent = document.getElementById("servSeoContent");
     if (seoContent && slug === "seo-agency-in-delhi-ncr") {
       seoContent.hidden = false;

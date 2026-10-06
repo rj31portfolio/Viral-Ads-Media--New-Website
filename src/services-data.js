@@ -193,11 +193,11 @@ const SINGLE_SERVICE_DATABASE = {
       { q: "Can you rescue unprofitable ad accounts?", a: "Yes, our audit and restructuring process frequently turns around stagnant or bleeding ad accounts into profitable growth engines." }
     ]
   },
-  "affordable-logo-and-branding-near-me": {
-    metaTitle: "Best Logo & Branding Agency in Delhi NCR| Logo Design, Identity & Creative Strategy",
-    metaDescription: "Transform your business identity with Viral Ads Media, a branding agency in Delhi creating strategic logos, visual identities and creative brand experiences that inspire growth.",
-    heading: `Brand Identity जो कोई <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">भुला न</span> पाए!`,
-    shortDesc: "Craft iconic visual systems, typography guidelines, and brand narratives that set your business apart in competitive markets.",
+  "branding-agency-in-delhi": {
+    metaTitle: "Branding Agency in Delhi NCR | Viral Ads Media",
+    metaDescription: "Viral Ads Media is a branding agency in Delhi NCR. Get brand strategy, logo and identity design for startups and SMEs. Book a free brand call.",
+    heading: "Branding Agency in Delhi That Builds Brands, Not Just Logos",
+    shortDesc: "Viral Ads Media is a branding agency in Delhi NCR. We help new brands start up and old ones start over. You get a clear story, a sharp look and a brand people remember.",
     tools: [
       { name: "Photoshop", logo: "./Assets/tools/photoshop.png" },
       { name: "Illustrator", logo: "./Assets/tools/illustrator.png" },
@@ -214,11 +214,27 @@ const SINGLE_SERVICE_DATABASE = {
       { title: "Sketch & Scribble", client: "Sketch & Scribble", year: "2025", img: "./Assets/case-study/sketch.png" }
     ],
     faqs: [
-      { q: "What source files do we get upon completion?", a: "You receive all vector source files including AI, EPS, SVG, PDF, and high-res brand guideline rulebooks." },
-      { q: "How many initial concepts do you provide?", a: "We typically present 3 distinct visual directions during our initial conceptualization sprint." },
-      { q: "Can you redesign an existing brand logo?", a: "Yes, we specialize in modernizing legacy brand identities while retaining core brand equity and recognition." },
-      { q: "What is included in a complete brand kit?", a: "Logo suite, typography scales, color palettes, stationery templates, and social media profile kits." }
-    ]
+      {
+            "q": "How do I pick the best branding agency in Delhi?",
+            "a": "Look at proof first. Check real case studies, ask about their process and compare what each quote includes. Choose the team that explains things clearly and fits your goals, not just the lowest price."
+      },
+      {
+            "q": "Is Viral Ads Media the best creative agency in Delhi?",
+            "a": "We won't crown ourselves. We can show 300+ brands scaled and a 95% client retention rate, and you can judge our work yourself. Book a call and ask us the hard questions."
+      },
+      {
+            "q": "What's the best branding agency in Delhi for startups?",
+            "a": "The best fit is one that moves fast and builds a brand you can grow into. We offer a lean package with strategy, logo and a simple guide, so you launch sharp without overspending."
+      },
+      {
+            "q": "Can small businesses afford branding?",
+            "a": "Yes. Start with a Launch package covering the basics, then add pieces as you grow. Our approach as an affordable branding agency in Delhi is to protect strategy and trim extras."
+      },
+      {
+            "q": "Do you work with ecommerce brands?",
+            "a": "Yes. We design the brand, then carry it to your website, product pages, social posts and ads."
+      }
+]
   },
   // "marketing-360": {
   //   heading: `हर तरफ हो आपकी चर्चा — <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">360° Growth</span> Engine!`,

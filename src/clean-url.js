@@ -59,6 +59,9 @@
   };
 
   function normalizeServiceSlug(slug) {
+    if (slug === "affordable-logo-and-branding-near-me") {
+      return "branding-agency-in-delhi";
+    }
     if (slug === "affordable-web-developer-in-delhi") {
       return "website-designing-company-in-delhi";
     }
@@ -77,6 +80,9 @@
     }
 
     const routeSlug = fileName === "service.html" ? normalizeServiceSlug(slug) : slug;
+    if (fileName === "service.html" && routeSlug === "branding-agency-in-delhi") {
+      return "/service/branding-agency-in-delhi/";
+    }
     if (fileName === "service.html" && routeSlug === "website-designing-company-in-delhi") {
       return "/website-designing-company-in-delhi/";
     }
@@ -131,6 +137,10 @@
         return rawHref;
       }
 
+      if (/^\/service\/(?:affordable-logo-and-branding-near-me|branding-agency-in-delhi)\/?$/.test(url.pathname)) {
+        return `/service/branding-agency-in-delhi/${url.hash}`;
+      }
+
       if (/^\/service\/(?:affordable-web-developer-in-delhi|website-designing-company-in-delhi)\/?$/.test(url.pathname)) {
         return `/website-designing-company-in-delhi/${url.hash}`;
       }
@@ -166,6 +176,10 @@
   }
 
   function replaceCurrentUrl() {
+    if (/^\/service\/(?:affordable-logo-and-branding-near-me|branding-agency-in-delhi)\/?$/.test(window.location.pathname)) {
+      window.history.replaceState({}, "", `/service/branding-agency-in-delhi/${window.location.hash}`);
+      return;
+    }
     if (/^\/(?:website-designing-company-in-delhi|service\/(?:affordable-web-developer-in-delhi|website-designing-company-in-delhi))\/?$/.test(window.location.pathname)) {
       window.history.replaceState({}, "", `/website-designing-company-in-delhi/${window.location.hash}`);
       return;
