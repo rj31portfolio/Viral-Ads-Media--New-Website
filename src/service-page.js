@@ -5,7 +5,7 @@
     { slug: "social-media-marketing-agency-in-delhi", title: "Social Media Marketing", icon: "fa-users" },
     { slug: "seo-agency-in-delhi-ncr", title: "Search Engine Optimization", icon: "fa-magnifying-glass" },
     { slug: "website-designing-company-in-delhi", title: "Website Designing", icon: "fa-display" },
-    { slug: "best-performance-marketing-in-delhi", title: "Performance Marketing", icon: "fa-chart-line" },
+    { slug: "performance-marketing-agency-in-delhi", title: "Performance Marketing", icon: "fa-chart-line" },
     { slug: "branding-agency-in-delhi", title: "Logo & Branding", icon: "fa-pen-nib" },
     { slug: "best-influencer-marketing-in-delhi", title: "Influencer Marketing", icon: "fa-user-astronaut" },
     { slug: "proffessional-brand-shoots-in-delhi", title: "Brand Shoots", icon: "fa-camera-retro" },
@@ -36,6 +36,22 @@
     // Populate Hero Heading / Short Desc
     document.getElementById("servHeading").innerHTML = data.heading;
     document.getElementById("servShortDesc").textContent = data.shortDesc;
+
+    const performanceContent = document.getElementById("servPerformanceContent");
+    if (performanceContent && slug === "performance-marketing-agency-in-delhi") {
+      performanceContent.hidden = false;
+      document.getElementById("serviceDetailMain").classList.add("performance-service-page");
+      const faqSection = document.getElementById("servFaqList").closest("section");
+      faqSection.querySelector("h2").textContent = "Frequently asked questions";
+      faqSection.querySelector(".text-zinc-400").hidden = true;
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.rel = "canonical";
+        document.head.appendChild(canonical);
+      }
+      canonical.href = new URL("/service/performance-marketing-agency-in-delhi/", window.location.origin).href;
+    }
 
     const brandingContent = document.getElementById("servBrandingContent");
     if (brandingContent && slug === "branding-agency-in-delhi") {

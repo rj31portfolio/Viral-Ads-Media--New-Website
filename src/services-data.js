@@ -166,11 +166,11 @@ const SINGLE_SERVICE_DATABASE = {
       }
     ]
   },
-  "best-performance-marketing-in-delhi": {
-    metaTitle: "Performance Marketing Agency in Delhi NCR | Google Ads, Meta Ads & Growth",
-    metaDescription: "Scale your business with Viral Ads Media, a performance marketing agency in Delhi creating high-converting ad campaigns, smart funnels and ROI-focused strategies for growth.",
-    heading: `हर Ad पर मिले <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">बेहतरीन</span> ROAS!`,
-    shortDesc: "Scale revenue predictably across Meta and Google Ads with data-driven funnels, rigorous A/B creative testing, and profit-focused attribution.",
+  "performance-marketing-agency-in-delhi": {
+    metaTitle: "Performance Marketing Agency in Delhi | Viral Ads Media",
+    metaDescription: "Viral Ads Media is a performance marketing agency in Delhi NCR. Google and Meta ads, lead generation and ecommerce growth, with full tracking. Free ad audit.",
+    heading: "Performance Marketing Agency in Delhi: Ads That Bring Qualified Leads, Not Just Clicks",
+    shortDesc: "Viral Ads Media is a performance marketing agency in Delhi, based in Rohini. We run Google Ads and Meta Ads for brands that want real leads and real sales, not just likes. We set up your tracking first, test what works, and tell you the numbers in plain words.",
     tools: [
       { name: "Google Ads", logo: "./Assets/tools/g-ads.png" },
       { name: "Meta Ads", logo: "./Assets/tools/m-ads.png" },
@@ -187,11 +187,31 @@ const SINGLE_SERVICE_DATABASE = {
       { title: "GlamFam Cosmetics", client: "GlamFam Cosmetics", year: "2026", img: "./Assets/case-study/glamfam.png" }
     ],
     faqs: [
-      { q: "What is the ideal monthly ad spend to start?", a: "We recommend starting with a minimum ad budget of $1,500/month to allow sufficient data learning for the algorithm." },
-      { q: "Do you design the ad creatives as well?", a: "Yes! Our media buying is backed by our in-house creative design and video production team." },
-      { q: "How often do you report on campaign metrics?", a: "Clients receive real-time dashboard access plus detailed weekly performance review calls with our senior media buyers." },
-      { q: "Can you rescue unprofitable ad accounts?", a: "Yes, our audit and restructuring process frequently turns around stagnant or bleeding ad accounts into profitable growth engines." }
-    ]
+      {
+            "q": "What does a performance marketing agency do?",
+            "a": "It runs paid ads such as Google Ads and Meta Ads, tracks the results, and improves campaigns to bring more leads or sales at a lower cost. It also tests creatives and landing pages."
+      },
+      {
+            "q": "What is a good ROAS or CPL?",
+            "a": "It depends on your profit margin and industry. As a rough guide, one 2026 dataset shows median ROAS of about 3.3x on Google and 2.2x on Meta. A \"good\" number is one that leaves you with profit after all costs."
+      },
+      {
+            "q": "How long before I see results?",
+            "a": "You usually see early signals in the first few weeks. Stable results often take two to three months, because the platforms need data and we need time to test."
+      },
+      {
+            "q": "What is the minimum ad budget to start?",
+            "a": "It depends on your market and goal. Many small businesses start with a modest test budget and scale once the numbers work. We'll suggest a figure after we review your goals."
+      },
+      {
+            "q": "Do you work with startups?",
+            "a": "Yes. We start with tracking, a small test budget and quick learning, then scale what works."
+      },
+      {
+            "q": "Which is better for leads: Google Ads or Meta Ads?",
+            "a": "Google Ads often brings higher-intent leads, because people are searching. Meta Ads can bring leads at a lower cost and reach people earlier. Many brands use both."
+      }
+]
   },
   "branding-agency-in-delhi": {
     metaTitle: "Branding Agency in Delhi NCR | Viral Ads Media",

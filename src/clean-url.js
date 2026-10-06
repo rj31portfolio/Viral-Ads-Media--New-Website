@@ -59,6 +59,9 @@
   };
 
   function normalizeServiceSlug(slug) {
+    if (slug === "best-performance-marketing-in-delhi") {
+      return "performance-marketing-agency-in-delhi";
+    }
     if (slug === "affordable-logo-and-branding-near-me") {
       return "branding-agency-in-delhi";
     }
@@ -80,6 +83,9 @@
     }
 
     const routeSlug = fileName === "service.html" ? normalizeServiceSlug(slug) : slug;
+    if (fileName === "service.html" && routeSlug === "performance-marketing-agency-in-delhi") {
+      return "/service/performance-marketing-agency-in-delhi/";
+    }
     if (fileName === "service.html" && routeSlug === "branding-agency-in-delhi") {
       return "/service/branding-agency-in-delhi/";
     }
@@ -137,6 +143,10 @@
         return rawHref;
       }
 
+      if (/^\/service\/(?:best-performance-marketing-in-delhi|performance-marketing-agency-in-delhi)\/?$/.test(url.pathname)) {
+        return `/service/performance-marketing-agency-in-delhi/${url.hash}`;
+      }
+
       if (/^\/service\/(?:affordable-logo-and-branding-near-me|branding-agency-in-delhi)\/?$/.test(url.pathname)) {
         return `/service/branding-agency-in-delhi/${url.hash}`;
       }
@@ -176,6 +186,10 @@
   }
 
   function replaceCurrentUrl() {
+    if (/^\/service\/(?:best-performance-marketing-in-delhi|performance-marketing-agency-in-delhi)\/?$/.test(window.location.pathname)) {
+      window.history.replaceState({}, "", `/service/performance-marketing-agency-in-delhi/${window.location.hash}`);
+      return;
+    }
     if (/^\/service\/(?:affordable-logo-and-branding-near-me|branding-agency-in-delhi)\/?$/.test(window.location.pathname)) {
       window.history.replaceState({}, "", `/service/branding-agency-in-delhi/${window.location.hash}`);
       return;
