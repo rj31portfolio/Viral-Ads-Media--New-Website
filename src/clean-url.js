@@ -59,6 +59,7 @@
   };
 
   function normalizeServiceSlug(slug) {
+    if (slug === "best-influencer-marketing-in-delhi") return "influencer-marketing-agency-delhi";
     if (slug === "best-performance-marketing-in-delhi") {
       return "performance-marketing-agency-in-delhi";
     }
@@ -82,6 +83,7 @@
       return null;
     }
 
+    if (fileName === "service.html" && normalizeServiceSlug(slug) === "influencer-marketing-agency-delhi") return "/service/influencer-marketing-agency-delhi/";
     const routeSlug = fileName === "service.html" ? normalizeServiceSlug(slug) : slug;
     if (fileName === "service.html" && routeSlug === "performance-marketing-agency-in-delhi") {
       return "/service/performance-marketing-agency-in-delhi/";
@@ -90,7 +92,7 @@
       return "/service/branding-agency-in-delhi/";
     }
     if (fileName === "service.html" && routeSlug === "website-designing-company-in-delhi") {
-      return "/website-designing-company-in-delhi/";
+      return "/service/website-designing-company-in-delhi/";
     }
     return `${config.cleanBase}/${encodeURIComponent(routeSlug)}`;
   }
@@ -109,6 +111,7 @@
   }
 
   function getRouteSlug(basePath, fallbackSearchParam) {
+    if (basePath === "/service" && /^\/influencer-marketing-agency-delhi(?:\/index\.html)?\/?$/.test(window.location.pathname)) return "influencer-marketing-agency-delhi";
     if (basePath === "/service" && window.location.pathname.replace(/\/+$/, "") === "/website-designing-company-in-delhi") {
       return "website-designing-company-in-delhi";
     }
@@ -151,8 +154,12 @@
         return `/service/branding-agency-in-delhi/${url.hash}`;
       }
 
-      if (/^\/service\/(?:affordable-web-developer-in-delhi|website-designing-company-in-delhi)\/?$/.test(url.pathname)) {
-        return `/website-designing-company-in-delhi/${url.hash}`;
+      if (/^\/(?:website-designing-company-in-delhi|service\/(?:affordable-web-developer-in-delhi|website-designing-company-in-delhi))(?:\/index\.html)?\/?$/.test(url.pathname)) {
+        return `/service/website-designing-company-in-delhi/${url.search}${url.hash}`;
+      }
+
+      if (/^\/(?:influencer-marketing-agency-delhi|service\/(?:best-influencer-marketing-in-delhi|influencer-marketing-agency-delhi))(?:\/index\.html)?\/?$/.test(url.pathname)) {
+        return `/service/influencer-marketing-agency-delhi/${url.search}${url.hash}`;
       }
 
       const fileName = url.pathname.split("/").pop();
@@ -186,6 +193,10 @@
   }
 
   function replaceCurrentUrl() {
+    if (/^\/(?:influencer-marketing-agency-delhi|service\/(?:best-influencer-marketing-in-delhi|influencer-marketing-agency-delhi))(?:\/index\.html)?\/?$/.test(window.location.pathname)) {
+      window.history.replaceState({}, "", `/service/influencer-marketing-agency-delhi/${window.location.search}${window.location.hash}`);
+      return;
+    }
     if (/^\/service\/(?:best-performance-marketing-in-delhi|performance-marketing-agency-in-delhi)\/?$/.test(window.location.pathname)) {
       window.history.replaceState({}, "", `/service/performance-marketing-agency-in-delhi/${window.location.hash}`);
       return;
@@ -194,8 +205,8 @@
       window.history.replaceState({}, "", `/service/branding-agency-in-delhi/${window.location.hash}`);
       return;
     }
-    if (/^\/(?:website-designing-company-in-delhi|service\/(?:affordable-web-developer-in-delhi|website-designing-company-in-delhi))\/?$/.test(window.location.pathname)) {
-      window.history.replaceState({}, "", `/website-designing-company-in-delhi/${window.location.hash}`);
+    if (/^\/(?:website-designing-company-in-delhi|service\/(?:affordable-web-developer-in-delhi|website-designing-company-in-delhi))(?:\/index\.html)?\/?$/.test(window.location.pathname)) {
+      window.history.replaceState({}, "", `/service/website-designing-company-in-delhi/${window.location.search}${window.location.hash}`);
       return;
     }
     if (window.location.pathname.replace(/\/+$/, "") === "/service/best-seo-agency-near-me") {

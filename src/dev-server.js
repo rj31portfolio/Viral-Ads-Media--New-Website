@@ -37,8 +37,11 @@ const DYNAMIC_ROUTE_RESOLVERS = [
 
 function resolveRoute(requestUrl) {
   const url = new URL(requestUrl, "http://localhost");
-  if (url.pathname.replace(/\/+$/, "") === "/website-designing-company-in-delhi") {
-    return "/service.html?website-designing-company-in-delhi";
+  if (/^\/service\/website-designing-company-in-delhi(?:\/index\.html)?\/?$/.test(url.pathname)) {
+    return `/service/website-designing-company-in-delhi/index.html${url.search}`;
+  }
+  if (/^\/service\/influencer-marketing-agency-delhi(?:\/index\.html)?\/?$/.test(url.pathname)) {
+    return `/service/influencer-marketing-agency-delhi/index.html${url.search}`;
   }
   const resolvedPath = ROUTES[url.pathname];
 
@@ -62,7 +65,24 @@ function resolveRoute(requestUrl) {
   return requestUrl;
 }
 
-function cleanUrlMiddleware(req, _res, next) {
+function cleanUrlMiddleware(req, res, next) {
+  const url = new URL(req.url || "/", "http://localhost");
+  if (/^\/(?:website-designing-company-in-delhi|service\/affordable-web-developer-in-delhi)(?:\/index\.html)?\/?$/.test(url.pathname) ||
+      (/^\/service(?:\.html)?\/?$/.test(url.pathname) &&
+       ["affordable-web-developer-in-delhi", "website-designing-company-in-delhi"].includes(url.search.slice(1).replace(/^id=/, "")))) {
+    const search = url.pathname.startsWith("/service/") ? url.search : "";
+    res.writeHead(301, { Location: `/service/website-designing-company-in-delhi/${search}` });
+    res.end();
+    return;
+  }
+  if (/^\/(?:influencer-marketing-agency-delhi|service\/best-influencer-marketing-in-delhi)(?:\/index\.html)?\/?$/.test(url.pathname) ||
+      (/^\/service(?:\.html)?\/?$/.test(url.pathname) &&
+       ["best-influencer-marketing-in-delhi", "influencer-marketing-agency-delhi"].includes(url.search.slice(1).replace(/^id=/, "")))) {
+    const search = url.pathname.startsWith("/service/") ? url.search : "";
+    res.writeHead(301, { Location: `/service/influencer-marketing-agency-delhi/${search}` });
+    res.end();
+    return;
+  }
   if (!req.url || req.url.includes(".")) {
     next();
     return;
@@ -87,4 +107,5 @@ if (require.main === module) {
 module.exports = {
   ROUTES,
   resolveRoute,
+  cleanUrlMiddleware,
 };

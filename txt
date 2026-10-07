@@ -1,16 +1,18 @@
 Daily Website Development Report
-Date: 05/10/2026
+Date: 06/10/2026
 Name: Raju Ali
 Project Name: viral ads media
 Work In Progress:-
-make generate portfolio images meta ads report show 
-update seo contenet in website desginging srvice page
-Seo Page and Social Media Page 
-explore webiste wild roar safari
-
-Website Live Link - 
+make update logo and branding service page contenet update 
+and also update seo content performance marketing detail page
+working on hi choice home page redesigning all section
+capify website lead form mail update for enquiry
+Website Live Link - viraladsmedia.com
+https://hichoice-redesigning.netlify.app/
 Issues / Challenges:- Na
 Feedback Call Update:- 
 Pending From Client / Team:- Na
 Google Ads - Ads Manages
+
+in have alery service pages but that page have i give you seo rich contenet and also change page slud not make new that page 
 

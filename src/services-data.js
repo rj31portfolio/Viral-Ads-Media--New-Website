@@ -282,32 +282,82 @@ const SINGLE_SERVICE_DATABASE = {
   //     { q: "Can we scale channels incrementally?", a: "Yes, we often begin with high-priority channels and expand into full omnichannel execution as revenue grows." }
   //   ]
   // },
-  "best-influencer-marketing-in-delhi": {
-    metaTitle: "Influencer Marketing Agency Delhi NCR | Creators, Reels & Brand Growth",
-    metaDescription: "Grow your brand with Viral Ads Media, an influencer marketing agency in Delhi NCR creating viral creator campaigns, Instagram reels, collaborations and content strategies that drive results.",
-    heading: `बड़े Influencers के साथ करो <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">धमाका!</span>`,
-    shortDesc: "Partner with authentic creator voices to drive massive organic reach, viral unboxings, and high-converting social proof.",
-    tools: [
-      { name: "Expin", logo: "./Assets/tools/expin.png" },
-      { name: "Star Ngage", logo: "./Assets/tools/star-ngage.png" },
-    ],
-    clients: [
-      { name: "Ocean Beauty", logo: "./Assets/brands/ocean beauty.png" },
-      { name: "Hoot Beauty", logo: "./Assets/brands/hoot beauty.png" },
-      { name: "Drapple", logo: "./Assets/brands/drapple.png" }
-    ],
-    portfolio: [
-      { title: "Ocean Beauty", client: "Ocean Beauty", year: "2026", img: "./Assets/case-study/ocean.png" },
-      { title: "Hoot Beauty", client: "Hoot Beauty", year: "2026", img: "./Assets/case-study/hoot.png" },
-      { title: "Drapple", client: "Drapple", year: "2026", img: "./Assets/case-study/drapple.png" },
-    ],
-    faqs: [
-      { q: "Do you handle product seeding and PR packages?", a: "Yes, we manage influencer gifting logistics, contract negotiations, and content rights from start to finish." },
-      { q: "How do you vet influencers for authenticity?", a: "We analyze audience demographics, engagement ratios, and fake-follower metrics using advanced vetting software." },
-      { q: "Can influencer posts be turned into paid ads?", a: "Yes! We run whitelisting campaigns utilizing creator handles to supercharge ad conversion performance." },
-      { q: "Do you work with micro-influencers?", a: "Micro-influencers often deliver higher ROI and trust. We curate custom mixes of nano, micro, and macro creators." }
-    ]
-  },
+  "influencer-marketing-agency-delhi": {
+  "metaTitle": "Influencer Marketing Agency in Delhi | Viral Ads Media",
+  "metaDescription": "Viral Ads Media is an influencer marketing agency in Delhi NCR. Creator discovery, campaigns, UGC and ROI reports. Get a free creator shortlist.",
+  "heading": "Influencer Marketing Agency in Delhi That Turns Creators Into Customers",
+  "shortDesc": "Viral Ads Media is an influencer marketing agency in Delhi. We find the right creators, plan the campaign, make the content and track every rupee. Brands across Delhi NCR work with us for Instagram collaborations, UGC, paid partnerships and creator-led ads that bring real enquiries and sales, not just likes.",
+  "tools": [
+    {
+      "name": "Expin",
+      "logo": "./Assets/tools/expin.png"
+    },
+    {
+      "name": "Star Ngage",
+      "logo": "./Assets/tools/star-ngage.png"
+    }
+  ],
+  "clients": [
+    {
+      "name": "Ocean Beauty",
+      "logo": "./Assets/brands/ocean beauty.png"
+    },
+    {
+      "name": "Hoot Beauty",
+      "logo": "./Assets/brands/hoot beauty.png"
+    },
+    {
+      "name": "Drapple",
+      "logo": "./Assets/brands/drapple.png"
+    }
+  ],
+  "portfolio": [
+    {
+      "title": "Ocean Beauty",
+      "client": "Ocean Beauty",
+      "year": "2026",
+      "img": "./Assets/case-study/ocean.png"
+    },
+    {
+      "title": "Hoot Beauty",
+      "client": "Hoot Beauty",
+      "year": "2026",
+      "img": "./Assets/case-study/hoot.png"
+    },
+    {
+      "title": "Drapple",
+      "client": "Drapple",
+      "year": "2026",
+      "img": "./Assets/case-study/drapple.png"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What does an influencer marketing agency in Delhi do?",
+      "a": "It finds and vets creators, plans the campaign, handles contracts and content approvals, and reports results. Viral Ads Media also boosts the best creator posts as ads and tracks sales so you know what worked."
+    },
+    {
+      "q": "What is the best influencer marketing company in Delhi for small businesses?",
+      "a": "The best one is the one that shows real results, explains its fees and reports clearly. For small budgets, look for agencies that work with nano and micro creators. We do, and we start small."
+    },
+    {
+      "q": "How long does it take to see results?",
+      "a": "Views and engagement show within days. Sales usually need two to four weeks of data. A few good campaigns tell you more than one."
+    },
+    {
+      "q": "What is influencer whitelisting?",
+      "a": "Whitelisting means running ads through a creator's account with their permission. People see the ad from someone they trust. It often builds more trust than a brand-handle ad."
+    },
+    {
+      "q": "Do you work with brands across Delhi NCR?",
+      "a": "Yes. We work with brands in Delhi, Noida and Gurugram, and in Rohini and nearby areas. Our office is in Budh Vihar, Delhi."
+    },
+    {
+      "q": "Can influencer marketing increase sales, or only awareness?",
+      "a": "It can do both. Use promo codes, affiliate links and partnership ads to push sales. Pure awareness posts work best for launches."
+    }
+  ]
+},
   // "meme-marketing": {
   //   heading: `Gen-Z को हंसाओ और ब्रांड <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">वायरल</span> कराओ!`,
   //   shortDesc: "Leverage internet culture and contextual humor to place your brand straight into the conversational stream of young audiences.",

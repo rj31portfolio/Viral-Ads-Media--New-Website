@@ -7,7 +7,7 @@
     { slug: "website-designing-company-in-delhi", title: "Website Designing", icon: "fa-display" },
     { slug: "performance-marketing-agency-in-delhi", title: "Performance Marketing", icon: "fa-chart-line" },
     { slug: "branding-agency-in-delhi", title: "Logo & Branding", icon: "fa-pen-nib" },
-    { slug: "best-influencer-marketing-in-delhi", title: "Influencer Marketing", icon: "fa-user-astronaut" },
+    { slug: "influencer-marketing-agency-delhi", title: "Influencer Marketing", icon: "fa-user-astronaut" },
     { slug: "proffessional-brand-shoots-in-delhi", title: "Brand Shoots", icon: "fa-camera-retro" },
   ];
 
@@ -102,7 +102,23 @@
         canonical.rel = "canonical";
         document.head.appendChild(canonical);
       }
-      canonical.href = new URL("/website-designing-company-in-delhi/", window.location.origin).href;
+      canonical.href = new URL("/service/website-designing-company-in-delhi/", window.location.origin).href;
+    }
+
+    const influencerContent = document.getElementById("servInfluencerContent");
+    if (influencerContent && slug === "influencer-marketing-agency-delhi") {
+      influencerContent.hidden = false;
+      document.getElementById("serviceDetailMain").classList.add("influencer-service-page");
+      const faqSection = document.getElementById("servFaqList").closest("section");
+      faqSection.querySelector("h2").textContent = "Frequently asked questions";
+      faqSection.querySelector(".text-zinc-400").hidden = true;
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.rel = "canonical";
+        document.head.appendChild(canonical);
+      }
+      canonical.href = new URL("/service/influencer-marketing-agency-delhi/", window.location.origin).href;
     }
 
     // Populate Tools with Logo Images matching reference style
@@ -174,6 +190,7 @@
 
     // Populate Accordion FAQs
     const faqList = document.getElementById("servFaqList");
+    faqList.replaceChildren();
     data.faqs.forEach((faq, index) => {
       const item = document.createElement("div");
       item.className = "faq-item bg-[#0c0c0c] border border-white/10 rounded-2xl overflow-hidden transition-all duration-300";

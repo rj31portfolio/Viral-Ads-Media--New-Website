@@ -1,42 +1,859 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
+  <base href="../../">
+  <link rel="canonical" href="/service/website-designing-company-in-delhi/">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="../../Assets/favicon/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="96x96" href="../../Assets/favicon/favicon-96x96.png" />
-  <link rel="shortcut icon" href="../../Assets/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../../Assets/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="Assets/favicon/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="Assets/favicon/favicon-96x96.png" />
+  <link rel="shortcut icon" href="Assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="Assets/favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Viral Ads Media" />
-  <link rel="manifest" href="../../Assets/favicon/site.webmanifest" />
-  <title>Website Designing Agency Delhi NCR | Creative Websites That Convert</title>
-  <meta name="description" content="Transform your digital presence with Viral Ads Media, a creative website designing agency in Delhi NCR offering custom web design, ecommerce solutions and conversion-focused experiences." />
-  <base href="../../" />
-  <style>
-    body { margin: 0; background: #050505; color: #fff; font-family: Inter, Arial, sans-serif; display: grid; place-items: center; min-height: 100vh; }
-  </style>
-</head>
-<body>
-  <p>Loading...</p>
+  <link rel="manifest" href="Assets/favicon/site.webmanifest" />
+  <meta name="description" content="Viral Ads Media is a website designing company in Delhi NCR. Get fast, mobile-friendly, SEO-friendly websites with clear pricing. Free quote on WhatsApp." />
+  <title>Website Designing Company in Delhi | Viral Ads Media</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
   <script>
-    (async () => {
-      try {
-        const response = await fetch('../../service.html');
-        const html = await response.text();
-        const withBase = html.replace('<head>', '<head><base href="../../">');
-        const cleanPath = window.location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
-        if (cleanPath) {
-          window.history.replaceState({}, '', cleanPath);
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#050505',
+            charcoal: '#0D0D0D',
+            surface: '#0c0c0b',
+            bone: '#EDEAE2',
+            smoke: '#A7A7A7',
+            orange: '#EC4D20',
+            line: '#242424'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            hindi: ['Amita', 'serif']
+          }
         }
-        document.open();
-        document.write(withBase);
-        document.close();
-      } catch (error) {
-        document.body.innerHTML = '<p>Unable to load this service page.</p>';
-        console.error(error);
       }
-    })();
+    };
   </script>
+  <link href="./src/input.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="./src/seo-service.css">
+  <style>
+    .clientSwiper, .clientPortfolioSwiper { overflow: hidden; padding-bottom: 3.5rem; width: 100%; }
+    .clientPortfolioSwiper .swiper-slide { height: auto; transition: transform 0.4s ease; }
+    .swiper-pagination-bullet { background: #52525b !important; opacity: 1; }
+    .swiper-pagination-bullet-active { background: #EC4D20 !important; width: 24px; border-radius: 4px; transition: width 0.3s ease; }
+    
+    /* Accordion styling */
+    .faq-panel { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+    .faq-item.active .faq-panel { max-height: 250px; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); color: #EC4D20; }
+  </style>
+  <link rel="stylesheet" href="src/contact-widgets.css">
+</head>
+<body class="bg-ink text-white overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <!-- <div id="navbar-placeholder"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("navbar.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("navbar-placeholder").innerHTML = html;
+          if (typeof initNavbar === "function") initNavbar();
+        })
+        .catch(err => console.error("Navbar Load Error:", err));
+    });
+  </script> -->
+  
+    <!-- header start -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-black border-b border-white/10">
+    <nav class="max-w-9xl mx-auto h-[90px] px-4 md:px-8 lg:px-12 flex items-center justify-between">
+      <!-- LOGO -->
+      <div class="flex items-center shrink-0">
+        <a href="index.html">
+          <img src="Assets/animated logo.gif" alt="Viral Ads Media"
+            class="w-[120px] sm:w-[150px] lg:w-[180px] h-auto" />
+        </a>
+      </div>
+
+      <!-- DESKTOP MENU -->
+      <ul class="hidden lg:flex items-center justify-center gap-1 flex-1">
+        <li>
+          <a href="index.html" class="nav-item text-bold ">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+        </li>
+
+        <!-- SERVICES DROPDOWN (Desktop) -->
+        <li class="relative" id="servicesMenu">
+          <a href="services.html" class="nav-item flex items-center gap-1.5 cursor-pointer" id="servicesBtn">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Services</span>
+            <!-- <i
+                class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"
+                id="servicesArrow"
+              ></i> -->
+          </a>
+
+          <div id="servicesDropdown"
+            class="absolute left-1/2 -translate-x-1/2 top-full w-[340px] bg-[#0b0b0b] border border-white/10 rounded-2xl p-4 opacity-0 invisible translate-y-3 transition-all duration-300 shadow-2xl z-50 max-h-[70vh] overflow-y-auto">
+            <div class="grid gap-2">
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?social-media-marketing-agency-in-delhi">
+                <h4 class="font-bold text-sm text-white">
+                  Social Media Marketing
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Grow & engage your audience
+                </p>
+              </a>
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition" href="service.html?seo-agency-in-delhi-ncr">
+                <h4 class="font-bold text-sm text-white">
+                  Search Engine Optimization
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Rank higher & grow traffic organically
+                </p>
+              </a>
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="/service/website-designing-company-in-delhi/">
+                <h4 class="font-bold text-sm text-white">
+                  Website Designing
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Create stunning, high-converting websites
+                </p>
+              </a>
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="/service/performance-marketing-agency-in-delhi/">
+                <h4 class="font-bold text-sm text-white">
+                  Performance Marketing
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Data-driven results for scaling brands
+                </p>
+              </a>
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="/service/branding-agency-in-delhi/">
+                <h4 class="font-bold text-sm text-white">Logo & Branding</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Brand Identity, Strategy & Design
+                </p>
+              </a>
+
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="/service/influencer-marketing-agency-delhi/">
+                <h4 class="font-bold text-sm text-white">
+                  Influencer Marketing
+                </h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Boost visibility & trust
+                </p>
+              </a>
+
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
+                href="service.html?proffessional-brand-shoots-in-delhi">
+                <h4 class="font-bold text-sm text-white">Brand Shoots</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Professional corporate & product photography
+                </p>
+              </a>
+
+            </div>
+
+            <div class="border-t border-white/10 mt-3 pt-3">
+              <a href="services.html"
+                class="flex items-center justify-between text-sm font-semibold text-[var(--primary-color)] hover:underline">
+                <span>Explore All Services</span>
+                    <span>→</span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a href="portfolio.html" class="nav-item">
+            <i class="fa-solid fa-photo-film"></i>
+            <span>Portfolio</span>
+          </a>
+        </li>
+
+        <!-- INDUSTRIES DROPDOWN (Desktop - Fully Dynamic) -->
+        <li class="relative" id="industryMenu">
+          <a href="industries.html" class="nav-item flex items-center gap-1.5 cursor-pointer" id="industryBtn">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Industries</span>
+            <!-- <i
+                id="industryArrow"
+                class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"
+              ></i> -->
+          </a>
+
+          <div id="industryDropdown"
+            class="absolute left-1/2 -translate-x-1/2 top-full w-[340px] bg-[#0b0b0b] border border-white/10 rounded-2xl p-4 opacity-0 invisible translate-y-3 transition-all duration-300 shadow-2xl z-50 max-h-[70vh] overflow-y-auto">
+            <div class="grid gap-2">
+              <a href="industry-detail.html?affordable-e-commerce-website-development-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">E-Commerce</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Growth solutions for online brands</p>
+              </a>
+              <a href="industry-detail.html?healthcare-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Healthcare</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Digital solutions for healthcare brands</p>
+              </a>
+              <a href="industry-detail.html?manufacturing-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Manufacturing</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Industrial digital growth solutions</p>
+              </a>
+              <a href="industry-detail.html?real-estate-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Real Estate</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Generate quality property leads</p>
+              </a>
+              <a href="industry-detail.html?education-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Education</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Build powerful online presence</p>
+              </a>
+              <a href="industry-detail.html?fashion-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Fashion</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Create digital brand identity</p>
+              </a>
+              <a href="industry-detail.html?travel-marketing-services"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Travel</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Tourism & hospitality marketing</p>
+              </a>
+              <a href="industry-detail.html?appliances-marketing-service"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Appliances</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Home appliance brand scaling</p>
+              </a>
+              <a href="industry-detail.html?cosmetics-marketing-service"
+                class="block p-2.5 rounded-xl hover:bg-white/5 transition cursor-pointer">
+                <h4 class="font-bold text-sm text-white">Cosmetics</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">Beauty & wellness customer acquisition</p>
+              </a>
+            </div>
+
+            <div class="border-t border-white/10 mt-3 pt-3">
+              <a href="industries.html"
+                class="flex items-center justify-between text-sm font-semibold text-[var(--primary-color)] hover:underline">
+                <span>Explore All Industries</span>
+                    <span>→</span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a href="about.html" class="nav-item">
+            <i class="fa-solid fa-building"></i>
+            <span>Company</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="blogs.html" class="nav-item">
+            <i class="fa-solid fa-pen-nib"></i>
+            <span>Blogs</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="career.html" class="nav-item">
+            <i class="fa-solid fa-rocket"></i>
+            <span>Career</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- RIGHT CTA -->
+      <div class="hidden lg:flex shrink-0 gap-4">
+        <a href="contact.html"
+          class="text-white px-5 py-3 flex flex-col items-center text-xs font-bold rounded-lg shadow-lg hover:scale-105 transition"
+          style="background: linear-gradient(to top,var(--primary-color) , #ff6a00);">
+          <i class="fa-solid fa-comments text-lg mb-0.5"></i>
+          Let's Talk
+        </a>
+        <a href="https://razorpay.me/@viraladsmedia9256" target="_blank"
+          class="text-white px-5 py-3 flex flex-col items-center text-xs font-bold rounded-lg shadow-lg hover:scale-105 transition"
+          style="background: linear-gradient(to top,var(--primary-color) , #ff6a00);">
+          <i class="fa-solid fa-credit-card text-lg mb-0.5"></i>
+          Pay Now!
+        </a>
+      </div>
+
+      <!-- MOBILE TOGGLE BUTTON -->
+      <button id="mobileBtn"
+        class="lg:hidden text-white border border-white/20 w-11 h-11 rounded-full flex items-center justify-center hover:border-[var(--primary-color)] transition cursor-pointer">
+        <i class="fa-solid fa-bars text-lg" id="mobileMenuIcon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- MOBILE MENU DRAWER (With Dynamic Submenus) -->
+  <div id="mobileMenu"
+    class="fixed top-[90px] left-0 w-full bg-black hidden lg:hidden z-40 shadow-2xl overflow-y-auto max-h-[calc(100vh-90px)]">
+    <div class="px-5 sm:px-8 py-5 space-y-1">
+      <a href="index.html" class="mobile-link"><span>Home</span></a>
+
+      <!-- Mobile Services Accordion -->
+      <div>
+        <div class="flex items-center justify-between py-3 overflow-y-auto">
+          <a href="services.html"
+            class="text-white text-base font-semibold hover:text-[var(--primary-color)]">Services</a>
+          <button id="mobileServicesToggle" class="text-white p-2 cursor-pointer">
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="mobileServicesArrow"></i>
+          </button>
+        </div>
+        <div id="mobileServicesSub" class="hidden pl-4 py-3 space-y-3 mt-1">
+          <a href="service.html?social-media-marketing-agency-in-delhi"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Social Media
+            Marketing</a>
+          <a href="service.html?seo-agency-in-delhi-ncr"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Search Engine
+            Optimization</a>
+          <a href="/service/website-designing-company-in-delhi/"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Website Designing</a>
+          <a href="/service/performance-marketing-agency-in-delhi/"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Performance
+            Marketing</a>
+          <a href="services.html" class="block text-sm font-semibold text-[var(--primary-color)] pt-1">View All Services
+            →</a>
+        </div>
+      </div>
+
+      <a href="portfolio.html" class="mobile-link"><span>Portfolio</span></a>
+
+      <!-- Mobile Industries Accordion (Dynamic Links) -->
+      <div>
+        <div class="flex items-center justify-between py-3">
+          <a href="industries.html"
+            class="text-white text-base font-semibold hover:text-[var(--primary-color)]">Industries</a>
+          <button id="mobileIndustryToggle" class="text-white p-2 cursor-pointer">
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="mobileIndustryArrow"></i>
+          </button>
+        </div>
+        <div id="mobileIndustriesSub" class="hidden pl-4 py-3 space-y-3 mt-1">
+          <a href="industry-detail.html?affordable-e-commerce-website-development-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">E-Commerce</a>
+          <a href="industry-detail.html?healthcare-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Healthcare</a>
+          <a href="industry-detail.html?manufacturing-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Manufacturing</a>
+          <a href="industry-detail.html?real-estate-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Real Estate</a>
+          <a href="industry-detail.html?education-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Education</a>
+          <a href="industry-detail.html?fashion-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Fashion</a>
+          <a href="industry-detail.html?travel-marketing-services"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Travel</a>
+          <a href="industry-detail.html?appliances-marketing-service"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Appliances</a>
+          <a href="industry-detail.html?cosmetics-marketing-service"
+            class="block text-sm text-zinc-400 py-1 hover:text-[var(--primary-color)] transition">Cosmetics</a>
+          <a href="industries.html" class="block text-sm font-semibold text-[var(--primary-color)] pt-1">View All
+            Industries Matrix →</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col space-y-4">
+        <a href="about.html" class="mobile-link"><span>Company</span></a>
+        <a href="blogs.html" class="mobile-link"><span>Blogs</span></a>
+        <a href="career.html" class="mobile-link"><span>Career</span></a>
+      </div>
+      <a href="contact.html"
+        class="block w-full text-center py-3.5 mt-6 bg-[var(--primary-color)] text-white font-bold rounded-lg">Let's
+        Talk</a>
+      <a href="https://razorpay.me/@viraladsmedia9256" target="_blank"
+        class="block w-full text-center py-3.5 mt-6 bg-[var(--primary-color)] text-white font-bold rounded-lg">Pay
+        Now</a>
+    </div>
+  </div>
+
+  <!-- header end -->
+
+
+  <!-- NOT FOUND STATE -->
+  <div id="notFoundState" class="hidden min-h-[70vh] flex flex-col items-center justify-center text-center px-6 mt-32">
+    <p class="font-mono text-xs text-smoke uppercase tracking-widest mb-4">404 Error</p>
+    <h1 class="text-4xl font-black mb-4">SERVICE SPECIFICATION NOT FOUND</h1>
+    <a href="../services.html" class="px-6 py-3 bg-orange text-white font-bold rounded-xl text-sm">Return to Services Hub →</a>
+  </div>
+
+  <!-- MAIN DYNAMIC SERVICE CONTAINER -->
+  <main id="serviceDetailMain" class="website-service-page">
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative min-h-[60vh] flex flex-col items-center justify-center px-6 pt-40 pb-20 text-center overflow-hidden border-b border-line">
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-orange/15 blur-[140px]"></div>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full text-orange font-mono text-xs uppercase tracking-widest">
+          [ Viral Ads Media- Services Solutions ]
+        </span>
+        <!-- Catchy Hindi + English Blended Heading with Red/Gradient Box for Hindi Text Only -->
+        <h1 id="servHeading" class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-tight">Website Designing Company in Delhi That Builds Sites Customers Actually Use</h1>
+        <p id="servBrandingTagline" class="text-lg sm:text-xl text-orange font-hindi" hidden>Ideas हमारे होते हैं. Viral Moment आपका होता है!</p>
+        <!-- Short Description -->
+        <p id="servShortDesc" class="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto font-light leading-relaxed">Viral Ads Media is a website designing company in Delhi, based in Rohini. We design and build fast, mobile-friendly websites that bring you more calls, enquiries and orders. Design, code, SEO and ads sit under one roof, so you don't have to run after five different vendors.</p>
+      </div>
+    </section>
+
+
+    <!-- Supplied copy for the existing Performance Marketing service. -->
+    <div id="servWebsiteContent" class="seo-service-content">
+      <div class="seo-content-inner">
+<p class="seo-content-intro">Small shop, growing brand or big company, we explain every step in plain words. No confusing tech talk. No surprise bills.</p>
+<section class="seo-content-block "><h2>What does a website designing company in Delhi do?</h2><p>A website designing company in Delhi plans, designs and builds your website so customers can find you, trust you and contact you. It handles the layout, the mobile view, the speed, the SEO setup and the code behind every page. A good one also helps you get visitors after launch.</p><p>When you work with us, you get:</p><ul class="seo-content-list"><li>A design made for your brand, not a copied template</li><li>A mobile-first layout, because most visitors come from phones</li><li>Fast pages that pass Google's speed checks</li><li>SEO set up from day one</li><li>Call, WhatsApp and enquiry buttons that actually work</li><li>Analytics, so you can see what is working</li><li>Support after launch</li></ul></section>
+<section class="seo-content-block "><h2>Website designing services in Delhi</h2><p>Every business needs something different. These are the website designing services in Delhi we offer most.</p><div class="seo-content-grid"><article class="seo-content-card"><h3>Custom website designing</h3><p>We design your site from scratch around your brand, your customers and your goals. As a custom website designing company in Delhi, we don't force your business into a ready-made box. The result is a modern website design that looks like you.</p></article>
+<article class="seo-content-card"><h3>Responsive and mobile-first website design</h3><p>Your site should look sharp on a small phone, a tablet and a big screen. We are a responsive website designing company in Delhi that starts with the phone view first, then scales up.</p></article>
+<article class="seo-content-card"><h3>Corporate and business website design</h3><p>Your website is often the first meeting. We build clean corporate and business websites that show who you are, what you sell and why people should trust you.</p></article>
+<article class="seo-content-card"><h3>Landing page design</h3><p>Running Google or Instagram ads? A focused landing page turns clicks into leads. One page, one goal, one clear button.</p></article>
+<article class="seo-content-card"><h3>UI UX design</h3><p>We map how visitors move through your site, then design each screen so people find what they need fast. Less confusion, more enquiries.</p></article>
+<article class="seo-content-card"><h3>Ecommerce website design</h3><p>Product pages, cart, checkout and payments, built so shoppers can buy without getting stuck.</p></article>
+<article class="seo-content-card"><h3>Website redesign</h3><p>Old site, slow site or outdated look? We rebuild it and keep the pages that already bring you traffic.</p></article></div></section>
+<section class="seo-content-block "><h2>Website Development Company in Delhi: design and code in one team</h2><p>A beautiful design falls apart if the code behind it is slow. That's why our designers and developers work together from day one. As a web development company in Delhi, we cover:</p><ul class="seo-content-list"><li>Frontend development: everything visitors see and tap, built with HTML, CSS, JavaScript, React and Next.js.</li><li>Backend development: forms, logins, databases and payments, including PHP development.</li><li>CMS development: WordPress development so you can edit text and images yourself.</li><li>Custom web development: booking systems, customer portals and dashboards.</li><li>Ecommerce development: online stores with payment gateways like Razorpay.</li></ul><p>Here is a quick guide to picking the right platform:</p><div class="social-platform-table" role="region" aria-label="Website platform comparison" tabindex="0"><table><thead><tr><th scope="col">Platform</th><th scope="col">Best for</th><th scope="col">Why</th></tr></thead><tbody><tr><th scope="row">WordPress</th><td>Service businesses, blogs, company sites</td><td>Easy to edit, big plugin library</td></tr><tr><th scope="row">Shopify</th><td>Online stores</td><td>Built for selling, simple to manage</td></tr><tr><th scope="row">Custom (React, Next.js)</th><td>Web apps, special features</td><td>Full control, high speed</td></tr></tbody></table></div><p>Not sure which one fits? Tell us what you want your website to do and we'll suggest the simplest option. If a cheaper platform works, we'll say so.</p></section>
+<section class="seo-content-block "><h2>SEO-friendly website design: fast, mobile-ready and easy for Google to read</h2><p>A good-looking website that nobody finds is just a poster in a locked room. We are a website designing company in Delhi with SEO built into the process, not added at the end. If you want an SEO friendly website design company in Delhi, this is what we check on every project..</p></section>
+<section class="seo-content-block "><h2>Our website design process</h2><p>No guesswork. Here is how every project runs.</p><ol class="seo-content-steps"><li>Discovery. We sit down with you and learn your goals, your customers and any technical limits. This step saves a lot of rework later.</li><li>Wireframing. We turn your needs into simple page layouts and mockups. You see the structure and the look before any code is written, and you tell us what to change.</li><li>Development and optimization. Our team builds clean, fast pages and tunes them for speed, mobile and SEO.</li><li>Launch. We run a full quality check, move the site live and set up analytics so you can track results from day one.</li></ol><p>Most business websites take about 3 to 6 weeks, depending on size and how fast feedback comes in.</p></section>
+<section class="seo-content-block seo-content-highlight"><h2>Why businesses choose Viral Ads Media</h2><p>We don't skip steps. Every client goes through a proper brand workshop and market research before we design anything, because skipping steps is how you end up with a logo instead of a brand.</p><p>Here is what you can count on:</p><ul class="seo-content-list"><li>Real numbers. We have scaled 300+ brands, run 500+ campaigns and kept 95% of our clients with us.</li><li>One team for everything. Website, SEO, Google and Meta ads, social media and branding, all in one place.</li><li>Leads, not likes. We build websites to bring you enquiries, not just compliments.</li><li>Plain talk. We tell you what we're doing and why.</li><li>A real office. We're in Budh Vihar, Rohini. Come visit, call or message us.</li><li>Trusted partners. We are a Google Partner and a Meta Marketing Partner.</li></ul><p>Looking for a professional website designing company in Delhi? Check the proof, not the claims. Many agencies call themselves the best website designing company in Delhi. Ask to see live websites, real client names and real results. We're happy to show ours.</p></section>
+<section class="seo-content-block "><h2>Websites and brands we have worked on</h2><p>We have built and grown brands like Topson Plast, Drapple, Allied Taps and Ocean Beauty, plus many more you can see in our portfolio.</p><p>We work with businesses in:</p><ul class="seo-content-list"><li>E-commerce: online stores that sell</li><li>Healthcare: clear, trustworthy clinic and hospital sites</li><li>Manufacturing: product catalogs and enquiry-ready company sites</li><li>Real estate: property pages that generate quality leads</li><li>Education: websites for schools and institutes</li><li>Fashion and cosmetics: brand-first design with strong visuals</li><li>Travel and appliances: booking-friendly and product-friendly layouts</li></ul></section>
+      </div>
+    </div>
+
+    <!-- 2. CLIENTS WE WORK WITH -->
+    <section class="py-24 px-6 lg:px-12 border-b border-line bg-charcoal">
+      <div class="max-w-7xl mx-auto space-y-10">
+        <div class="text-center">
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">Clients we work with</h2>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center justify-items-center">
+          <div id="servClientsLogoGrid" class="contents"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. TOOLS WE USE -->
+    <section class="py-24 px-6 lg:px-12 border-b border-line bg-ink">
+      <div class="max-w-7xl mx-auto space-y-10">
+        <div class="text-center">
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">Tools we use</h2>
+        </div>
+        <div id="servToolsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center justify-items-center"></div>
+      </div>
+    </section>
+
+    <!-- 4. CLIENT PORTFOLIO CAROUSEL WITH HERO IMAGES -->
+    <section class="py-24 px-6 lg:px-12 border-b border-line bg-surface/30">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-14 text-center max-w-xl mx-auto space-y-2">
+          <span class="text-xs font-mono uppercase tracking-[0.3em] text-orange block">[ Client Spotlight ]</span>
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight">Client Portfolio Showcase</h2>
+          <p class="text-zinc-400 text-sm">Explore interactive hero imagery and project executions tailored for this service.</p>
+        </div>
+
+        <div class="swiper clientPortfolioSwiper">
+          <div id="servPortfolioCarouselWrapper" class="swiper-wrapper"></div>
+          <div class="swiper-pagination mt-8"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ACCORDION FAQS SECTION -->
+    <section class="py-24 px-6 lg:px-12 border-b border-line">
+      <div class="max-w-4xl mx-auto space-y-12">
+        <div class="text-center space-y-3">
+          <span class="text-xs font-mono uppercase tracking-[0.3em] text-orange block">[ Got Questions? ]</span>
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight">Frequently Asked Questions</h2>
+          <p class="text-zinc-400 text-sm">Everything you need to know about our workflow, deliverables, and service execution.</p>
+        </div>
+        <div id="servFaqList" class="space-y-4"><details class="seo-content-card"><summary>How much does website designing cost in Delhi?</summary><p>Most small business websites cost between ₹30,000 and ₹1,50,000. Simple sites can start near ₹10,000, while ecommerce sites and custom apps cost more. The price depends on pages, design, features and content. Send us your needs for an exact quote.</p></details>
+<details class="seo-content-card"><summary>What is the difference between website designing and website development?</summary><p>Designing is how the site looks and feels: layout, colors, images and user flow. Development is how it works: code, forms, payments and databases. A website development agency in Delhi like ours does both, so the look and the tech fit together.</p></details>
+<details class="seo-content-card"><summary>Will my website be SEO-friendly and mobile-ready?</summary><p>Yes. We build every site mobile-first, optimize speed, and set up page titles, descriptions, clean URLs and schema markup. SEO doesn't stop at launch, though. Ranking takes ongoing work, and our SEO team can handle that.</p></details>
+<details class="seo-content-card"><summary>Do you use ready-made templates or custom designs?</summary><p>Both, depending on your budget and goal. A template can work well for a simple, low-cost site. If you want to stand out, we design custom. We'll tell you honestly which one suits you.</p></details></div>
+      </div>
+    </section>
+
+    <!-- 6. OTHER SERVICES QUICK JUMP -->
+    <section class="py-24 px-6 lg:px-12 bg-charcoal">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-end justify-between mb-12">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-[0.3em] text-orange block mb-2">[ Explore More ]</span>
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight">Other Core Services</h2>
+          </div>
+          <a href="../services.html" class="font-mono text-xs uppercase tracking-widest text-smoke hover:text-orange transition-colors">Services Hub →</a>
+        </div>
+        <div id="servOtherGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+      </div>
+    </section>
+
+  </main>
+    <!-- Footer Placeholder -->
+    <!-- <div id="footer-placeholder"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("footer.html")
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById("footer-placeholder").innerHTML = html;
+          })
+          .catch((err) => console.error("Footer load failed:", err));
+      });
+    </script> -->
+      <!-- footer start -->
+
+  <footer
+    class="text-white pt-16 pb-8 px-4 sm:px-6 lg:px-12 relative overflow-hidden border-t border-white/5 font-sans bg-[#050505]">
+
+    <div class="max-w-8xl mx-auto relative z-10 space-y-12">
+
+      <!-- Top Callout Banner -->
+      <div
+        class="relative bg-gradient-to-r from-[#0c0705] via-[#100806] to-[#070403] rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-[0_0_60px_rgba(236,77,32,0.15)] overflow-hidden border border-[#EC4D20]/50">
+
+        <!-- Subtle curved orange glow on the right bottom edge -->
+        <div
+          class="absolute -bottom-10 right-10 w-64 h-64 bg-[#EC4D20]/25 rounded-full blur-[60px] pointer-events-none">
+        </div>
+
+        <!-- Left side graphic icon & text -->
+        <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left relative z-10">
+          <div class="w-20 flex items-center justify-center text-3xl shrink-0">
+            <img src="Assets/brand mark.png" alt="Brand Mark" class="w-full h-auto object-contain">
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">Let's <span
+                class="text-[#EC4D20]">Grow Your Brand</span></h3>
+            <p class="text-zinc-300 text-sm sm:text-base font-normal">Powerful strategies. Creative ideas. Real
+              results.</p>
+            <p class="text-zinc-500 text-xs sm:text-sm">Partner with Viral Ads Media and take your business to the
+              next level.</p>
+          </div>
+        </div>
+
+        <!-- Enquire Now Button -->
+        <a href="https://wa.me/919354491934" target="_blank"
+          class="relative z-10 px-8 py-4 bg-gradient-to-r from-[#EC4D20] to-[#d8370d] hover:opacity-95 rounded-2xl font-bold text-white text-sm tracking-wide transition-all shadow-[0_0_35px_rgba(236,77,32,0.5),inset_0_1px_2px_rgba(255,255,255,0.3)] flex items-center gap-3 shrink-0 cursor-pointer">
+          <i class="fa-brands fa-whatsapp text-xl"></i> ENQUIRE NOW
+        </a>
+
+      </div>
+
+      <!-- Middle Content Columns Grid (5 Columns, Responsive & Certifications/Sponsorships 2-item grid preserved) -->
+      <!-- Middle Content Columns Grid (Responsive 2-column mobile, 5-column desktop) -->
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-8 pt-4 items-start">
+
+        <!-- Column 1: Brand Info & Socials -->
+        <!-- Added: col-span-2 sm:col-span-1 -->
+        <div class="col-span-2 sm:col-span-1 space-y-6 lg:pr-2">
+          <div class="flex items-center gap-3">
+            <div class="w-full flex items-center justify-start text-[#EC4D20] shrink-0">
+              <img src="Assets/VAM logo.png" alt="Viral Ads Media Logo" class="w-48 h-auto object-contain">
+            </div>
+          </div>
+          <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
+            We are a creative digital agency helping brands grow with innovative ideas, data-driven strategies, and
+            impactful marketing.
+          </p>
+          <!-- Follow Us Section -->
+          <div class="space-y-3 pt-2">
+            <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-zinc-500 font-semibold">FOLLOW US</p>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="https://www.facebook.com/theviraladsmedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-facebook text-xs"></i></a>
+              <a href="https://www.instagram.com/theviraladsmedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-instagram text-xs"></i></a>
+              <a href="https://www.behance.net/viraladsmedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-behance text-xs"></i></a>
+              <a href="https://www.linkedin.com/in/viral-ads-media-34ba19280/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-linkedin-in text-xs"></i></a>
+              <a href="https://www.youtube.com/@ViralAdsMedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-youtube text-xs"></i></a>
+              <a href="https://x.com/viraladsmedia/" target="_blank"
+                class="w-10 h-10 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-[#EC4D20] hover:bg-[#EC4D20]/10 transition"><i
+                  class="fa-brands fa-x-twitter text-xs"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links with Divider -->
+        <!-- Added: col-span-1 -->
+        <div class="col-span-1 space-y-4 border-t sm:border-t-0 sm:border-l border-white/10 pt-6 sm:pt-0 sm:pl-6">
+          <div class="flex items-center gap-2 text-[#EC4D20] text-sm font-bold">
+            <i class="fa-solid fa-link text-xl"></i>
+            <h4 class="text-white text-xl sm:text-2xl">Quick Links</h4>
+          </div>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-zinc-400">
+            <li><a href="./index.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Home</a></li>
+            <li><a href="./about.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Company</a></li>
+            <li><a href="./services.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Services</a></li>
+            <li><a href="./portfolio.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Our Work</a></li>
+            <li><a href="./blogs.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Blogs</a></li>
+            <li><a href="./career.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Career</a></li>
+            <li><a href="./contact.html"
+                class="hover:text-[#EC4D20] transition flex items-center text-base sm:text-lg gap-2.5"><i
+                  class="fa-solid fa-chevron-right text-[#EC4D20] text-xs"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Services with Divider -->
+        <!-- Added: col-span-1 -->
+        <div class="col-span-1 space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-6">
+          <div class="flex items-center gap-2 text-[#EC4D20] text-sm font-bold">
+            <i class="fa-solid fa-briefcase text-xl"></i>
+            <h4 class="text-white text-xl sm:text-2xl">Services</h4>
+          </div>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-zinc-400">
+            <li>
+              <a href="./service.html?social-media-marketing-agency-in-delhi"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-brands fa-facebook-messenger text-[#EC4D20] shrink-0"></i>
+                <span>Social Media Marketing</span>
+              </a>
+            </li>
+            <li>
+              <a href="./service.html?seo-agency-in-delhi-ncr"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-magnifying-glass-chart text-[#EC4D20] shrink-0"></i>
+                <span>Search Engine Optimization</span>
+              </a>
+            </li>
+            <li>
+              <a href="/service/website-designing-company-in-delhi/"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-paint-brush text-[#EC4D20] shrink-0"></i>
+                <span>Website Designing</span>
+              </a>
+            </li>
+            <li>
+              <a href="/service/performance-marketing-agency-in-delhi/"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-chart-simple text-[#EC4D20] shrink-0"></i>
+                <span>Performance Marketing</span>
+              </a>
+            </li>
+            <li>
+              <a href="/service/branding-agency-in-delhi/"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-signature text-[#EC4D20] shrink-0"></i>
+                <span>Logo & Branding</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="/service/influencer-marketing-agency-delhi/"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-star text-[#EC4D20] shrink-0"></i>
+                <span>Influencer Marketing</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./service.html?proffessional-brand-shoots-in-delhi"
+                class="flex items-center text-base sm:text-lg gap-3 hover:text-[#EC4D20] transition">
+                <i class="fa-solid fa-camera-retro text-[#EC4D20] shrink-0"></i>
+                <span>Brand Shoots</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Info with Divider & Pay Now! Button -->
+        <!-- Added: col-span-2 sm:col-span-1 -->
+        <div
+          class="col-span-2 sm:col-span-1 space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-6">
+          <div class="flex items-center gap-2 text-[#EC4D20] text-sm font-bold">
+            <i class="fa-solid fa-phone text-xl"></i>
+            <h4 class="text-white text-xl sm:text-2xl">Contact Info</h4>
+          </div>
+          <ul class="space-y-4 text-xs sm:text-sm text-zinc-400">
+            <li class="flex items-center gap-3.5">
+              <div
+                class="w-9 h-9 rounded-xl bg-[#121212] border border-white/10 flex items-center justify-center text-[#EC4D20] shrink-0 shadow-sm">
+                <i class="fa-solid fa-phone text-xs"></i>
+              </div>
+              <a href="tel:+919354491934" class="hover:text-white transition text-base sm:text-lg font-medium">+91
+                93544 91934</a>
+            </li>
+            <li class="flex items-center gap-3.5">
+              <div
+                class="w-9 h-9 rounded-xl bg-[#121212] border border-white/10 flex items-center justify-center text-[#EC4D20] shrink-0 shadow-sm">
+                <i class="fa-solid fa-envelope text-xs"></i>
+              </div>
+              <a href="mailto:info@viraladsmedia.com"
+                class="hover:text-white transition text-base sm:text-lg font-medium break-all">info@viraladsmedia.com</a>
+            </li>
+            <li class="flex items-start gap-3.5">
+              <div
+                class="w-9 h-9 rounded-xl bg-[#121212] border border-white/10 flex items-center justify-center text-[#EC4D20] shrink-0 shadow-sm mt-0.5">
+                <i class="fa-solid fa-location-dot text-xs"></i>
+              </div>
+              <span class="leading-relaxed text-base sm:text-lg text-zinc-300">B-33, Khatu Shyam Mandir Road, near
+                Max Bazar, Budh Vihar Phase I, Delhi, 110086</span>
+            </li>
+          </ul>
+
+          <!-- Pay Now! Button added to Contact Info Column -->
+          <div class="pt-3">
+            <a href="https://razorpay.me/@viraladsmedia9256" target="_blank"
+              class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-orange-600 to-[#EC4D20] hover:opacity-95 rounded-xl font-bold text-white text-sm tracking-wide transition-all shadow-[0_0_20px_rgba(185,64,16,0.692)] flex items-center justify-center gap-2.5 cursor-pointer">
+              <i class="fa-solid fa-credit-card text-base"></i> Pay Now!
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 5: Certifications & Sponsorships with Divider (Preserving 2-item row grid exactly) -->
+        <!-- Added: col-span-2 sm:col-span-1 -->
+        <div
+          class="col-span-2 sm:col-span-1 space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-6">
+          <div class="flex items-start gap-2 text-[#EC4D20] text-sm font-bold">
+            <i class="fa-solid fa-certificate text-xl mt-1"></i>
+            <h4 class="text-white text-xl sm:text-sm leading-tight">Certifications &<br class="hidden sm:inline">
+              Sponsorships</h4>
+          </div>
+
+          <!-- Strict 2 items in a row grid layout for Certifications & Sponsorships -->
+          <div class="grid grid-cols-2 gap-3 items-center">
+            <img src="Assets/Certification/36.png" alt="Google Partner"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/37.png" alt="Facebook Marketing Partner"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/38.png" alt="ISO Certification"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/39.png" alt="Sponsor 1"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/40.png" alt="Certification 5"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/41.png" alt="Sponsor 2"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <img src="Assets/Certification/42.png" alt="Certification 6"
+              class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            <a href="https://www.dmca.com/r/prddr50" target="_blank" class="block w-full">
+              <img src="Assets/Certification/43.png" alt="DMCA Protected"
+                class="h-16 w-full object-contain rounded border border-white/10 bg-[#151515] p-1.5">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Feature Values Strip with Internal Dividers -->
+      <div
+        class="bg-[#0b0b0b] border border-white/10 rounded-2xl p-6 sm:p-8 lg:p-10 grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-6 relative ">
+
+        <!-- Value 1 -->
+        <div class="flex items-start gap-4">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-xs sm:text-sm text-white">Result Driven</h5>
+            <p class="text-zinc-400 text-[11px] mt-0.5">Strategies that deliver measurable growth.</p>
+          </div>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-xs sm:text-sm text-white">Creative Excellence</h5>
+            <p class="text-zinc-400 text-[11px] mt-0.5">Innovative ideas that make your brand stand out.</p>
+          </div>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-xs sm:text-sm text-white">Data Focused</h5>
+            <p class="text-zinc-400 text-[11px] mt-0.5">Insights that drive smarter decisions and better ROI.</p>
+          </div>
+        </div>
+
+        <!-- Value 4 -->
+        <div class="flex items-start gap-4 lg:border-l lg:border-white/10 lg:pl-6">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2a1710] to-[#120704] border border-[#EC4D20]/40 flex items-center justify-center text-[#EC4D20] text-sm shrink-0 shadow-[0_0_12px_rgba(236,77,32,0.2)]">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-xs sm:text-sm text-white">Client First</h5>
+            <p class="text-zinc-400 text-[11px] mt-0.5">Your success is our top priority.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Location Bar -->
+      <div
+        class="pt-6 border-t border-[#EC4D20]/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-mono">
+        <p>Viral Ads Media - <span class="text-[#EC4D20]">Believe</span> &copy; 2023-2026</p>
+        <div class="flex items-center gap-2 text-white">
+          <i class="fa-solid fa-location-dot text-[#EC4D20]"></i>
+          <span>Delhi, India</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <!-- footer end -->
+
+  <!-- Swiper JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script src="./src/clean-url.js"></script>
+  <script src="./src/script.js"></script>
+  <script src="./src/services-data.js"></script>
+  <script src="./src/service-page.js"></script>
+  <!-- Floating Call & WhatsApp Buttons -->
+
+<a href="tel:+919354491934" class="call-widget" aria-label="Call us"><span class="contact-widget-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></span><span class="contact-widget-copy"><small>Let's talk</small><strong>Call us</strong></span></a>
+
+<a href="https://wa.me/919354491934" target="_blank" rel="noopener noreferrer" class="whatsapp-widget" aria-label="Chat on WhatsApp"><span class="contact-widget-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.44 0 .07 5.37.07 11.97c0 2.11.55 4.17 1.6 5.99L0 24l6.2-1.63a11.94 11.94 0 0 0 5.83 1.49h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-1.25-6.21-3.49-8.41ZM12.04 21.84a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.68.97.98-3.59-.24-.37a9.92 9.92 0 0 1-1.52-5.29c0-5.49 4.47-9.96 9.97-9.96a9.9 9.9 0 0 1 7.04 2.92 9.9 9.9 0 0 1 2.91 7.05c0 5.49-4.47 9.96-9.95 9.96Zm5.46-7.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.11 3.22 5.11 4.52.71.31 1.27.5 1.7.64.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg></span><span class="contact-widget-copy"><small>Have a question?</small><strong>WhatsApp us</strong></span></a>
+
+
+
 </body>
 </html>
+
+
 
