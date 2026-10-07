@@ -105,12 +105,14 @@
 .branding-service-page #servHeading,
 .performance-service-page #servHeading,
 .website-service-page #servHeading,
+.brand-shoot-service-page #servHeading,
 .influencer-service-page #servHeading,
 .social-service-page #servHeading { font-size: clamp(2.2rem, 4.5vw, 4rem); }
 .seo-service-page .faq-item.active .faq-panel,
 .branding-service-page .faq-item.active .faq-panel,
 .performance-service-page .faq-item.active .faq-panel,
 .website-service-page .faq-item.active .faq-panel,
+.brand-shoot-service-page .faq-item.active .faq-panel,
 .influencer-service-page .faq-item.active .faq-panel,
 .social-service-page .faq-item.active .faq-panel { max-height: none; }
 

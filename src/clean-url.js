@@ -59,6 +59,7 @@
   };
 
   function normalizeServiceSlug(slug) {
+    if (slug === "proffessional-brand-shoots-in-delhi") return "brand-shoot-services-delhi";
     if (slug === "best-influencer-marketing-in-delhi") return "influencer-marketing-agency-delhi";
     if (slug === "best-performance-marketing-in-delhi") {
       return "performance-marketing-agency-in-delhi";
@@ -78,6 +79,7 @@
   }
 
   function buildCleanDynamicPath(fileName, slug) {
+    if (fileName === "service.html" && normalizeServiceSlug(slug) === "brand-shoot-services-delhi") return "/service/brand-shoot-services-delhi/";
     const config = DYNAMIC_ROUTE_CONFIG[fileName];
     if (!config || !slug) {
       return null;
@@ -145,6 +147,9 @@
       if (url.origin !== window.location.origin) {
         return rawHref;
       }
+      if (/^\/service\/(?:proffessional-brand-shoots-in-delhi|brand-shoot-services-delhi)(?:\/index\.html)?\/?$/.test(url.pathname)) {
+        return `/service/brand-shoot-services-delhi/${url.search}${url.hash}`;
+      }
 
       if (/^\/service\/(?:best-performance-marketing-in-delhi|performance-marketing-agency-in-delhi)\/?$/.test(url.pathname)) {
         return `/service/performance-marketing-agency-in-delhi/${url.hash}`;
@@ -193,6 +198,10 @@
   }
 
   function replaceCurrentUrl() {
+    if (/^\/service\/(?:proffessional-brand-shoots-in-delhi|brand-shoot-services-delhi)(?:\/index\.html)?\/?$/.test(window.location.pathname)) {
+      window.history.replaceState({}, "", `/service/brand-shoot-services-delhi/${window.location.search}${window.location.hash}`);
+      return;
+    }
     if (/^\/(?:influencer-marketing-agency-delhi|service\/(?:best-influencer-marketing-in-delhi|influencer-marketing-agency-delhi))(?:\/index\.html)?\/?$/.test(window.location.pathname)) {
       window.history.replaceState({}, "", `/service/influencer-marketing-agency-delhi/${window.location.search}${window.location.hash}`);
       return;

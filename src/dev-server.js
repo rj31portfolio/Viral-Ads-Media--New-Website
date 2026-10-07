@@ -37,6 +37,9 @@ const DYNAMIC_ROUTE_RESOLVERS = [
 
 function resolveRoute(requestUrl) {
   const url = new URL(requestUrl, "http://localhost");
+  if (/^\/service\/brand-shoot-services-delhi(?:\/index\.html)?\/?$/.test(url.pathname)) {
+    return `/service/brand-shoot-services-delhi/index.html${url.search}`;
+  }
   if (/^\/service\/website-designing-company-in-delhi(?:\/index\.html)?\/?$/.test(url.pathname)) {
     return `/service/website-designing-company-in-delhi/index.html${url.search}`;
   }
@@ -67,6 +70,14 @@ function resolveRoute(requestUrl) {
 
 function cleanUrlMiddleware(req, res, next) {
   const url = new URL(req.url || "/", "http://localhost");
+  if (/^\/service\/proffessional-brand-shoots-in-delhi(?:\/index\.html)?\/?$/.test(url.pathname) ||
+      (/^\/service(?:\.html)?\/?$/.test(url.pathname) &&
+       ["proffessional-brand-shoots-in-delhi", "brand-shoot-services-delhi"].includes(url.search.slice(1).replace(/^id=/, "")))) {
+    const search = url.pathname.startsWith("/service/") ? url.search : "";
+    res.writeHead(301, { Location: `/service/brand-shoot-services-delhi/${search}` });
+    res.end();
+    return;
+  }
   if (/^\/(?:website-designing-company-in-delhi|service\/affordable-web-developer-in-delhi)(?:\/index\.html)?\/?$/.test(url.pathname) ||
       (/^\/service(?:\.html)?\/?$/.test(url.pathname) &&
        ["affordable-web-developer-in-delhi", "website-designing-company-in-delhi"].includes(url.search.slice(1).replace(/^id=/, "")))) {

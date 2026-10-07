@@ -8,7 +8,7 @@
     { slug: "performance-marketing-agency-in-delhi", title: "Performance Marketing", icon: "fa-chart-line" },
     { slug: "branding-agency-in-delhi", title: "Logo & Branding", icon: "fa-pen-nib" },
     { slug: "influencer-marketing-agency-delhi", title: "Influencer Marketing", icon: "fa-user-astronaut" },
-    { slug: "proffessional-brand-shoots-in-delhi", title: "Brand Shoots", icon: "fa-camera-retro" },
+    { slug: "brand-shoot-services-delhi", title: "Brand Shoots", icon: "fa-camera-retro" },
   ];
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -119,6 +119,22 @@
         document.head.appendChild(canonical);
       }
       canonical.href = new URL("/service/influencer-marketing-agency-delhi/", window.location.origin).href;
+    }
+
+    const brandShootContent = document.getElementById("servBrandShootContent");
+    if (brandShootContent && slug === "brand-shoot-services-delhi") {
+      brandShootContent.hidden = false;
+      document.getElementById("serviceDetailMain").classList.add("brand-shoot-service-page");
+      const faqSection = document.getElementById("servFaqList").closest("section");
+      faqSection.querySelector("h2").textContent = "Brand shoot FAQs";
+      faqSection.querySelector(".text-zinc-400").hidden = true;
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.rel = "canonical";
+        document.head.appendChild(canonical);
+      }
+      canonical.href = new URL("/service/brand-shoot-services-delhi/", window.location.origin).href;
     }
 
     // Populate Tools with Logo Images matching reference style

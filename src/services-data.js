@@ -379,33 +379,86 @@ const SINGLE_SERVICE_DATABASE = {
   //     { q: "Where are meme campaigns distributed?", a: "We syndicate content across Instagram Reels, TikTok, X (Twitter), and major community meme channels." }
   //   ]
   // },
-  "proffessional-brand-shoots-in-delhi": {
-    metaTitle: "Professional Brand Shoot Agency in Delhi NCR | Viral Ads Media",
-    metaDescription: "Viral Ads Media offers professional brand shoots in Delhi NCR, creating high-quality product photography, campaign visuals and creative content that helps brands stand out.",
-    heading: `Cinematic Visuals जो सीधे <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">दिल जीत</span> लें!`,
-    shortDesc: "Professional corporate photography, commercial product videography, and lifestyle shoots designed to elevate your brand prestige instantly.",
-    tools: [
-      { name: "Photoshop", logo: "./Assets/tools/photoshop.png" },
-      { name: "LightRoom", logo: "./Assets/tools/a-lightroom.png" },
-      { name: "Canva", logo: "./Assets/tools/canva.png" },
-    ],
-    clients: [
-      { name: "Topson", logo: "./Assets/brands/topson.png" },
-      { name: "Ocean Beauty", logo: "./Assets/brands/ocean beauty.png" },
-      { name: "Franklite", logo: "./Assets/brands/franklite.png" }
-    ],
-    portfolio: [
-      { title: "Topson", client: "Topson", year: "2025", img: "./Assets/case-study/topson.png" },
-      { title: "Ocean Beauty", client: "Ocean Beauty", year: "2025", img: "./Assets/case-study/ocean.png" },
-      { title: "Ocean Beauty", client: "Ocean Beauty", year: "2025", img: "./Assets/case-study/franklite.png" }
-    ],
-    faqs: [
-      { q: "Do you provide studio setups for brand shoots?", a: "Yes, our production crew handles studio lighting, staging, high-end 4K cameras, and professional color grading." },
-      { q: "Can you shoot on location at our office or factory?", a: "Absolutely! We travel nationwide to capture authentic on-site corporate and industrial operations." },
-      { q: "What format are edited videos delivered in?", a: "We deliver master 4K files alongside optimized vertical cuts formatted specifically for Instagram Reels and YouTube." },
-      { q: "How many edited deliverables are included?", a: "Deliverable counts depend on your production package. We outline exact shot lists and asset counts prior to filming." }
-    ]
-  },
+  "brand-shoot-services-delhi": {
+  "metaTitle": "Brand Shoot Services in Delhi | Viral Ads Media",
+  "metaDescription": "Professional brand shoot services in Delhi NCR. Brand, product and ecommerce photography with clear pricing. Get a free quote from Viral Ads Media.",
+  "heading": "Professional Brand Shoot Services in Delhi NCR | Creative Shoot Services",
+  "shortDesc": "Your brand should look as good as it really is. Viral Ads Media plans and shoots brand photos and videos that you can use on your website, social media, ads and online stores.",
+  "tools": [
+    {
+      "name": "Photoshop",
+      "logo": "./Assets/tools/photoshop.png"
+    },
+    {
+      "name": "LightRoom",
+      "logo": "./Assets/tools/a-lightroom.png"
+    },
+    {
+      "name": "Canva",
+      "logo": "./Assets/tools/canva.png"
+    }
+  ],
+  "clients": [
+    {
+      "name": "Topson",
+      "logo": "./Assets/brands/topson.png"
+    },
+    {
+      "name": "Ocean Beauty",
+      "logo": "./Assets/brands/ocean beauty.png"
+    },
+    {
+      "name": "Franklite",
+      "logo": "./Assets/brands/franklite.png"
+    }
+  ],
+  "portfolio": [
+    {
+      "title": "Topson",
+      "client": "Topson",
+      "year": "2025",
+      "img": "./Assets/case-study/topson.png"
+    },
+    {
+      "title": "Ocean Beauty",
+      "client": "Ocean Beauty",
+      "year": "2025",
+      "img": "./Assets/case-study/ocean.png"
+    },
+    {
+      "title": "Ocean Beauty",
+      "client": "Ocean Beauty",
+      "year": "2025",
+      "img": "./Assets/case-study/franklite.png"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is a brand shoot?",
+      "a": "A brand shoot is a planned photo and video session that shows your brand's look, people and products. The images are used on your website, social media, ads and online stores."
+    },
+    {
+      "q": "What is the difference between a brand shoot and a product shoot?",
+      "a": "A brand shoot shows who you are, with people, places and products together. A product shoot focuses only on the item you sell and its details. Many brands do both in the same session."
+    },
+    {
+      "q": "How long does a brand shoot take?",
+      "a": "Most shoots take a few hours to one full day. Planning comes first, and editing comes after. We share the delivery time in your quote."
+    },
+    {
+      "q": "Do you shoot for Amazon and Flipkart?",
+      "a": "Yes. We shoot ecommerce photography in Delhi for online stores. We follow each store's rules on background, size and image count."
+    },
+    {
+      "q": "Do you provide models, stylists and makeup artists?",
+      "a": "Yes, when your shoot needs them. We add them to your quote so you can see the cost."
+    },
+    {
+      "q": "Can you shoot at our office, shop or factory?",
+      "a": "Yes. We can shoot at your place, at a studio, or at a Delhi location."
+    }
+  ]
+},
   // "viral-marketing": {
   //   heading: `ऐसी पब्लिसिटी जो देश भर में <span class="inline-block bg-gradient-to-r from-[#EC4D20] to-red-800 text-white px-3 py-1 rotate-[-2deg] font-hindi">तहलका</span> मचा दे!`,
   //   shortDesc: "Stunts, PR hooks, and grand-scale viral activations engineered to make national headlines and shatter internet traffic records.",

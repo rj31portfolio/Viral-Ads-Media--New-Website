@@ -1,80 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="../../">
+  <link rel="canonical" href="/service/brand-shoot-services-delhi/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="Assets/favicon/favicon.svg" />
   <link rel="icon" type="image/png" sizes="96x96" href="Assets/favicon/favicon-96x96.png" />
   <link rel="shortcut icon" href="Assets/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="Assets/favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Viral Ads Media" />
   <link rel="manifest" href="Assets/favicon/site.webmanifest" />
-<meta name="description" content="Discover industry-specific marketing solutions from Viral Ads Media for growth-focused brands in Delhi NCR and beyond." />
-<title>Industry Niche Records — Viral Ads Media</title>
+  <meta name="description"
+    content="Professional brand shoot services in Delhi NCR. Brand, product and ecommerce photography with clear pricing. Get a free quote from Viral Ads Media." />
+  <title>Brand Shoot Services in Delhi | Viral Ads Media</title>
 
-<!-- Fonts: Inter, IBM Plex Mono, Bebas Neue, Amita (Hindi) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Amita:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#050505',
+            charcoal: '#0D0D0D',
+            surface: '#0c0c0b',
+            bone: '#EDEAE2',
+            smoke: '#A7A7A7',
+            orange: '#EC4D20',
+            line: '#242424'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            hindi: ['Amita', 'serif']
+          }
+        }
+      }
+    };
+  </script>
+  <link href="./src/input.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="./src/seo-service.css">
+  <style>
+    .clientSwiper,
+    .clientPortfolioSwiper {
+      overflow: hidden;
+      padding-bottom: 3.5rem;
+      width: 100%;
+    }
 
-<link href="./src/input.css" rel="stylesheet" />
-<link rel="stylesheet" href="src/style.css">
+    .clientPortfolioSwiper .swiper-slide {
+      height: auto;
+      transition: transform 0.4s ease;
+    }
 
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          ink:    '#050505',
-          surface:'#0c0c0b',
-          bone:   '#EDEAE2',
-          smoke:  '#86837C',
-          accent: '#EC4D20',
-          line:   'rgba(237,234,226,0.08)',
-        },
-        fontFamily: {
-          display: ['"Bebas Neue"', 'sans-serif'],
-          mono:    ['"IBM Plex Mono"', 'monospace'],
-          sans:    ['Inter', 'sans-serif'],
-          hindi:   ['"Amita"', 'cursive'],
-        },
-      },
-    },
-  };
-</script>
-<style>
-  .brandLogoSwiper { overflow: hidden; padding-bottom: 3rem; width: 100%; }
-  .brandLogoSwiper .swiper-slide { height: auto; display: flex; justify-content: center; align-items: center; }
-  .swiper-pagination-bullet { background: #52525b !important; opacity: 1; }
-  .swiper-pagination-bullet-active { background: #EC4D20 !important; width: 24px; border-radius: 4px; transition: width 0.3s ease; }
-</style>
+    .swiper-pagination-bullet {
+      background: #52525b !important;
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #EC4D20 !important;
+      width: 24px;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    /* Accordion styling */
+    .faq-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    .faq-item.active .faq-panel {
+      max-height: 250px;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      color: #EC4D20;
+    }
+  </style>
+  <link rel="stylesheet" href="src/contact-widgets.css">
 </head>
 
-<body class="bg-ink text-bone antialiased overflow-x-hidden">
-<div class="grain"></div>
+<body class="bg-ink text-white overflow-x-hidden">
 
-<div id="smooth-wrapper">
-<div id="smooth-content">
-
-  <!-- NAVBAR PLACEHOLDER -->
+  <!-- NAVBAR -->
   <!-- <div id="navbar-placeholder"></div>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       fetch("navbar.html")
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById("navbar-placeholder").innerHTML = html;
-        if (typeof initNavbar === "function") initNavbar();
-      })
-      .catch(err => console.error("Navbar Load Error:", err));
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("navbar-placeholder").innerHTML = html;
+          if (typeof initNavbar === "function") initNavbar();
+        })
+        .catch(err => console.error("Navbar Load Error:", err));
     });
   </script> -->
-    <!-- header start -->
+
+  <!-- header start -->
   <header class="fixed top-0 left-0 w-full z-50 bg-black border-b border-white/10">
     <nav class="max-w-9xl mx-auto h-[90px] px-4 md:px-8 lg:px-12 flex items-center justify-between">
       <!-- LOGO -->
@@ -143,8 +176,7 @@
                   Data-driven results for scaling brands
                 </p>
               </a>
-              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
-                href="/service/branding-agency-in-delhi/">
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition" href="/service/branding-agency-in-delhi/">
                 <h4 class="font-bold text-sm text-white">Logo & Branding</h4>
                 <p class="text-xs text-zinc-400 mt-0.5">
                   Brand Identity, Strategy & Design
@@ -161,8 +193,7 @@
                 </p>
               </a>
 
-              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition"
-                href="/service/brand-shoot-services-delhi/">
+              <a class="block p-2.5 rounded-xl hover:bg-white/5 transition" href="/service/brand-shoot-services-delhi/">
                 <h4 class="font-bold text-sm text-white">Brand Shoots</h4>
                 <p class="text-xs text-zinc-400 mt-0.5">
                   Professional corporate & product photography
@@ -175,7 +206,7 @@
               <a href="services.html"
                 class="flex items-center justify-between text-sm font-semibold text-[var(--primary-color)] hover:underline">
                 <span>Explore All Services</span>
-                    <span>→</span>
+                <span>→</span>
               </a>
             </div>
           </div>
@@ -253,7 +284,7 @@
               <a href="industries.html"
                 class="flex items-center justify-between text-sm font-semibold text-[var(--primary-color)] hover:underline">
                 <span>Explore All Industries</span>
-                    <span>→</span>
+                <span>→</span>
               </a>
             </div>
           </div>
@@ -390,93 +421,332 @@
 
 
   <!-- NOT FOUND STATE -->
-  <div id="notFound" class="hidden min-h-[70vh] flex flex-col items-center justify-center text-center px-6 mt-32">
-    <p class="font-mono text-xs text-smoke uppercase tracking-widest mb-4">404</p>
-    <h1 class="font-display text-4xl mb-6 tracking-wide">INDUSTRY SECTOR NOT FOUND</h1>
-    <a href="industries.html" class="font-mono text-xs uppercase tracking-widest text-accent border-b border-accent pb-1">Back to Industries Directory</a>
+  <div id="notFoundState" class="hidden min-h-[70vh] flex flex-col items-center justify-center text-center px-6 mt-32">
+    <p class="font-mono text-xs text-smoke uppercase tracking-widest mb-4">404 Error</p>
+    <h1 class="text-4xl font-black mb-4">SERVICE SPECIFICATION NOT FOUND</h1>
+    <a href="../services.html" class="px-6 py-3 bg-orange text-white font-bold rounded-xl text-sm">Return to Services
+      Hub →</a>
   </div>
 
-  <!-- MAIN DYNAMIC INDUSTRY CONTAINER -->
-  <main id="industryMain" class="hidden">
+  <!-- MAIN DYNAMIC SERVICE CONTAINER -->
+  <main id="serviceDetailMain" class="brand-shoot-service-page">
 
-    <!-- HERO SECTION -->
-    <section class="relative min-h-[75vh] w-full flex items-end overflow-hidden px-6 lg:px-[6vw] pb-16 pt-36">
-      <img id="indHeroImg" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.55] contrast-105" src="" alt="" />
-      <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.4) 50%, rgba(5,5,5,0.2) 100%)"></div>
-      
-      <div class="relative z-10 max-w-4xl space-y-4">
-        <div class="flex items-center gap-3">
-          <span id="indChip" class="font-mono text-xs tracking-[0.3em] uppercase text-accent px-3 py-1 bg-accent/10 border border-accent/30 rounded-sm inline-block">Niche Specialty</span>
-          <a href="industries.html" class="font-mono text-xs text-smoke hover:text-white transition">← All Industries →</a>
-        </div>
-        <!-- Hero Heading with Hindi + English Combo -->
-        <h1 id="indTitle" class="font-display text-5xl sm:text-7xl lg:text-8xl tracking-wide uppercase leading-tight"></h1>
-        <p id="indDescription" class="text-bone/80 text-base sm:text-xl max-w-2xl font-light leading-relaxed pt-2"></p>
+    <!-- 1. HERO SECTION -->
+    <section
+      class="relative min-h-[60vh] flex flex-col items-center justify-center px-6 pt-40 pb-20 text-center overflow-hidden border-b border-line">
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-orange/15 blur-[140px]"></div>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full text-orange font-mono text-xs uppercase tracking-widest">
+          [ Viral Ads Media- Services Solutions ]
+        </span>
+        <!-- Catchy Hindi + English Blended Heading with Red/Gradient Box for Hindi Text Only -->
+        <h1 id="servHeading" class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-tight">
+          Professional Brand Shoot Services in Delhi NCR | Creative Shoot Services</h1>
+        <p id="servBrandingTagline" class="text-lg sm:text-xl text-orange font-hindi" hidden>Ideas हमारे होते हैं. Viral
+          Moment आपका होता है!</p>
+        <!-- Short Description -->
+        <p id="servShortDesc" class="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto font-light leading-relaxed">Your
+          brand should look as good as it really is. Viral Ads Media plans and shoots brand photos and videos that you
+          can use on your website, social media, ads and online stores.</p>
       </div>
     </section>
 
-    <!-- SECTOR IMPACT & PERFORMANCE -->
-    <section class="px-6 lg:px-[6vw] py-16 border-b border-line bg-surface">
+
+    <!-- Supplied copy for the existing Performance Marketing service. -->
+    <div id="servBrandShootContent" class="seo-service-content">
+      <div class="seo-content-inner">
+        <p class="seo-content-intro">300+ brands scaled • 500+ campaigns • 95% client retention • Google Partner •
+          Facebook Marketing Partner</p>
+        <section class="seo-content-block">
+          <h2>What are brand shoot services?</h2>
+          <p>Brand shoot services are planned photo and video shoots that show your brand, your people and your products
+            in one clear style. A brand shoot in Delhi usually covers the idea, the shot list, the shoot day, editing
+            and final files for your website, ads, social media and online stores.</p>
+          <p>Most brands do not need more photos. They need the right photos. One good brand shoot can fill your
+            website, your Instagram, your Amazon listings and your ads for months.</p>
+          <p>Viral Ads Media is a photoshoot agency for brands in Delhi. and we shoot across Delhi, Noida and Gurugram.
+          </p>
+        </section>
+        <section class="seo-content-block">
+          <h2>Our brand shoot and photography services in Delhi</h2>
+          <p>Pick one service or mix a few. Most brands start with one and add more later.</p>
+          <div class="seo-content-grid">
+            <article class="seo-content-card">
+              <h3>Brand photography in Delhi</h3>
+              <p>Founder portraits, team photos, your office, your shop floor and behind-the-scenes shots. This is
+                professional brand photography in Delhi that helps people trust you before they call you.</p>
+              <p>Best for: startups, clinics, schools, service businesses, factories.</p>
+            </article>
+            <article class="seo-content-card">
+              <h3>Product photography in Delhi</h3>
+              <p>Clean, sharp pictures of your products from every useful angle. Our professional product photography in
+                Delhi shows size, shape, colour and detail so buyers know what they are getting.</p>
+              <p>Best for: catalogues, websites and online stores.</p>
+            </article>
+            <article class="seo-content-card">
+              <h3>Creative product photography in Delhi</h3>
+              <p>Styled scenes with props, colour and light. Think a cosmetic jar on a stone ledge, or a tap with water
+                splashing. Creative product photography in Delhi makes products feel real and wanted, and it works well
+                in ads and social posts.</p>
+              <p>Best for: beauty, food, fashion, home and lifestyle brands.</p>
+            </article>
+            <article class="seo-content-card">
+              <h3>Ecommerce photography in Delhi</h3>
+              <p>Marketplace-ready images with the right size, background and set of angles. We shoot with the rules of
+                Amazon and other online stores in mind, so your listings do not get rejected.</p>
+              <p>Best for: online sellers and D2C brands.</p>
+            </article>
+            <article class="seo-content-card">
+              <h3>Commercial photography in Delhi</h3>
+              <p>Pictures made for ads, brochures, catalogues, banners and packaging. We plan the look first, then shoot
+                to match your campaign.</p>
+              <p>Best for: launches, offers and print or digital campaigns.</p>
+            </article>
+            <article class="seo-content-card">
+              <h3>Brand content shoots</h3>
+              <p>Short videos, reels and social-first content shot in the same session as your photos. As a brand
+                content shoot agency in Delhi, we think about where each clip will run before we press record.</p>
+              <p>Best for: Instagram, YouTube, ads and websites.</p>
+            </article>
+          </div>
+        </section>
+        <section class="seo-content-block">
+          <h2>Brand shoot vs product shoot vs ecommerce shoot: what is the difference?</h2>
+          <p>They sound alike, but they do different jobs.</p>
+          <div class="social-platform-table" role="region" aria-label="Brand, product and ecommerce shoot comparison"
+            tabindex="0">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Comparison</th>
+                  <th scope="col">Brand shoot</th>
+                  <th scope="col">Product shoot</th>
+                  <th scope="col">Ecommerce shoot</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Main goal</th>
+                  <td>Show who you are</td>
+                  <td>Show what you sell</td>
+                  <td>Help buyers decide fast</td>
+                </tr>
+                <tr>
+                  <th scope="row">Shows</th>
+                  <td>People, place, products and mood</td>
+                  <td>The product and its details</td>
+                  <td>The product on a clean background</td>
+                </tr>
+                <tr>
+                  <th scope="row">Used on</th>
+                  <td>Website, social media, ads, press</td>
+                  <td>Catalogues, websites, ads</td>
+                  <td>Amazon, Flipkart, your online store</td>
+                </tr>
+                <tr>
+                  <th scope="row">Style</th>
+                  <td>Story and feeling</td>
+                  <td>Clear and detailed</td>
+                  <td>Simple and rule-based</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Not sure which one you need? Tell us what you sell and where you sell it. We will tell you honestly, even
+            if the answer is a smaller shoot.</p>
+        </section>
+        <section class="seo-content-block">
+          <h2>What makes the best brand shoot services in Delhi?</h2>
+          <p>We cannot tell you who is best for you. But here is what to check before you hire anyone:</p>
+          <ol class="seo-content-steps">
+            <li>They plan before they shoot. Ask to see a moodboard and a shot list.</li>
+            <li>They ask about your customers. A good shoot starts with your buyer, not the camera.</li>
+            <li>They show real work for brands like yours. Look at their portfolio, not just their claims.</li>
+            <li>Their pricing is clear. You should know what is included and what costs extra.</li>
+            <li>They know where the photos will be used. A website banner and an Amazon listing need different pictures.
+            </li>
+            <li>They tell you who owns the files. Get this in writing.</li>
+            <li>They can help after the shoot. Photos are only useful if they get posted, run in ads and show up on your
+              website.</li>
+          </ol>
+          <p>That last point is where we are different. Viral Ads Media also runs social media, SEO, websites and ads.
+            So we shoot with the finished use already in mind. Skipping steps is how you end up with photos instead of a
+            brand, and we do not skip steps.</p>
+        </section>
+        <section class="seo-content-block">
+          <h2>Industries we shoot for</h2>
+          <p>We work with brands in:</p>
+          <ul class="seo-content-list">
+            <li>E-commerce: product images and lifestyle shots for online stores</li>
+            <li>Fashion: lookbooks, catalogue images and brand campaigns</li>
+            <li>Cosmetics and beauty: close-ups, texture shots and styled flat lays</li>
+            <li>Manufacturing: products, machines and factory photos for B2B buyers</li>
+            <li>Appliances: clean product shots and in-use scenes</li>
+            <li>Healthcare: doctors, clinics and care teams</li>
+            <li>Education: campus, classrooms and admission campaigns</li>
+            <li>Real estate: projects, interiors and brand portraits</li>
+            <li>Travel: places, stays and experiences</li>
+          </ul>
+        </section>
+        <section class="seo-content-block">
+          <h2>Shooting in Delhi: studio, location, permits and weather</h2>
+          <p>Studio or location? A studio gives you control over light and is best for products. A location gives you
+            real surroundings and is best for people, teams and lifestyle shots. We can also shoot at your office, shop
+            or factory.</p>
+          <p>Permits. Public gardens and cafés are easy for most shoots. Government-protected monuments, like many in
+            Delhi, need advance permission for commercial photography. We check this before we quote, because it can
+            change your date and your cost.</p>
+          <p>Season and weather.</p>
+          <ul class="seo-content-list">
+            <li>Winter (Nov to Jan): smog can make outdoor photos look flat and grey. We plan indoor shoots or clear
+              morning slots.</li>
+            <li>Summer (Apr to Jun): heat is hard on food, makeup and models. We shoot early or indoors.</li>
+            <li>Monsoon (Jul to Sep): rain can cancel outdoor plans, so we keep a backup date.</li>
+          </ul>
+        </section>
+        <section class="seo-content-block">
+          <h2>How to get ready for your brand shoot</h2>
+          <ol class="seo-content-steps">
+            <li>Write down what you want the photos to do (more sales, more calls, better trust).</li>
+            <li>Collect 5 to 10 pictures whose style you like.</li>
+            <li>Make a list of every product, person and place to shoot.</li>
+            <li>Clean, iron and test your products before the day.</li>
+            <li>Tell us where each photo will be used.</li>
+            <li>Keep your logo and brand colours handy.</li>
+            <li>Pick one person on your side who can approve things fast.</li>
+          </ol>
+        </section>
+        <section class="seo-content-block seo-content-highlight">
+          <h2>Why brands choose Viral Ads Media</h2>
+          <ul class="seo-content-list">
+            <li>300+ brands scaled and 500+ campaigns run, from startups to older businesses</li>
+            <li>95% client retention. Most clients stay with us.</li>
+            <li>Google Partner and Facebook Marketing Partner listed on our site</li>
+            <li>One team for the full job. Shoots, websites, SEO, ads and social media.</li>
+            <li>We work in plain words. We explain what we do and why.</li>
+          </ul>
+          <p>We help new brands start up and old ones start over.</p>
+        </section>
+      </div>
+    </div>
+
+    <!-- 2. CLIENTS WE WORK WITH -->
+    <section class="py-24 px-6 lg:px-12 border-b border-line bg-charcoal">
+      <div class="max-w-7xl mx-auto space-y-10">
+        <div class="text-center">
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">Clients we work with</h2>
+        </div>
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center justify-items-center">
+          <div id="servClientsLogoGrid" class="contents"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. TOOLS WE USE -->
+    <section class="py-24 px-6 lg:px-12 border-b border-line bg-ink">
+      <div class="max-w-7xl mx-auto space-y-10">
+        <div class="text-center">
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">Tools we use</h2>
+        </div>
+        <div id="servToolsGrid"
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center justify-items-center">
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CLIENT PORTFOLIO CAROUSEL WITH HERO IMAGES -->
+    <section class="py-24 px-6 lg:px-12 border-b border-line bg-surface/30">
       <div class="max-w-7xl mx-auto">
-        <p class="font-mono text-xs uppercase tracking-[0.3em] text-smoke mb-8 text-center lg:text-left">Sector Impact & Performance</p>
-        <div id="indStatsGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-8"></div>
-      </div>
-    </section>
-
-    <!-- EXCLUSIVE PORTFOLIO CAROUSEL WITH BRAND LOGOS ONLY -->
-    <section class="px-6 lg:px-[6vw] py-24 border-b border-line">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
-        <div>
-          <span class="font-mono text-xs uppercase tracking-[0.3em] text-accent block mb-2">[ Verified Ecosystem ]</span>
-          <h2 class="font-display text-4xl sm:text-5xl tracking-wide">EXCLUSIVE PORTFOLIO OF BRANDS</h2>
+        <div class="mb-14 text-center max-w-xl mx-auto space-y-2">
+          <span class="text-xs font-mono uppercase tracking-[0.3em] text-orange block">[ Client Spotlight ]</span>
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight">Client Portfolio Showcase</h2>
+          <p class="text-zinc-400 text-sm">Explore interactive hero imagery and project executions tailored for this
+            service.</p>
         </div>
-        <p class="text-smoke text-sm max-w-sm font-light">Verified client logos representing successful campaigns and digital executions in this sector.</p>
-      </div>
 
-      <!-- Swiper Carousel for Brand Logos Only -->
-      <div class="swiper brandLogoSwiper">
-        <div id="indBrandLogosWrapper" class="swiper-wrapper"></div>
-        <div class="swiper-pagination mt-6"></div>
-      </div>
-    </section>
-
-    <!-- CASE STUDIES (Hero images only, no links) -->
-    <section class="px-6 lg:px-[6vw] py-24 border-b border-line bg-surface/40">
-      <div class="mb-14">
-        <span class="font-mono text-xs uppercase tracking-[0.3em] text-accent block mb-2">[ Proven Execution ]</span>
-        <h2 class="font-display text-4xl sm:text-5xl tracking-wide">CASE STUDIES</h2>
-      </div>
-      <div id="indCaseStudiesGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-8"></div>
-    </section>
-
-    <!-- EXPLORE OTHER INDUSTRIES -->
-    <section class="px-6 lg:px-[6vw] py-24">
-      <div class="flex items-end justify-between mb-12">
-        <div>
-          <span class="font-mono text-xs uppercase tracking-[0.3em] text-accent block mb-2">[ Directory Matrix ]</span>
-          <h2 class="font-display text-4xl sm:text-5xl tracking-wide">EXPLORE OTHER INDUSTRIES</h2>
+        <div class="swiper clientPortfolioSwiper">
+          <div id="servPortfolioCarouselWrapper" class="swiper-wrapper"></div>
+          <div class="swiper-pagination mt-8"></div>
         </div>
-        <a href="industries.html" class="font-mono text-xs uppercase tracking-widest text-smoke hover:text-accent transition-colors">All Industries →</a>
       </div>
-      <div id="otherIndustriesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </section>
+
+    <!-- 5. ACCORDION FAQS SECTION -->
+    <section class="py-24 px-6 lg:px-12 border-b border-line">
+      <div class="max-w-4xl mx-auto space-y-12">
+        <div class="text-center space-y-3">
+          <span class="text-xs font-mono uppercase tracking-[0.3em] text-orange block">[ Got Questions? ]</span>
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight">Brand shoot FAQs</h2>
+          <p class="text-zinc-400 text-sm">Everything you need to know about our workflow, deliverables, and service
+            execution.</p>
+        </div>
+        <div id="servFaqList" class="space-y-4">
+          <details class="seo-content-card">
+            <summary>What is a brand shoot?</summary>
+            <p>A brand shoot is a planned photo and video session that shows your brand's look, people and products. The
+              images are used on your website, social media, ads and online stores.</p>
+          </details>
+          <details class="seo-content-card">
+            <summary>What is the difference between a brand shoot and a product shoot?</summary>
+            <p>A brand shoot shows who you are, with people, places and products together. A product shoot focuses only
+              on the item you sell and its details. Many brands do both in the same session.</p>
+          </details>
+          <details class="seo-content-card">
+            <summary>How long does a brand shoot take?</summary>
+            <p>Most shoots take a few hours to one full day. Planning comes first, and editing comes after. We share the
+              delivery time in your quote.</p>
+          </details>
+          <details class="seo-content-card">
+            <summary>Do you shoot for Amazon and Flipkart?</summary>
+            <p>Yes. We shoot ecommerce photography in Delhi for online stores. We follow each store's rules on
+              background, size and image count.</p>
+          </details>
+          <details class="seo-content-card">
+            <summary>Do you provide models, stylists and makeup artists?</summary>
+            <p>Yes, when your shoot needs them. We add them to your quote so you can see the cost.</p>
+          </details>
+          <details class="seo-content-card">
+            <summary>Can you shoot at our office, shop or factory?</summary>
+            <p>Yes. We can shoot at your place, at a studio, or at a Delhi location.</p>
+          </details>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 6. OTHER SERVICES QUICK JUMP -->
+    <section class="py-24 px-6 lg:px-12 bg-charcoal">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-end justify-between mb-12">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-[0.3em] text-orange block mb-2">[ Explore More ]</span>
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight">Other Core Services</h2>
+          </div>
+          <a href="../services.html"
+            class="font-mono text-xs uppercase tracking-widest text-smoke hover:text-orange transition-colors">Services
+            Hub →</a>
+        </div>
+        <div id="servOtherGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+      </div>
     </section>
 
   </main>
-
-  <!-- FOOTER PLACEHOLDER -->
+  <!-- Footer Placeholder -->
   <!-- <div id="footer-placeholder"></div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      fetch("footer.html")
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById("footer-placeholder").innerHTML = html;
-        })
-        .catch(err => console.error("Failed to load footer:", err));
-    });
-  </script> -->
-
-    <!-- footer start -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("footer.html")
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById("footer-placeholder").innerHTML = html;
+          })
+          .catch((err) => console.error("Footer load failed:", err));
+      });
+    </script> -->
+  <!-- footer start -->
 
   <footer
     class="text-white pt-16 pb-8 px-4 sm:px-6 lg:px-12 relative overflow-hidden border-t border-white/5 font-sans bg-[#050505]">
@@ -648,6 +918,7 @@
                 <span>Brand Shoots</span>
               </a>
             </li>
+
           </ul>
         </div>
 
@@ -792,33 +1063,37 @@
           <span>Delhi, India</span>
         </div>
       </div>
+
     </div>
   </footer>
   <!-- footer end -->
-</div>
-</div>
 
-<!-- Swiper JS CDN -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js"></script>
+  <!-- Swiper JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script src="./src/clean-url.js"></script>
-<script src="./src/script.js"></script>
-<script src="./src/industry-data.js"></script>
-<script src="./src/industry.js"></script>
+  <script src="./src/clean-url.js"></script>
+  <script src="./src/script.js"></script>
+  <script src="./src/services-data.js"></script>
+  <script src="./src/service-page.js"></script>
+  <!-- Floating Call & WhatsApp Buttons -->
 
-<!-- Floating Call & WhatsApp Buttons -->
+  <a href="tel:+919354491934" class="call-widget" aria-label="Call us"><span class="contact-widget-icon"><svg
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round" aria-hidden="true">
+        <path
+          d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z" />
+      </svg></span><span class="contact-widget-copy"><small>Let's talk</small><strong>Call us</strong></span></a>
 
-<a href="tel:+919354491934" class="call-widget" aria-label="Call us"><span class="contact-widget-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></span><span class="contact-widget-copy"><small>Let's talk</small><strong>Call us</strong></span></a>
- 
-<a href="https://wa.me/919354491934" target="_blank" rel="noopener noreferrer" class="whatsapp-widget" aria-label="Chat on WhatsApp"><span class="contact-widget-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.44 0 .07 5.37.07 11.97c0 2.11.55 4.17 1.6 5.99L0 24l6.2-1.63a11.94 11.94 0 0 0 5.83 1.49h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-1.25-6.21-3.49-8.41ZM12.04 21.84a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.68.97.98-3.59-.24-.37a9.92 9.92 0 0 1-1.52-5.29c0-5.49 4.47-9.96 9.97-9.96a9.9 9.9 0 0 1 7.04 2.92 9.9 9.9 0 0 1 2.91 7.05c0 5.49-4.47 9.96-9.95 9.96Zm5.46-7.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.11 3.22 5.11 4.52.71.31 1.27.5 1.7.64.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg></span><span class="contact-widget-copy"><small>Have a question?</small><strong>WhatsApp us</strong></span></a>
+  <a href="https://wa.me/919354491934" target="_blank" rel="noopener noreferrer" class="whatsapp-widget"
+    aria-label="Chat on WhatsApp"><span class="contact-widget-icon"><svg viewBox="0 0 24 24" fill="currentColor"
+        aria-hidden="true">
+        <path
+          d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.44 0 .07 5.37.07 11.97c0 2.11.55 4.17 1.6 5.99L0 24l6.2-1.63a11.94 11.94 0 0 0 5.83 1.49h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-1.25-6.21-3.49-8.41ZM12.04 21.84a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.68.97.98-3.59-.24-.37a9.92 9.92 0 0 1-1.52-5.29c0-5.49 4.47-9.96 9.97-9.96a9.9 9.9 0 0 1 7.04 2.92 9.9 9.9 0 0 1 2.91 7.05c0 5.49-4.47 9.96-9.95 9.96Zm5.46-7.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.11 3.22 5.11 4.52.71.31 1.27.5 1.7.64.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z" />
+      </svg></span><span class="contact-widget-copy"><small>Have a question?</small><strong>WhatsApp
+        us</strong></span></a>
 
 
-<link rel="stylesheet" href="src/contact-widgets.css">
+
 </body>
+
 </html>
-
-
-
