@@ -1,12 +1,12 @@
 Daily Website Development Report
-Date: 06/10/2026
+Date: 07/10/2026
 Name: Raju Ali
-Project Name: viral ads media
+Project Name: viral ads media and hichoice
 Work In Progress:-
-make update logo and branding service page contenet update 
-and also update seo content performance marketing detail page
-working on hi choice home page redesigning all section
-capify website lead form mail update for enquiry
+work on hichoice make responsive design 
+header footer change in all pages
+contenet update in two pages of seo Viral ads Media
+brand shoot service and influencer marketing page
 Website Live Link - viraladsmedia.com
 https://hichoice-redesigning.netlify.app/
 Issues / Challenges:- Na
