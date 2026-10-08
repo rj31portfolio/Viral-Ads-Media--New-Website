@@ -17,3 +17,4 @@ Google Ads - Ads Manages
 in have alery home page degine but i have seo rich contenet so update in home page and that hide this contenet by button and that show read more and i give you hme page contenet beacuse that home page so make creative show 
 
 
+hero section same desgine exsting but tag change h1 to h2 and h1 tag show in seo contenet only one in home page 
