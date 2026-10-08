@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-
   document.querySelectorAll('.accordion-btn').forEach(button => {
     button.addEventListener('click', () => {
       const item = button.closest('.accordion-item');
