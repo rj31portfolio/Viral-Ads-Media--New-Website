@@ -1,12 +1,11 @@
 Daily Website Development Report
-Date: 07/10/2026
+Date: 08/10/2026
 Name: Raju Ali
 Project Name: viral ads media and hichoice
 Work In Progress:-
-work on hichoice make responsive design 
-header footer change in all pages
-contenet update in two pages of seo Viral ads Media
-brand shoot service and influencer marketing page
+celing fan catgory page degine update complete 
+seo rich contenet update in home 
+with read me and read less 
 Website Live Link - viraladsmedia.com
 https://hichoice-redesigning.netlify.app/
 Issues / Challenges:- Na
@@ -14,7 +13,5 @@ Feedback Call Update:-
 Pending From Client / Team:- Na
 Google Ads - Ads Manages
 
-in have alery home page degine but i have seo rich contenet so update in home page and that hide this contenet by button and that show read more and i give you hme page contenet beacuse that home page so make creative show 
 
 
-hero section same desgine exsting but tag change h1 to h2 and h1 tag show in seo contenet only one in home page 

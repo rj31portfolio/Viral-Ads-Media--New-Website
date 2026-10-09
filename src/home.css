@@ -367,8 +367,8 @@
 .growth-preview { display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; align-items: center; }
 .growth-eyebrow { display: flex; align-items: center; gap: 12px; color: #f27d59; font-size: 11px; font-weight: 600; letter-spacing: .14em; line-height: 1.7; }
 .growth-eyebrow > span { width: 28px; height: 1px; background: currentColor; flex-shrink: 0; }
-.growth-preview h2 { margin: 20px 0; font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 700; line-height: 1.13; letter-spacing: -.035em; }
-.growth-preview h2 > span { color: #f27d59; }
+.growth-preview h1 { margin: 20px 0; font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 700; line-height: 1.13; letter-spacing: -.035em; }
+.growth-preview h1 > span { color: #f27d59; }
 .growth-guide p, .growth-list { color: #b6b6be; line-height: 1.85; }
 .growth-guide .growth-eyebrow { color: #f27d59; }
 .growth-guide .growth-intro { max-width: 640px; font-size: 17px; }
